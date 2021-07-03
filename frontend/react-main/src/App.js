@@ -1,13 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import React from "react";
 
-function App() {
+
+class HelloApp extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      helloWorld: {},
+    }
+  }
+
+  componentDidMount() {
+    fetch(`/express`)
+        .then(res => res.json())
+        .then(data=>{
+          this.setState({
+            helloWorld:data
+          })
+        });
+  }
+
+
+  render() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {this.state.helloWorld.helloWorld}
         </p>
         <a
           className="App-link"
@@ -22,4 +43,8 @@ function App() {
   );
 }
 
-export default App;
+
+}
+
+
+export default HelloApp
