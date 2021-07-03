@@ -1,5 +1,4 @@
 # Installation Guide <br>
 There is no guide 
 `npm install` into backend    folder<br>
-`npm install` into react-main folder <br>
-`his name is jisan`
+`npm install` into react-main folder 
