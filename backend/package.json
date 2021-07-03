@@ -4,7 +4,8 @@
   "description": "Design Project Backend",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev":"nodemon start"
   },
   "author": "",
   "license": "ISC",
