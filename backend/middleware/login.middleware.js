@@ -1,9 +1,12 @@
-const loginRouter = require('../route/login.route')
+const loginRouter = require('../route/api/authenticate/login.route')
 const checkLoginData = (req, res, next) => {
     const name = req.body.name
     const password = req.body.password
-    if (name != null) {
+    if (name != null&&password!=null) {
         next()
+    }
+    else {
+        res.send('No No')
     }
 }
 
