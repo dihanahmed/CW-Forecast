@@ -1,4 +1,4 @@
-const connection = require('../connection')
+const connection = require('../../../connection')
 const bcrypt = require('bcrypt')
 const sessionStorage = require('sessionstorage')
 'use strict';

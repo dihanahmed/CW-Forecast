@@ -13,8 +13,10 @@ app.get("/express",((req, res) => {
     res.json({helloWorld: "hello world"});
 */
 }))
-app.use('/',loginRouter);
+app.use('/api/authenticate/login',loginRouter);
 
 
 app.listen(8001)
 module.exports=app;
+
+//login change
