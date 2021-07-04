@@ -1,5 +1,5 @@
 const express = require("express");
-const loginRouter = require('./route/login.controller')
+const loginRouter = require('./route/login.route')
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
@@ -14,12 +14,7 @@ app.get("/express",((req, res) => {
 */
 }))
 app.use('/',loginRouter);
-app.post('/post',(req, res) =>{
-    const name = req.body.name;
-    console.log("please do ")
-    console.log(name)
-    res.send(name)
-})
+
 
 app.listen(8001)
 module.exports=app;
