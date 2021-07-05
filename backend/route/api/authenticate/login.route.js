@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 
-const checkLoginData=require('../../../middleware/login.middleware')
+const checkLoginData=require('../../../middleware/api/authentication/login.middleware')
 const confirmLogin=require('../../../controller/api/authenticate/login.controller')
 
 route.get('/', (req, res) => {
