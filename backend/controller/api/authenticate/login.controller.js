@@ -9,15 +9,13 @@ var newPassword = ''
 var temp = ''
 const canLogin = (req, res) => {
 
-    const email = req.body.name
+    const email = req.body.email
     const password = req.body.password
     connection.query(queryString, email, (err, result) => {
-
-        if (result) {
+         if (result) {
             newPassword = result[0].password
 
-            res.send(newPassword)
-            /*bcrypt.compare(password, newPassword, function (err, isValid) {
+           bcrypt.compare(password, newPassword, function (err, isValid) {
                 if (isValid) {
                     sessionStorage.setItem('user', email)
                     res.send("valid")
@@ -25,9 +23,9 @@ const canLogin = (req, res) => {
                     res.send("Error")
                 }
 
-            })*/
+            })
         }
-        else {
+       else {
             res.send(`${email}`+` `+`${password}`+` no no`)
         }
     })
