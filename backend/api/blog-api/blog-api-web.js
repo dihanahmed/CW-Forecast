@@ -7,8 +7,8 @@ const route = express.Router()
 const app = express();
 
 
-app.use('/blog-api/authenticate/login',loginRouter);
-app.use('/blog-api/authenticate/register',registerRouter);
+app.use('login',loginRouter);
+app.use('register',registerRouter);
 
 
 module.exports = route;
