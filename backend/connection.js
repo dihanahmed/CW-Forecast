@@ -2,9 +2,9 @@ const mysql=require('mysql2')
 
 const mysqlConnection=mysql.createConnection({
     host: 'localhost',
-    user: "jisan",
-    password:"1234",
-    database:"assignment",
+    user: "root",
+    password:"",
+    database:"dp",
     multipleStatements: true
 })
 
