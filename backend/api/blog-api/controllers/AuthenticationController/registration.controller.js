@@ -1,47 +1,43 @@
-const connection = require('../../database/connection')
+const connection = require('../../../../config/database/connection')
 const bcrypt = require('bcrypt');
+const User = require("../../models/users");
 const saltRound = 10;
-const confirmRegistration=(req,res) => {
+const confirmRegistration = (req, res) => {
     res.send(req.body.email)
 }
 
-const sendData = (req,res)=>{
-    const email = req.body.email
-    const password = req.body.password
-    const name = req.body.name
-    const phone = req.body.phone
-    const queryString = `INSERT INTO Clients
-            (
-                name,email,password,phone
-            )
-            VALUES
-            (
-                ?,?,?,?
-            )`
-    var newpassword = ''
-    bcrypt.genSalt(10).then(salt => {
-        console.log(`Salt ${salt}`);
-        return bcrypt.hash(password, salt)
-    }).then(hash => {
-        newpassword = hash
-        const queryString = `INSERT INTO Clients
-            (
-                name,email,password,phone
-            )
-            VALUES
-            (
-                ?, ?,?,?
-            )`
+function registerUser(registrationData, res) {
+    return hash => {
+        registrationData.password = hash
+        new User(registrationData).save()
+            .then(() => {
+                res.send({registrationStatus: true});
+            }).catch((err) => {
+            res.send({registrationStatus: false});
+        });
 
-        connection.query(queryString, [name,email,newpassword,phone], (err, rows, fields) => {
-            if (!err) {
-                res.send("Done")
-            } else {
-                console.log(err)
-            }
-        })
+    };
+}
+
+function hashPassword(salt, password) {
+    console.log(`Salt ${salt}`);
+    return bcrypt.hash(password, salt)
+}
+
+const sendData = (req, res) => {
+    const registrationData = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        phone: req.body.phone
+    }
+
+    bcrypt.genSalt(10).then(salt => {
+        return hashPassword(salt, registrationData.password);
     })
+        .then(registerUser(registrationData, res))
         .catch(err => console.error(err.message))
 
 }
-module.exports={confirmRegistration,sendData}
+
+module.exports = {confirmRegistration, sendData}
