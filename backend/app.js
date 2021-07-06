@@ -14,8 +14,6 @@ configureApp = ()=>{
 
 configureApp();
 
-
-
 app.use('/blog-api',blogApi);
 
 

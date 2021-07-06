@@ -7,8 +7,8 @@ const route = express.Router()
 const app = express();
 
 
-app.use('login',loginRouter);
-app.use('register',registerRouter);
+route.use('/login',loginRouter);
+route.use('/register',registerRouter);
 
 
 module.exports = route;
