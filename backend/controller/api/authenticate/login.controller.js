@@ -14,6 +14,7 @@ const canLogin = (req, res) => {
     connection.query(queryString, email, (err, result) => {
          if (result) {
             newPassword = result[0].password
+             console.log(newPassword);
 
            bcrypt.compare(password, newPassword, function (err, isValid) {
                 if (isValid) {
