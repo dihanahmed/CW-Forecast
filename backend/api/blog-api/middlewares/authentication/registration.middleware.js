@@ -1,5 +1,3 @@
-const User = require("../../models/users");
-
 const checkRegistration=(req,res,next) => {
     const name = req.body.name
     const password = req.body.password
@@ -7,12 +5,6 @@ const checkRegistration=(req,res,next) => {
     const phone = req.body.phone
 
     if(password.length>6 && !isEmpty(email) && !isEmpty(phone) && !isEmpty(name)){
-        User.findOne({email:email}).
-            then(user => {
-                if(!isEmpty(user) ){
-                    next();
-                }
-        })
         next()
     }
     else {
