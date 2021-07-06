@@ -2,7 +2,7 @@ const express = require("express");
 
 const blogApi = require('./api/blog-api/routes/blog-api-web')
 const app = express();
-const addAuthenticateOption = require("./api/blog-api/Services/AuthService/checkAuthentication");
+const addAuthenticateOption = require("./api/blog-api/middlewares/authentication/checkAuthentication");
 
 configureApp = ()=>{
     app.use(express.json());

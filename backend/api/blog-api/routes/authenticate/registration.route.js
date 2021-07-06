@@ -1,6 +1,6 @@
 const express=require('express')
 const route = express.Router()
-const checkRegistration=require('../../../../middleware/api/authentication/registration.middleware')
+const checkRegistration=require('../../middlewares/authentication/registration.middleware')
 const {confirmRegistration,sendData}=require('../../controllers/AuthenticationController/registration.controller')
 
 route.get('/',(req, res)=>{
