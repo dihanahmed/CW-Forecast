@@ -7,8 +7,7 @@ const app = express();
 configureApp = ()=>{
     app.use(express.json());
     app.use(express.urlencoded({extended:false}))
-
-
+    require("./config/database/connection");
 }
 
 

@@ -1,4 +1,4 @@
-const connection = require('../../database/connection')
+const connection = require('../../../../config/database/connection')
 const bcrypt = require('bcrypt');
 const saltRound = 10;
 const confirmRegistration=(req,res) => {
@@ -6,6 +6,12 @@ const confirmRegistration=(req,res) => {
 }
 
 const sendData = (req,res)=>{
+    const registrationData = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        phone: req.body.phone
+    }
     const email = req.body.email
     const password = req.body.password
     const name = req.body.name
