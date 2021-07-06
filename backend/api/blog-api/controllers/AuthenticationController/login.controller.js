@@ -1,4 +1,3 @@
-
 const bcrypt = require('bcrypt')
 const sessionStorage = require('sessionstorage')
 const User = require("../../models/users");
@@ -18,18 +17,15 @@ function acceptOrRejectLogin(email, res) {
 }
 
 
-
 const tryLogin = (req, res) => {
-
     const email = req.body.email;
     const password = req.body.password;
     User.findOne({email})
-        .then((user)=>{
-            if(!user)  return res.json({loginStatus: false});
+        .then((user) => {
+            if (!user) return res.json({loginStatus: false});
             bcrypt.compare(password, user.password, acceptOrRejectLogin(email, res))
         })
 }
-
 
 
 module.exports = tryLogin

@@ -2,7 +2,7 @@ const connection = require('../../../../config/database/connection')
 const bcrypt = require('bcrypt');
 const User = require("../../models/users");
 const saltRound = 10;
-const confirmRegistration=(req,res) => {
+const confirmRegistration = (req, res) => {
     res.send(req.body.email)
 }
 
@@ -24,7 +24,7 @@ function hashPassword(salt, password) {
     return bcrypt.hash(password, salt)
 }
 
-const sendData = (req,res)=>{
+const sendData = (req, res) => {
     const registrationData = {
         name: req.body.name,
         email: req.body.email,
@@ -40,4 +40,4 @@ const sendData = (req,res)=>{
 
 }
 
-module.exports={confirmRegistration,sendData}
+module.exports = {confirmRegistration, sendData}
