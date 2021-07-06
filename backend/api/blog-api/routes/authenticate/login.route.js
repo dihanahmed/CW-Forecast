@@ -8,7 +8,7 @@ const checkLoginData=require('../../middlewares/authentication/login.middleware'
 const confirmLogin=require('../../controllers/AuthenticationController/login.controller')
 
 route.get('/', (req, res) => {
-    console.log("Done my boi")
+    console.log("Is authenticated? : " + req.body.authenticated)
     res.send("done")
     res.end()
 })
