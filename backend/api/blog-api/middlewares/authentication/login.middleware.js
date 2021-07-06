@@ -2,12 +2,15 @@ const loginRouter = require('../../routes/authenticate/login.route')
 const checkLoginData = (req, res, next) => {
     const name = req.body.email
     const password = req.body.password
-    if (name != null&&password!=null) {
+    if (!isEmpty(name) && !isEmpty(password)) {
         next()
+    } else {
+        res.json({loginStatus: false})
     }
-    else {
-        res.send('No No')
-    }
+}
+
+const isEmpty = (data) => {
+    return data === undefined || data === null;
 }
 
 module.exports = checkLoginData
