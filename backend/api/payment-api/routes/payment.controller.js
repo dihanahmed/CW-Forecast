@@ -1,22 +1,9 @@
-const express = require("express");
-//https://www.npmjs.com/package/forecastio
-const blogApi = require('./api/blog-api/blog-api-web')
-const app = express();
-const addAuthenticateOption = require("./api/blog-api/middlewares/authentication/checkAuthentication");
-const payment=require("./api/payment-api/routes/payment.controller")
+const express=require('express')
+const routes=express.Router()
 const SSLCommerzPayment = require('sslcommerz')
 
-configureApp = ()=>{
-    app.use(express.json());
-    app.use(express.urlencoded({extended:false}))
-    app.use(addAuthenticateOption.auth)
-    app.use('/payment',payment)
 
-}
-
-configureApp();
-
-/*app.get('/init', (req, res) => {
+routes.get('/', (req, res) => {
     const data = {
         total_amount: 100,
         currency: 'BDT',
@@ -54,14 +41,6 @@ configureApp();
         res.redirect(GatewayPageURL)
         console.log('Redirecting to: ', GatewayPageURL)
     });
-})*/
+})
 
-
-
-app.listen(8001)
-module.exports=app;
-
-//login change
-
-
-
+module.exports =routes
