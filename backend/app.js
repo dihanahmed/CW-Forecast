@@ -1,7 +1,8 @@
 const express = require("express");
-const loginRouter = require('./route/api/authenticate/login.route')
+
+const blogApi = require('./api/blog-api/blog-api-web')
 const app = express();
-const addAuthenticateOption = require("./api/Services/AuthService/checkAuthentication");
+const addAuthenticateOption = require("./api/blog-api/middlewares/authentication/checkAuthentication");
 
 configureApp = ()=>{
     app.use(express.json());
@@ -12,12 +13,9 @@ configureApp = ()=>{
 
 
 configureApp();
-let registerRouter=require('./route/api/authenticate/registration.route')
 
+app.use('/blog-api',blogApi);
 
-
-app.use('/api/authenticate/login',loginRouter);
-app.use('/api/authenticate/register',registerRouter);
 
 
 app.get("/express",((req, res) => {

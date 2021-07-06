@@ -1,4 +1,4 @@
-const connection = require('../../../connection')
+const connection = require('../../database/connection')
 const bcrypt = require('bcrypt');
 const saltRound = 10;
 const confirmRegistration=(req,res) => {
