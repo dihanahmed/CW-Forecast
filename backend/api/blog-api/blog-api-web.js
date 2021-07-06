@@ -1,6 +1,6 @@
 const express = require('express');
-const loginRouter = require('./authenticate/login.route')
-let registerRouter=require('./authenticate/registration.route')
+const loginRouter = require('./routes/authenticate/login.route')
+let registerRouter=require('./routes/authenticate/registration.route')
 
 
 const route = express.Router()
