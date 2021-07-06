@@ -1,35 +1,29 @@
-const connection = require('../../../../config/database/connection')
+
 const bcrypt = require('bcrypt')
 const sessionStorage = require('sessionstorage')
+const User = require("../../models/users");
+
 'use strict';
 
-
-const queryString = `select password from Clients where email=?;`
-var newPassword = ''
-var temp = ''
 const canLogin = (req, res) => {
 
-    const email = req.body.email
-    const password = req.body.password
-    connection.query(queryString, email, (err, result) => {
-         if (result) {
-            newPassword = result[0].password
+    const email = req.body.email;
+    const password = req.body.password;
+    User.findOne({email})
+        .then((user)=>{
+            if(!user)  return res.json({loginStatus: false});
 
-           bcrypt.compare(password, newPassword, function (err, isValid) {
+            bcrypt.compare(password, user.password, function (err, isValid) {
                 if (isValid) {
                     sessionStorage.setItem('user', email)
-                    res.send("valid")
+                    res.json({loginStatus:true});
                 } else {
-                    res.send("Error")
+                    res.json({loginStatus:false});
                 }
 
             })
-        }
-       else {
-            res.send(`${email}`+` `+`${password}`+` no no`)
-        }
-    })
-
+        })
 
 }
+
 module.exports = canLogin
