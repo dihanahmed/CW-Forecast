@@ -1,4 +1,3 @@
-const connection = require('../../../../config/database/connection')
 const bcrypt = require('bcrypt');
 const User = require("../../models/users");
 const saltRound = 10;
@@ -13,7 +12,9 @@ function registerUser(registrationData, res) {
             .then(() => {
                 res.send({registrationStatus: true});
             }).catch((err) => {
-            res.send({registrationStatus: false});
+                if(err.code === 11000)
+                    res.send({registrationStatus: false, reason: "Already Registered"});
+                else  res.send({registrationStatus: false, reason: "Could Not Connect to The Server"});
         });
 
     };
@@ -32,7 +33,7 @@ const sendData = (req, res) => {
         phone: req.body.phone
     }
 
-    bcrypt.genSalt(10).then(salt => {
+    bcrypt.genSalt(saltRound).then(salt => {
         return hashPassword(salt, registrationData.password);
     })
         .then(registerUser(registrationData, res))

@@ -6,7 +6,7 @@ const addAuthenticateOption = require("./middlewares/authentication/checkAuthent
 const route = express.Router()
 
 
-route.use(addAuthenticateOption.auth)
+route.use(addAuthenticateOption.addAuthHeader)
 route.use('/login', loginRouter);
 route.use('/register', registerRouter);
 
