@@ -5,9 +5,9 @@ module.exports ={
     donate: (request,response)=>{
         const donation = new Donation(request.body.data);
         donation.save().then(()=>{
-            response.json({donationStatus:true})
+            response.json({donationSuccessful:true})
         }).catch(err=>{
-            response.json({donationStatus:false, reason: "Error Connecting to Server"});
+            response.json({donationSuccessful:false, reason: "Error Connecting to Server"});
         })
     }
 }
