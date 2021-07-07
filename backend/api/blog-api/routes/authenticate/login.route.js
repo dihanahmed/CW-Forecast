@@ -9,7 +9,7 @@ const confirmLogin = require('../../controllers/AuthenticationController/login.c
 const checkAuthentication = require("../../middlewares/authentication/checkAuthentication");
 
 route.get('/', checkAuthentication.auth,(req, res) => {
-        req.body.authenticated.user().then(console.log)
+        req.body.authenticated.user().then(res.json)
 })
 
 route.get('/test',checkAuthentication.admin,(request,response)=>{
