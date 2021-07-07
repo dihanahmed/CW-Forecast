@@ -62,10 +62,10 @@ class App extends Component{
         }
 
         axios.post('/blog-api/register', registered)
-        .then(response => console.log(response.data))
-        .then((res) => {
-          console.log(res);
-        })
+        .then((response) => {
+          // window.location.assign("/blog-api/login");
+          window.location.assign("/login");  
+        });
 
         this.setState({
             name:'',
