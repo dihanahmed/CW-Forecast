@@ -10,11 +10,11 @@ function registerUser(registrationData, res) {
         registrationData.password = hash
         new User(registrationData).save()
             .then(() => {
-                res.send({registrationStatus: true});
+                res.send({registrationSuccessful: true});
             }).catch((err) => {
                 if(err.code === 11000)
-                    res.send({registrationStatus: false, reason: "Already Registered"});
-                else  res.send({registrationStatus: false, reason: "Could Not Connect to The Server"});
+                    res.send({registrationSuccessful: false, reason: "Already Registered"});
+                else  res.send({registrationSuccessful: false, reason: "Could Not Connect to The Server"});
         });
 
     };
