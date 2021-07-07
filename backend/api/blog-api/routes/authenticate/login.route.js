@@ -8,10 +8,6 @@ const checkLoginData = require('../../middlewares/authentication/login.middlewar
 const confirmLogin = require('../../controllers/AuthenticationController/login.controller')
 const checkAuthentication = require("../../middlewares/authentication/checkAuthentication");
 
-route.get('/', checkAuthentication.auth,(req, res) => {
-        req.body.authenticated.user().then(console.log)
-})
-
 route.get('/test',checkAuthentication.admin,(request,response)=>{
         response.send({isAdmin: true});
 })
