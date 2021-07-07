@@ -12,5 +12,4 @@ route.use('/login', loginRouter);
 route.use('/register', registerRouter);
 route.use('/blog',blogRoute);
 
-
 module.exports = route;
