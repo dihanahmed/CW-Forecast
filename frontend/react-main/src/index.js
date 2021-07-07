@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {Homepage, Blogpage, Wheather, Climate, Donation } from './App';
+import {Blogpage} from './pages/blog';
 
 ReactDOM.render(
     <Router>

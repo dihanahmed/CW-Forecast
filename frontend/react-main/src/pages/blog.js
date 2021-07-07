@@ -1,14 +1,13 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
+//import {useHistory} from "react-router-dom";
 
-function blog() {
-    let history = useHistory();
+const Blogpage = () => {
+	return (
+		<div>
+				<h1>Blogpage</h1>
+				
+		</div>
+	)
+};
 
-    history.push()
-
-    return(
-        <div>
-            
-        </div>
-    )
-}
+export {Blogpage};
