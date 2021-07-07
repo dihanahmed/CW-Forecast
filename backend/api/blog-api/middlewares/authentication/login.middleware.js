@@ -4,7 +4,7 @@ const checkLoginData = (req, res, next) => {
     if (!isEmpty(name) && !isEmpty(password)) {
         next()
     } else {
-        res.json({loginStatus: false, reason: "Email and Password Required"})
+        res.json({loginSuccessful: false, reason: "Email and Password Required"})
     }
 }
 
