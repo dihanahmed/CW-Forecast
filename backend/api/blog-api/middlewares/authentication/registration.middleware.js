@@ -1,14 +1,21 @@
 const checkRegistration = (req, res, next) => {
     const name = req.body.name
     const password = req.body.password
+    const confirm = req.body.confirm
     const email = req.body.email
     const phone = req.body.phone
 
-    if (password.length > 6 && !isEmpty(email) && !isEmpty(phone) && !isEmpty(name)) {
+
+    if (password.length > 6 && !isEmpty(email) && !isEmpty(phone) && !isEmpty(name) && !isEmpty(confirm)) {
         next()
     } else {
-        res.send('Not enough data')
+       return   res.json({registrationStatus: false, reason: "Not Enough Data"})
     }
+
+    if(!(confirm === password)){
+        return  res.json({registrationStatus: false, reason: "Password and Confirm Password Do Not Match"});
+    }
+
 }
 
 const isEmpty = (data) => {
