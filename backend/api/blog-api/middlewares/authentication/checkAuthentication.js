@@ -2,7 +2,6 @@ const sessionStorage = require('sessionstorage');
 const User = require("../../models/users");
 
 function addHeader(request) {
-    console.log("Adding Auth Headers");
     request.body.authenticated = {status: false};
     let user = sessionStorage.getItem('user');
     if (user != null) {
@@ -22,8 +21,6 @@ module.exports = {
     },
 
     auth: (request,response,next)=> {
-        console.log(request.body.authenticated.status);
-
         if (request.body.authenticated.status === true)
             next();
         else return response.json({isAuthenticated: false}).status(304);
@@ -33,9 +30,6 @@ module.exports = {
         const notAdmin =  ()=> {
             return {isAdmin: false};
         }
-
-        console.log("Admin middleware")
-        console.log(request.body.authenticated);
         if(!request.body.authenticated.status) {return response.json(notAdmin());}
         request.body.authenticated.user().then((user=>{
             if(user.email === "admin@admin.com")

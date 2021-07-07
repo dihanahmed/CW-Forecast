@@ -20,10 +20,7 @@ app.use('/getWeather',getWeather)
 
 
 app.get("/express", ((req, res) => {
-    console.log("Sending data");
     res.send('hello world');
-
-
 }))
 
 
