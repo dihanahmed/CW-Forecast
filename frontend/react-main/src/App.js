@@ -15,50 +15,14 @@ const Homepage = () => {
 				<h1>Homepage </h1>
 				<Link to='/'>Go to Homepage</Link><br/>
         <Link to='/blog'>Go to Blogpage</Link><br/>
-        <Link to='/wheather'>Go to Wheather</Link><br/>
+        <Link to='/weather'>Go to Weather</Link><br/>
         <Link to='/climate'>Go to Climate</Link><br/>
         <Link to='/donation'>Go to Donation</Link><br/>
 		</div>
 	)
 };
 
-const Blogpage = () => {
-	return (
-		<div>
-				<h1>Blogpage</h1>
-				
-		</div>
-	)
-};
-
-const Wheather = () => {
-	return (
-		<div>
-				<h1>Wheather</h1>
-				
-		</div>
-	)
-};
-
-const Climate = () => {
-	return (
-		<div>
-				<h1>Climate</h1>
-				
-		</div>
-	)
-};
-
-const Donation = () => {
-	return (
-		<div>
-				<h1>Donation</h1>
-				
-		</div>
-	)
-};
-
-export {Homepage, Blogpage , Wheather, Climate, Donation, Header } ;
+export {Homepage, Header } ;
 
 
 
