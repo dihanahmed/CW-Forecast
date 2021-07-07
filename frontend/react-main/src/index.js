@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {Homepage, Blogpage, Wheather, Climate, Donation } from './App';
+
+import {Homepage} from './App';
 import {Blogpage} from './pages/blog';
+import {Weather} from './pages/weather';
+import {Climate} from './pages/climate';
+import {Donation} from './pages/donation';
 
 ReactDOM.render(
     <Router>
        <Switch>
 		      <Route exact path="/" component={Homepage}/>
 				<Route exact path="/blog" component={Blogpage }/>
-        <Route exact path="/wheather" component={Wheather }/>
+        <Route exact path="/weather" component={Weather }/>
         <Route exact path="/climate" component={Climate }/>
         <Route exact path="/donation" component={Donation }/>
 	    </Switch>
