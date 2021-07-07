@@ -7,7 +7,7 @@ const checkRegistration = (req, res, next) => {
     if (password.length > 6 && !isEmpty(email) && !isEmpty(phone) && !isEmpty(name)) {
         next()
     } else {
-        res.send('Not enough data')
+        res.json({registrationStatus: false, reason: "Not Enough Data"})
     }
 }
 
