@@ -8,12 +8,14 @@ class App extends Component{
             name: '',
             email: '',
             password: '',
-            phone: ''
+            phone: '',
+            confirm: ''
         }
         this.changeName = this.changeName.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
         this.changePassword = this.changePassword.bind(this)
         this.changePhone = this.changePhone.bind(this)
+        this.confirmPassword = this.confirmPassword.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
 
     }
@@ -36,6 +38,12 @@ class App extends Component{
         })
     }
 
+    confirmPassword(event){
+      this.setState({
+          confirm:event.target.value
+      })
+  }
+
     changePhone(event){
         this.setState({
             phone:event.target.value
@@ -49,16 +57,18 @@ class App extends Component{
             name: this.state.name,
             email: this.state.email,
             password: this.state.password,
+            confirm: this.state.confirm,
             phone: this.state.phone
         }
 
-        axios.post('http://localhost:4000/app/signup', registered)
+        axios.post('/blog-api/register', registered)
         .then(response => console.log(response.data))
 
         this.setState({
             name:'',
             email:'',
             password:'',
+            confirm:'',
             phone:''
         })
     }
@@ -76,6 +86,8 @@ class App extends Component{
                             <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} classname = 'form-control from-group'/>
 
                             <input type = 'text' placeholder='phone' onChange = {this.changePhone} value = {this.state.phone} classname = 'form-control from-group'/>
+
+                            <input type = 'password' placeholder='confirm' onChange = {this.confirmPassword} value = {this.state.confirm} classname = 'form-control from-group'/>
 
                             <input type = 'submit' classname='btn btn-danger btn-block' value = 'Submit' />
 
