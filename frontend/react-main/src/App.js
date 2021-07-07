@@ -1,104 +1,157 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-class App extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            name: '',
-            email: '',
-            password: '',
-            phone: '',
-            confirm: ''
-        }
-        this.changeName = this.changeName.bind(this)
-        this.changeEmail = this.changeEmail.bind(this)
-        this.changePassword = this.changePassword.bind(this)
-        this.changePhone = this.changePhone.bind(this)
-        this.confirmPassword = this.confirmPassword.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
+const Header = () => {
+	return (
+		<div>
+				<p>Header</p>
+		</div>
+	)
+};
 
-    }
+const Homepage = () => {
+	return (
+		<div>
+				<h1>Homepage </h1>
+				<Link to='/'>Go to Homepage</Link>
+        <Link to='/blog'>Go to Blogpage</Link>
+        <Link to='/wheather'>Go to Wheather</Link>
+        <Link to='/climate'>Go to Climate</Link>
+        <Link to='/donation'>Go to Donation</Link>
+		</div>
+	)
+};
 
-    changeName(event){
-        this.setState({
-            name:event.target.value
-        })
-    }
+const Blogpage = () => {
+	return (
+		<div>
+				<h1>Blogpage</h1>
+				
+		</div>
+	)
+};
 
-    changeEmail(event){
-        this.setState({
-            email:event.target.value
-        })
-    }
+const Wheather = () => {
+	return (
+		<div>
+				<h1>Wheather</h1>
+				
+		</div>
+	)
+};
 
-    changePassword(event){
-        this.setState({
-            password:event.target.value
-        })
-    }
+const Climate = () => {
+	return (
+		<div>
+				<h1>Climate</h1>
+				
+		</div>
+	)
+};
 
-    confirmPassword(event){
-      this.setState({
-          confirm:event.target.value
-      })
-  }
+const Donation = () => {
+	return (
+		<div>
+				<h1>Donation</h1>
+				
+		</div>
+	)
+};
 
-    changePhone(event){
-        this.setState({
-            phone:event.target.value
-        })
-    }
+export {Homepage, Blogpage , Wheather, Climate, Donation, Header } ;
 
-    onSubmit(event){
-        event.preventDefault()
 
-        const registered = {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password,
-            confirm: this.state.confirm,
-            phone: this.state.phone
-        }
 
-        axios.post('/blog-api/register', registered)
-        .then((response) => {
-          // window.location.assign("/blog-api/login");
-          window.location.assign("/login");  
-        });
 
-        this.setState({
-            name:'',
-            email:'',
-            password:'',
-            confirm:'',
-            phone:''
-        })
-    }
 
-    render(){
-        return(
-            <div>
-                <div classname= 'container'>
-                    <div classname = 'form-div'>
-                        <form onSubmit={this.onSubmit}>
-                            <input type = 'text' placeholder='name' onChange = {this.changeName} value = {this.state.name} classname = 'form-control from-group'/>
 
-                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} classname = 'form-control from-group'/>
 
-                            <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} classname = 'form-control from-group'/>
 
-                            <input type = 'text' placeholder='phone' onChange = {this.changePhone} value = {this.state.phone} classname = 'form-control from-group'/>
 
-                            <input type = 'password' placeholder='confirm' onChange = {this.confirmPassword} value = {this.state.confirm} classname = 'form-control from-group'/>
 
-                            <input type = 'submit' classname='btn btn-danger btn-block' value = 'Submit' />
 
-                        </form>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-export default App;
+// import React, { useState } from 'react';
+// //import ReactDOM from 'react-dom';
+// import { BrowseRouter as Router , Route, Switch, Link, browserHistory, IndexRoute } from 'react-router-dom';
+// import blog from "./blog";
+// import wheather from "./wheather";
+// import climate from "./climate";
+// import donation from "./donation";
+// import { func } from 'prop-types';
+
+
+// function App(){
+//   return(
+//     <Router>
+//       <switch>
+//         <Route exact path = "/blog" component={blog} />
+//         <Route exact path = "/wheather" component={wheather} />
+//         <Route exact path = "/climate" component={climate} />
+//         <Route exact path = "/donation" component={donation} />
+//       </switch>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+// class App extends React.Component {
+//    render() {
+//       return (
+//          <div>
+//             <ul>
+//             <li>Home</li>
+//             <li>About</li>
+//             <li>Contact</li>
+//             </ul>
+//             {this.props.children}
+//          </div>
+//       )
+//    }
+// }
+// export default App;
+
+// class Home extends React.Component {
+//    render() {
+//       return (
+//          <div>
+//             <h1>Home...</h1>
+//          </div>
+//       )
+//    }
+// }
+// export default Home;
+
+// class About extends React.Component {
+//    render() {
+//       return (
+//          <div>
+//             <h1>About...</h1>
+//          </div>
+//       )
+//    }
+// }
+// export default About;
+
+// class Contact extends React.Component {
+//    render() {
+//       return (
+//          <div>
+//             <h1>Contact...</h1>
+//          </div>
+//       )
+//    }
+// }
+// export default Contact;
+
+//  ReactDOM.render((
+//   <Router history = {browserHistory}>
+//      <Route path = "/" component = {App}>
+//         <IndexRoute component = {Home} />
+//         <Route path = "home" component = {Home} />
+//         <Route path = "about" component = {About} />
+//         <Route path = "contact" component = {Contact} />
+//      </Route>
+//   </Router>
+// ), document.getElementById('app'))
