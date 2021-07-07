@@ -21,7 +21,6 @@ function registerUser(registrationData, res) {
 }
 
 function hashPassword(salt, password) {
-    console.log(`Salt ${salt}`);
     return bcrypt.hash(password, salt)
 }
 
