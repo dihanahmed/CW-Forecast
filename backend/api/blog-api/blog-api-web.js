@@ -10,5 +10,4 @@ route.use(addAuthenticateOption.addAuthHeader)
 route.use('/login', loginRouter);
 route.use('/register', registerRouter);
 
-
 module.exports = route;
