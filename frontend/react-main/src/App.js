@@ -13,11 +13,11 @@ const Homepage = () => {
 	return (
 		<div>
 				<h1>Homepage </h1>
-				<Link to='/'>Go to Homepage</Link>
-        <Link to='/blog'>Go to Blogpage</Link>
-        <Link to='/wheather'>Go to Wheather</Link>
-        <Link to='/climate'>Go to Climate</Link>
-        <Link to='/donation'>Go to Donation</Link>
+				<Link to='/'>Go to Homepage</Link><br/>
+        <Link to='/blog'>Go to Blogpage</Link><br/>
+        <Link to='/wheather'>Go to Wheather</Link><br/>
+        <Link to='/climate'>Go to Climate</Link><br/>
+        <Link to='/donation'>Go to Donation</Link><br/>
 		</div>
 	)
 };
