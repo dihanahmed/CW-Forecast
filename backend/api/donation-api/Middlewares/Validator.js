@@ -1,6 +1,6 @@
 
     const isEmpty =  (data) => {
-        return data === undefined || data === null;
+        return data === undefined || data === null || data === '';
     }
 
 
@@ -14,8 +14,9 @@ module.exports ={
             phone: request.body.phone,
             treeID: request.body.treeID,
         }
-        if(isEmpty(data.phone)||isEmpty(data.email)||isEmpty(data.phone) || isEmpty(data.donorName)){
-            return response.json({donationStatus: false, reason: "Not Enough Data"});
+        console.log(data);
+        if(isEmpty(data.phone)||isEmpty(data.email)||isEmpty(data.treeID) || isEmpty(data.donorName)){
+            return response.json({donationSuccessful: false, reason: "Not Enough Data"});
         }
         else {
             request.body.data = data;

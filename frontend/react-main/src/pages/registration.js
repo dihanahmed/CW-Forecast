@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //import { Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+//import { Redirect } from "react-router-dom";
 import axios from 'axios';
+//import {useHistory} from "react-router-dom";
 //Home = require("./login");
 
 
@@ -128,3 +129,4 @@ class App extends Component{
 }
 
 export default App;
+//export {App};
