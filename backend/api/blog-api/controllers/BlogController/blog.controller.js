@@ -50,4 +50,8 @@ function blogAll(req,res){
 }
 
 
-module.exports=routers
+module.exports={
+    makeBlog,
+    blogbyEmail,
+    blogAll
+}
