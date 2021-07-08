@@ -60,6 +60,16 @@ function Navbar() {
               </Link>
             </li>
 
+            <li className='nav-item'>
+              <Link
+                  to='/donations'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+              >
+                Donation
+              </Link>
+            </li>
+
             <li>
               <Link
                 to='/sign-up'
