@@ -29,7 +29,7 @@ function  makeBlog(req,res){
 
 function blogbyEmail(req,res){
 
-    Blog.findOne({email:email})
+    Blog.findOne({email:res.body.email})
     .then(blog=>{
         if(blog){
             //User exists
