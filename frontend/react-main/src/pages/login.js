@@ -35,7 +35,7 @@ class Login extends Component{
             password: this.state.password
         }
 
-        axios.post('http://localhost:8001/api/blog-api/register', registered)
+        axios.post('http://localhost:8001/blog-api/register', registered)
         .then((response) => {
           this.setState({ redirect: true })
         });
