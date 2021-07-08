@@ -40,7 +40,7 @@ function blogbyEmail(req,res){
 }
 
 function blogAll(req,res){
-    Blogl.findAll({email:email})
+    Blog.findAll()
     .then(blogs=>{
         if(blogs){
             res.json(blogs)
