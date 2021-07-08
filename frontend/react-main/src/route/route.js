@@ -12,7 +12,7 @@ export default function Body() {
       <Switch>
         <Route path="/" component={Homepage} exact />
         <Route path="/blog" component={Blogpage} exact />
-        <Route path="/" component={Homepage} exact />
+        <Route path="/regis" component={Homepage} exact />
         <Route path="/" component={Homepage} exact />
         <Route path="/" component={Homepage} exact />
         
