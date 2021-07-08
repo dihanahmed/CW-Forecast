@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import {Homepage} from './App';
+// import {Header} from './App';
 import {Blogpage} from './pages/blog';
 import {Weather} from './pages/weather';
 import {Climate} from './pages/climate';
@@ -20,7 +21,7 @@ ReactDOM.render(
         <Route exact path="/donation" component={Donation }/>
         <Route exact path="/registration" component = {App} />
         <Route exact path="/login" component = {Login} />
-        <Route exact path="/dashboard" component = {Login />
+        {/* <Route exact path="/login" component = {Login} /> */}
 	    </Switch>
     </Router>,
     document.getElementById('root')

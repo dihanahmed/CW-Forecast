@@ -84,7 +84,7 @@ class App extends Component{
             phone: this.state.phone
         }
 
-        axios.post('http://localhost:8001/api/blog-api/register', registered)
+        axios.post('http://localhost:8001/blog-api/register', registered)
         .then((response) => {
           this.setState({ redirect: true })
         });
