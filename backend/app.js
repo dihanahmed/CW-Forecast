@@ -1,13 +1,18 @@
 const express = require("express");
+const cors = require("cors")
 
 const blogApi = require('./api/blog-api/blog-api-web')
 const getWeather=require("./api/weather-api/routes/weather.route")
 const donationApi = require("./api/donation-api/donation-api-web")
+const {corsOptions} = require("./CORS Policy/policy");
+
 
 const app = express();
 
 
+
 configureApp = () => {
+    app.use(cors(corsOptions));
     app.use(express.json());
     app.use(express.urlencoded({extended: false}))
     require("./config/database/connection");
