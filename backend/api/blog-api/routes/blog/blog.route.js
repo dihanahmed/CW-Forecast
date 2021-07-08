@@ -46,4 +46,4 @@ function saveArticleAndRedirect(path) {
     }
 }
 
-module.exports = route
+module.exports = router;
