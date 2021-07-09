@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,84 +6,20 @@ import CardActionArea from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Background1 from '../images/pexels-felix-mittermeier-957024.jpg';
-import Background2 from '../images/media2.jpg';
-import Background3 from '../images/shobuj.jpg';
-import { AppBar, Toolbar} from '@material-ui/core';
+import {AppBar, Toolbar} from '@material-ui/core';
+import {getUseStyles} from "./DonationStyles";
 
 
-const handleRoute = () =>{ 
-    this.props.history.push("/climate");
-  }
-
-const useStyles = makeStyles({
-	component: {
-        background: '#C6CAB1',
-        color: 'black'
-    },
-    container: {
-        justifyContent: 'center',
-		height: '80px'
-    },
-
-	root1: {
-		backgroundColor: '#e4f4ef',
-		maxWidth: 1000,
-		marginRight: '80px'
-	  
-	},
-
-	root2: {
-		backgroundColor: '#dad6db',
-		maxWidth: 1000,
-		marginLeft: '70px',
-		marginRight: '80px'
-		
-	},
-	root3: {
-		backgroundColor: '#E3EEAB',
-		maxWidth: 1000,
-		marginLeft: '70px'
-		
-	},
-	media1: {
-		backgroundImage: `url(${Background1})`,	
-		backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '30vh',
-	},
-	media2: {
-		backgroundImage: `url(${Background2})`,	
-		backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-		backgroundPosition: '-30px 0px',
-        width: '100vw',
-        height: '30vh',
-	},
-	media3: {
-		backgroundImage: `url(${Background3})`,	 
-		backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-		backgroundPosition: '-30px 0px',
-        width: '100vw',
-        height: '30vh',
-	},
-	btn:{
-		marginLeft: '20px'
-	},
-	allcards:{
-		padding: '200px 100px 500px 70px',
-		maxWidth: '2000px',
-		display: 'flex',
-		flexDirection: 'wrap',
-	}
-
-  });
+const useStyles = getUseStyles();
   
 
-  export default function Donation() {
-	const classes = useStyles();
+  export default function Donation(props) {
+
+	  const handleRoute = () =>{
+		  props.history.push("/climate");
+	  }
+
+	  const classes = useStyles();
   
 	return (
 		<div className = {classes.allcards}>
