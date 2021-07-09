@@ -1,33 +1,35 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
 
-const Blogpage = () => {
-    let history = useHistory();
+class Blogpage extends React.Component {
+    render() {
+        let history = useHistory();
 
-	return (
-        <div>
-		<div>
-			<button
-                onClick={()=>{
-                    history.push("/registration")
-                }}
-            >
-                Register Your Account
-            </button>
-				
-		</div>
+        return (
+            <div>
+                <div>
+                    <button
+                        onClick={() => {
+                            history.push("/registration")
+                        }}
+                    >
+                        Register Your Account
+                    </button>
 
-        <div>
-        <button
-                onClick={()=>{
-                    history.push("/login")
-                }}
-            >
-                Login to Your Account
-            </button>
-        </div>
-        </div>
-	)
-};
+                </div>
+
+                <div>
+                    <button
+                        onClick={() => {
+                            history.push("/login")
+                        }}
+                    >
+                        Login to Your Account
+                    </button>
+                </div>
+            </div>
+        )
+    }
+}
 
 export {Blogpage};
