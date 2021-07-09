@@ -1,13 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { AppBar, Toolbar } from '@material-ui/core';
 
-const App = () => {
-	return (
-		<div>
-		</div>
-	)
+// const Header = () => {
+// 	return (
+
+// 	)
+// };
+
+const Homepage = () => {
+    return (
+        <div>
+            <AppBar>
+                <Toolbar>
+                    <p> Home </p>
+                </Toolbar>
+            </AppBar>
+            <div>
+                <h1>Homepage </h1>
+                <Link to='/'>Go to Homepage</Link><br/>
+                <Link to='/blog'>Go to Blogpage</Link><br/>
+                <Link to='/weather'>Go to Weather</Link><br/>
+                <Link to='/climate'>Go to Climate</Link><br/>
+                <Link to='/donation'>Go to Donation</Link><br/>
+            </div>
+        </div>
+    )
 };
 
-export {App } ;
+export {Homepage } ;
 
 
 

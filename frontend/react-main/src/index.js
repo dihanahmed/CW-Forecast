@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import {Homepage} from './App';
+import {Homepage} from './pages/HomePage';
 // import {Header} from './App';
 import {Blogpage} from './pages/blog';
 import {Weather} from './pages/weather';

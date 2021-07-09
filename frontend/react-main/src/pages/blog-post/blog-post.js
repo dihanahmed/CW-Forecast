@@ -1,8 +1,11 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
 
+let history = useHistory();
+
 const Blogpost = () => {
-    let history = useHistory();
+   return( <>
+
 
     <div className="blog_post">
     <div className="site_header">
@@ -25,5 +28,7 @@ const Blogpost = () => {
         </div>
     </div>
 </div>
+
+    </>)
 
 };
