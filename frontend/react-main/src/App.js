@@ -28,28 +28,17 @@ const  useStyles = makeStyles({
 // 	)
 // };
 
-const Homepage = () => {
+const App = () => {
 	const classes = useStyles();
 	return (
-		<div className = {classes.design}>
-			<AppBar className = {classes.component}>
-				<Toolbar className = {classes.container}>
-					<Typography> Home </Typography>
-				</Toolbar>
-			</AppBar>
 		<div>
-		<h1>Homepage </h1>
-		<Link to='/'>Go to Homepage</Link><br/>
-        <Link to='/blog'>Go to Blogpage</Link><br/>
-        <Link to='/weather'>Go to Weather</Link><br/>
-        <Link to='/climate'>Go to Climate</Link><br/>
-        <Link to='/donation'>Go to Donation</Link><br/>
-		</div>
+
+
 		</div>
 	)
 };
 
-export {Homepage } ;
+export {App } ;
 
 
 

@@ -1,6 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
+import Background from '../src/images/green.jpg';
+
+const  useStyles = makeStyles({
+    component: {
+        background: '#FFFFFF',
+        color: 'black'
+    },
+    container: {
+        justifyContent: 'center'
+    },
+    design: {
+        backgroundImage: `url(${Background})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh',
+
+    }
+});
 
 // const Header = () => {
 // 	return (
@@ -9,11 +29,12 @@ import { AppBar, Toolbar } from '@material-ui/core';
 // };
 
 const Homepage = () => {
+    const classes = useStyles();
     return (
-        <div>
-            <AppBar>
-                <Toolbar>
-                    <p> Home </p>
+        <div className = {classes.design}>
+            <AppBar className = {classes.component}>
+                <Toolbar className = {classes.container}>
+                    <Typography> Home </Typography>
                 </Toolbar>
             </AppBar>
             <div>
