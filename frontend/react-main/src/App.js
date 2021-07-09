@@ -1,13 +1,55 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
+import Background from '../src/images/green.jpg';
 
-const App = () => {
+const  useStyles = makeStyles({
+	component: {
+		background: '#FFFFFF',
+		color: 'black'
+	},
+	container: {
+		justifyContent: 'center'
+	},
+	design: {
+		backgroundImage: `url(${Background})`,
+		backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh',
+		
+	}
+});
+
+// const Header = () => {
+// 	return (
+		
+// 	)
+// };
+
+const Homepage = () => {
+	const classes = useStyles();
 	return (
+		<div className = {classes.design}>
+			<AppBar className = {classes.component}>
+				<Toolbar className = {classes.container}>
+					<Typography> Home </Typography>
+				</Toolbar>
+			</AppBar>
 		<div>
+		<h1>Homepage </h1>
+		<Link to='/'>Go to Homepage</Link><br/>
+        <Link to='/blog'>Go to Blogpage</Link><br/>
+        <Link to='/weather'>Go to Weather</Link><br/>
+        <Link to='/climate'>Go to Climate</Link><br/>
+        <Link to='/donation'>Go to Donation</Link><br/>
+		</div>
 		</div>
 	)
 };
 
-export {App } ;
+export {Homepage } ;
 
 
 
