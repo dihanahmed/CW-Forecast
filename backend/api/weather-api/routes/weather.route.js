@@ -9,8 +9,12 @@ var options = {
 }
 var forecastIo = new ForecastIo('2286dd2204e405b21ad2dec95e789d49');
 
-route.get('/',(req, res) =>{
-    forecastIo.forecast('51.506', '-0.127',options).then(function(data) {
+route.post('/',(req, res) =>{
+
+    const a =Number(req.body.latitude)
+    const b=Number(req.body.longitude)
+
+    forecastIo.forecast(`${a}`, `${b}`,options).then(function(data) {
 
         /*  console.log(JSON.stringify(data, null, 2));
           res.send(JSON.stringify(data,null,2))
