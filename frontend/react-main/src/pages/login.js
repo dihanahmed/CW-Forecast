@@ -30,14 +30,19 @@ class Login extends Component{
 	onSubmit(event){
         event.preventDefault()
 
-        const registered = {
+        const loggedIn = {
             email: this.state.email,
             password: this.state.password
         }
 
-        axios.post('http://localhost:8001/blog-api/register', registered)
+        axios.post('http://localhost:8001/blog-api/login', loggedIn)
         .then((response) => {
-          this.setState({ redirect: true })
+           console.log(response);
+            if(response.data.loginSuccessful){
+                 this.setState({ redirect: true })
+                this.props.history.push('/dashboard');
+            }
+
         });
 
         
@@ -46,7 +51,7 @@ class Login extends Component{
             email:'',
             password:''
         })
-		this.props.history.push('/dashboard');
+	//
     }
 
     
