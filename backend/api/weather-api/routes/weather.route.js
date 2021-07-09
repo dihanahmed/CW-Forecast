@@ -23,4 +23,15 @@ route.get('/',(req, res) =>{
     });
 
 })
+
+
+/*
+Todo
+    request -> City
+    City    -> LL
+    LL     -> fetch data
+    Res. send data
+ */
+
+
 module.exports=route

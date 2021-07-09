@@ -15,8 +15,12 @@ const useStyles = getUseStyles();
 
   export default function Donation(props) {
 
-	  const handleRoute = () =>{
-		  props.history.push("/climate");
+	  const handleRoute = (data) =>{
+		  props.history.push({
+			  pathname: '/climate',
+			  search: `?query=${data}`
+
+		  });
 	  }
 
 	  const classes = useStyles();
@@ -43,7 +47,7 @@ const useStyles = getUseStyles();
 				</CardContent>
 				</CardActionArea>
 				<CardActions>
-				<Button size="small" color="primary" className={classes.btn}>
+				<Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(1)}}>
 					Donate
 				</Button>
 				</CardActions>
@@ -65,7 +69,7 @@ const useStyles = getUseStyles();
 		  </CardContent>
 		</CardActionArea>
 		<CardActions>
-		  <Button size="small" color="primary" className={classes.btn}>
+		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(2)}}>
 			Donate
 		  </Button>
 		</CardActions>
@@ -85,7 +89,7 @@ const useStyles = getUseStyles();
 		  </CardContent>
 		</CardActionArea>
 		<CardActions>
-		  <Button size="small" color="primary" className={classes.btn} onClick={handleRoute}>
+		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(3)}}>
 			Donate
 		  </Button>
 		</CardActions>
