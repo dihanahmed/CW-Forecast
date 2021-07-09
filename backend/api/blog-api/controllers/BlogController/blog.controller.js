@@ -29,7 +29,7 @@ function  makeBlog(req,res){
 
 function blogbyEmail(req,res){
 
-    Blog.findOne({email:email})
+    Blog.findOne({email:res.body.email})
     .then(blog=>{
         if(blog){
             //User exists
@@ -40,7 +40,7 @@ function blogbyEmail(req,res){
 }
 
 function blogAll(req,res){
-    Blogl.findAll({email:email})
+    Blog.findAll()
     .then(blogs=>{
         if(blogs){
             res.json(blogs)
@@ -50,4 +50,8 @@ function blogAll(req,res){
 }
 
 
-module.exports=routers
+module.exports={
+    makeBlog,
+    blogbyEmail,
+    blogAll
+}
