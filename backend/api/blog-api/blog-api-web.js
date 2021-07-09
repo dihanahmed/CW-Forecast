@@ -9,5 +9,6 @@ const route = express.Router()
 route.use(addAuthenticateOption.addAuthHeader)
 route.use('/login', loginRouter);
 route.use('/register', registerRouter);
+route.use('/fetch',fetchRouter)
 
 module.exports = route;
