@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import * as PropTypes from "prop-types";
 
 export class BlogNavbar extends React.Component {
+
     render() {
         return <AppBar className={this.props.classes.component}>
             <Toolbar className={this.props.classes.container}>
