@@ -10,15 +10,16 @@ import {AppBar, Toolbar} from '@material-ui/core';
 import {getUseStyles} from "./DonationStyles";
 
 
-const handleRoute = () =>{
-    this.props.history.push("/climate");
-  }
-
 const useStyles = getUseStyles();
   
 
-  export default function Donation() {
-	const classes = useStyles();
+  export default function Donation(props) {
+
+	  const handleRoute = () =>{
+		  props.history.push("/climate");
+	  }
+
+	  const classes = useStyles();
   
 	return (
 		<div className = {classes.allcards}>
