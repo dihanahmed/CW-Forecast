@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.9",
+    "request": "^2.88.2",
     "sessionstorage": "^0.1.0"
   }
 }

@@ -9,8 +9,6 @@ const {corsOptions} = require("./CORS Policy/policy");
 
 const app = express();
 
-
-
 configureApp = () => {
     app.use(cors(corsOptions));
     app.use(express.json());
@@ -31,10 +29,13 @@ app.get("/express", ((req, res) => {
 }))
 
 
+
+
 app.listen(8001)
 module.exports = app;
 
 //login change
 
 //new_branch
+
 
