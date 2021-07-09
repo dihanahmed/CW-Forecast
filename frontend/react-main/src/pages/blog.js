@@ -1,9 +1,8 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
 
 class Blogpage extends React.Component {
     render() {
-        let history = useHistory();
+        const { history } = this.props
 
         return (
             <div>
@@ -21,7 +20,7 @@ class Blogpage extends React.Component {
                 <div>
                     <button
                         onClick={() => {
-                            history.push("/login")
+                           history.push("/login")
                         }}
                     >
                         Login to Your Account
