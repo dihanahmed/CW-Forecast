@@ -6,7 +6,7 @@ import axios from 'axios';
 //Home = require("./login");
 
 
-class App extends Component{
+class Registration extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -129,5 +129,5 @@ class App extends Component{
     }
 }
 
-export default App;
+export default Registration;
 //export {App};

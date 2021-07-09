@@ -8,7 +8,7 @@ import {Blogpage} from './pages/blog';
 import {Weather} from './pages/weather';
 import {Climate} from './pages/climate';
 import {Donation} from './pages/donation';
-import App from './pages/registration';
+import Registration from './pages/registration';
 import Login from './pages/login';
 
 ReactDOM.render(
@@ -19,7 +19,7 @@ ReactDOM.render(
         <Route exact path="/weather" component={Weather }/>
         <Route exact path="/climate" component={Climate }/>
         <Route exact path="/donation" component={Donation }/>
-        <Route exact path="/registration" component = {App} />
+        <Route exact path="/registration" component = {Registration} />
         <Route exact path="/login" component = {Login} />
         {/* <Route exact path="/login" component = {Login} /> */}
 	    </Switch>
