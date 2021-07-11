@@ -20,16 +20,16 @@ const cities ={
         longitude: 0
     },
     SYLHET: {
-        latitude: 0,
-        longitude: 0
+        latitude: 24.894802,
+        longitude: 91.869034
     },
     MYMENSINGH: {
         latitude: 0,
         longitude: 0
     },
     JASHORE: {
-        latitude: 0,
-        longitude: 0
+        latitude: 23.170664,
+        longitude: 89.212418
     }
 
 }
