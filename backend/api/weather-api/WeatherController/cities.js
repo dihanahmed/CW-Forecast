@@ -26,6 +26,9 @@ const cities ={
 }
 
 fetchCoordinate = (city)=>{
+    const cityData = cities[city];
+    if(cityData === null || cityData === undefined) return {successful:false}
+    cityData.successful = true;
     return cities[city];
 
 }

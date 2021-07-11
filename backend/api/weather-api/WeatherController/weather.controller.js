@@ -1,6 +1,6 @@
 const ForecastIo = require('forecastio');
 const forecastIo = new ForecastIo('2286dd2204e405b21ad2dec95e789d49');
-const city = require('./cities');
+const cityInfo = require('./cities');
 
 
 const options = {
@@ -19,7 +19,6 @@ function coordinateWeather(latitude, longitude, res) {
 }
 
 fetchWeatherByCoordinate = (req, res) =>{
-
     const a =Number(req.body.latitude)
     const b=Number(req.body.longitude)
     coordinateWeather(a, b, res);
@@ -28,8 +27,10 @@ fetchWeatherByCoordinate = (req, res) =>{
 
 fetchWeatherByCity =(req,res)=>{
  let city = req.body.city.toString().toUpperCase();
- let coordinate = city.fetchCoordinate(city);
- coordinateWeather(coordinate.latitude,coordinate.longitude);
+ let coordinate = cityInfo.fetchCoordinate(city);
+ console.log(coordinate);
+ if(!coordinate.successful) return res.json({successful: false});
+ coordinateWeather(coordinate.latitude,coordinate.longitude,res);
 }
 
 
