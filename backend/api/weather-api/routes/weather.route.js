@@ -6,16 +6,8 @@ const route = express.Router();
 
 
 
-route.post('/',weatherController.fetchWeather)
-
-
-/*
-Todo
-    request -> City
-    City    -> LL
-    LL     -> fetch data
-    Res. send data
- */
+route.post('/city',weatherController.fetchWeatherByCity);
+route.get('/available',weatherController.fetchAvailableCities);
 
 
 module.exports=route

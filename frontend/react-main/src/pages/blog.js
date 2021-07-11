@@ -10,10 +10,10 @@ class Blogpage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8001/`)
+        axios.get(`http://localhost:8001/blog-api/fetch/all`)
             .then(res => {
-                const movies = res.data;
-                this.setState({ movies: movies });
+                const blogs = res.data;
+                this.setState({ blogs: res });
             })
     }
 
@@ -22,10 +22,7 @@ class Blogpage extends React.Component {
         const classes = useStyles;
         const { history } = this.props;
 
-        axios.get("http://localhost:8001/getWeather").then((res)=>{
-            console.log(res);
-        })
-
+        console.log(this.state.blogs);
         return (
             <div>
 
