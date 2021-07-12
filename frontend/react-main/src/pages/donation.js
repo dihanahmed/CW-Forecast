@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {AppBar, Toolbar} from '@material-ui/core';
 import {getUseStyles} from "./DonationStyles";
+import axios from 'axios';
 
 
 const useStyles = getUseStyles();
@@ -16,8 +17,14 @@ const useStyles = getUseStyles();
   export default function Donation(props) {
 
 	  const handleRoute = (data) =>{
+
+		axios.post('http://localhost:8001/blog-api/donation', data)
+        .then((response) => {
+          this.setState({ redirect: true })
+        });
+
 		  props.history.push({
-			  pathname: '/climate',
+			  pathname: '/donationform',
 			  search: `?query=${data}`
 
 		  });
