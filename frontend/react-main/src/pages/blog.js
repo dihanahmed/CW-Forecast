@@ -10,9 +10,10 @@ class Blogpage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8001/blog-api/fetch/all`)
+        axios.get(`http://localhost:8001/blog-api/verify`)
             .then(res => {
-                const blogs = res.data;
+                const blogs = res.data.data;
+                console.log(blogs);
                 this.setState({ blogs: res });
             })
     }
