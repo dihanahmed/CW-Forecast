@@ -26,6 +26,7 @@ function showDonate(req,res){
 module.exports ={
     donate: (request,response)=>{
         const donation = new Donation(request.body.data);
+        console.log(donation);
         donation.save().then(()=>{
             response.json({donationSuccessful:true})
         }).catch(err=>{
