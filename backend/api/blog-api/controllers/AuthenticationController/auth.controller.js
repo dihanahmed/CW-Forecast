@@ -1,9 +1,10 @@
 const express=require('express')
+const sessionStorage = require('sessionstorage');
 
-function isTrue(req, res){
-    res.json({authenticated:ture})
+function logOut(req,res){
+    sessionStorage.clear();
+    res.json({successful:true});
 }
 
-function isFalse(req,res){
-    res.json({authenticated:false})
-}
+
+module.exports = {logOut};
