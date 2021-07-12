@@ -1,25 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
-import Background from './../images/green.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import { AppBar, Toolbar, Typography, makeStyles } from "@material-ui/core";
+import Background from "./../images/green.jpg";
+import "./HomePage.css";
 
-const  useStyles = makeStyles({
-    component: {
-        background: '#FFFFFF',
-        color: 'black'
-    },
-    container: {
-        justifyContent: 'center'
-    },
-    design: {
-        backgroundImage: `url(${Background})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh',
-
-    }
+const useStyles = makeStyles({
+  component: {
+    background: "#FFFFFF",
+    color: "black",
+  },
+  container: {
+    justifyContent: "center",
+  },
+  design: {
+    backgroundImage: `url(${Background})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: "100vw",
+    height: "100vh",
+  },
 });
 
 // const Header = () => {
@@ -29,37 +29,68 @@ const  useStyles = makeStyles({
 // };
 
 const Homepage = () => {
-    const classes = useStyles();
-    return (
-        <div className = {classes.design}>
-            <AppBar className = {classes.component}>
-                <Toolbar className = {classes.container}>
-                    <Typography> Home </Typography>
-                </Toolbar>
-            </AppBar>
+  const classes = useStyles();
+  return (
+    <div>
+    <div className={classes.design}>
+      <div>
+        <AppBar className={classes.component}>
+          <Toolbar className={classes.container}>
             <div>
-                <h1>Homepage </h1>
-                <Link to='/'>Go to Homepage</Link><br/>
-                <Link to='/blog'>Go to Blogpage</Link><br/>
-                <Link to='/weather'>Go to Weather</Link><br/>
-                <Link to='/climate'>Go to Climate</Link><br/>
-                <Link to='/donation'>Go to Donation</Link><br/>
+              <Typography>
+                {" "}
+                <Link to="/" className="navlinks">
+                  Homepage
+                </Link>{" "}
+              </Typography>
             </div>
-        </div>
-    )
+            <div>
+              <Typography>
+                {" "}
+                <Link to="/blog" className="navlinks">
+                  Blogpage
+                </Link>{" "}
+              </Typography>
+            </div>
+            <div>
+              <Typography>
+                {" "}
+                <Link to="/weather" className="navlinks">
+                  Weather
+                </Link>{" "}
+              </Typography>
+            </div>
+            <div>
+              <Typography>
+                {" "}
+                <Link to="/climate" className="navlinks">
+                  Climate
+                </Link>{" "}
+              </Typography>
+            </div>
+            <div>
+              <Typography>
+                {" "}
+                <Link to="/donation" className="navlinks">
+                  Donation
+                </Link>{" "}
+              </Typography>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+      
+
+      <div className='t1'>
+        {/* <Typography variant='h3' color='#ffffff'> CW Forecast</Typography> */}
+        <p className="text"> CW Forecast </p>
+      </div>
+      </div>
+    </div>
+  );
 };
 
-export {Homepage } ;
-
-
-
-
-
-
-
-
-
-
+export { Homepage };
 
 // import React, { useState } from 'react';
 // //import ReactDOM from 'react-dom';
@@ -69,7 +100,6 @@ export {Homepage } ;
 // import climate from "./climate";
 // import donation from "./donation";
 // import { func } from 'prop-types';
-
 
 // function App(){
 //   return(
@@ -85,7 +115,6 @@ export {Homepage } ;
 // }
 
 // export default App;
-
 
 // class App extends React.Component {
 //    render() {

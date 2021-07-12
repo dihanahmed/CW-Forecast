@@ -10,6 +10,7 @@ import {Climate} from './pages/climate';
 import {Donation} from './pages/donation';
 import Registration from './pages/registration';
 import Login from './pages/login';
+import DonationForm from './pages/donationForm';
 
 ReactDOM.render(
 
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route exact path="/donation" component={Donation }/>
         <Route exact path="/registration" component = {Registration} />
         <Route exact path="/login" component = {Login} />
+        <Route exact path="/donationform" component = {DonationForm} /> 
 
 	    </Switch>
     </Router>,
