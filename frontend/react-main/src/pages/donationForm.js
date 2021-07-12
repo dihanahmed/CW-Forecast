@@ -7,7 +7,7 @@ class DonationForm extends Component{
         this.state = {
             donorName: '',
             email: '',
-            phone: ''
+            phone: '',
         }
         this.changeDonorName = this.changeDonorName.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
@@ -39,13 +39,15 @@ class DonationForm extends Component{
         event.preventDefault()
 
         const registered = {
-            donorName: this.state.name,
+            donorName: this.state.donorName,
             email: this.state.email,
-            phone: this.state.phone
+            phone: this.state.phone,
+            treeID: this.props.location.state.treeID
         }
 
         axios.post('http://localhost:8001/donation-api/donate', registered)
         .then((response) => {
+            console.log(this.state);
           this.setState({ redirect: true })
         });
 
@@ -66,7 +68,7 @@ class DonationForm extends Component{
                 <div classname= 'container'>
                     <div classname = 'form-div'>
                         <form onSubmit={this.onSubmit}>
-                            <input type = 'text' placeholder='donorName' onChange = {this.changeDonorName} value = {this.state.donorname} classname = 'form-control from-group'/>
+                            <input type = 'text' placeholder='donorName' onChange = {this.changeDonorName} value = {this.state.donorName} classname = 'form-control from-group'/>
 
                             <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} classname = 'form-control from-group'/>
 
