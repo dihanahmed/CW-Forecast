@@ -27,7 +27,7 @@ function  makeBlog(req,res){
     }
 }
 
-function blogbyEmail(req,res){
+function findByEmail(req,res){
 
     Blog.findOne({email:res.body.email})
     .then(blog=>{
@@ -39,8 +39,8 @@ function blogbyEmail(req,res){
 
 }
 
-function blogAll(req,res){
-    Blog.findAll()
+function findAll(req,res){
+    Blog.find()
     .then(blogs=>{
         if(blogs){
             res.json(blogs)
@@ -52,6 +52,6 @@ function blogAll(req,res){
 
 module.exports={
     makeBlog,
-    blogbyEmail,
-    blogAll
+    findByEmail,
+    findAll
 }
