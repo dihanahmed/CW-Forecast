@@ -34,13 +34,6 @@ fetchWeatherByCity =(req,res)=>{
 }
 
 
-
-
-
-
-
-
-
 module.exports = {
    fetchWeatherByCoordinate,
     fetchWeatherByCity,
