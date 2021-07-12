@@ -1,33 +1,50 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
+import {getUseStyles} from "./DonationStyles";
+import {BlogNavbar} from "./blogNavbar";
+import axios from 'axios';
 
-const Blogpage = () => {
-    let history = useHistory();
+class Blogpage extends React.Component {
 
-	return (
-        <div>
-		<div>
-			<button
-                onClick={()=>{
+    state ={
+        blogs:[]
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost:8001/blog-api/fetch/all`)
+            .then(res => {
+                const blogs = res.data;
+                this.setState({ blogs: res });
+            })
+    }
+
+    render() {
+        const useStyles = getUseStyles();
+        const classes = useStyles;
+        const { history } = this.props;
+
+        console.log(this.state.blogs);
+        return (
+            <div>
+
+                <BlogNavbar classes={classes} onClick={() => {
                     history.push("/registration")
-                }}
-            >
-                Register Your Account
-            </button>
-				
-		</div>
-
-        <div>
-        <button
-                onClick={()=>{
+                }} onClick1={() => {
                     history.push("/login")
-                }}
-            >
-                Login to Your Account
-            </button>
-        </div>
-        </div>
-	)
-};
+                }}/>
+
+                <div>Blog Posts:
+                    <div>
+
+                   </div>
+                </div>
+
+
+
+
+
+            </div>
+        )
+    }
+}
 
 export {Blogpage};
