@@ -4,7 +4,7 @@ const BlogSchema= new mongoose.Schema({
 
     title:{
         type: String,
-        required: ture
+        required: true
     },
     content:{
         type: String,
@@ -15,7 +15,7 @@ const BlogSchema= new mongoose.Schema({
         required: true
     },
     date:{
-        tyep: Date,
+        type: Date,
         default: Date.now
     }
 })
