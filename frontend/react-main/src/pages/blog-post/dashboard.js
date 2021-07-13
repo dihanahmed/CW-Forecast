@@ -1,12 +1,21 @@
 import React from "react";
-import {getUseStyles} from "./DonationStyles";
-import {BlogNavbar} from "./blogNavbar";
+import {getUseStyles} from "../DonationStyles";
+import {BlogNavbar} from "../blogNavbar";
 import axios from 'axios';
 
-class Blogpage extends React.Component {
+class Dashboard extends React.Component {
 
     state ={
         blogs:[]
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost:8001/blog-api/verify`)
+            .then(res => {
+                const blogs = res.data.data;
+                console.log(blogs);
+                this.setState({ blogs: res });
+            })
     }
 
     render() {
@@ -39,4 +48,4 @@ class Blogpage extends React.Component {
     }
 }
 
-export {Blogpage};
+export default Dashboard;
