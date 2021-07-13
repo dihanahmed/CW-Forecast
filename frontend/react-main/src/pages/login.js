@@ -12,6 +12,7 @@ class Login extends Component{
         this.changeEmail = this.changeEmail.bind(this)
         this.changePassword = this.changePassword.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+        this.registerBack = this.registerBack.bind(this)
 
     }
 
@@ -25,6 +26,12 @@ class Login extends Component{
         this.setState({
             password:event.target.value
         })
+    }
+
+    registerBack(event){
+        event.preventDefault();
+        this.props.history.push('/registration');
+
     }
 
 	onSubmit(event){
@@ -70,7 +77,11 @@ class Login extends Component{
                             <input type = 'submit' classname='btn btn-danger btn-block' value = 'Submit' />
 
                         </form>
+
                     </div>
+
+                    <p>Forget password?</p>
+                    <input onClick={this.registerBack} type = 'submit' classname='btn btn-danger btn-block' value = 'Register kore asho, jao' />
                 </div>
             </div>
         );

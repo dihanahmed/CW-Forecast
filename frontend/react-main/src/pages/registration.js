@@ -22,6 +22,7 @@ class Registration extends Component{
         this.changePhone = this.changePhone.bind(this)
         this.confirmPassword = this.confirmPassword.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+        this.goToLogin = this.goToLogin.bind(this)
 
     }
 
@@ -73,6 +74,12 @@ class Registration extends Component{
   //      return <RenderYourForm/>;
   // }
 
+  goToLogin(event){
+    event.preventDefault();
+    this.props.history.push('/login');
+
+}
+
     onSubmit(event){
         event.preventDefault()
 
@@ -123,6 +130,9 @@ class Registration extends Component{
 
                         </form>
                     </div>
+
+                    <p>Already have an account?</p>
+                    <input onClick={this.goToLogin} type = 'submit' classname='btn btn-danger btn-block' value = 'Login koro toh' />
                 </div>
             </div>
         );
