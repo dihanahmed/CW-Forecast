@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {Homepage} from './pages/HomePage';
 // import {Header} from './App';
 import {Blogpage} from './pages/blog';
-import {Weather} from './pages/weather';
+import Weather from './pages/weather';
 import {Climate} from './pages/climate';
 import {Donation} from './pages/donation';
 import Registration from './pages/registration';
