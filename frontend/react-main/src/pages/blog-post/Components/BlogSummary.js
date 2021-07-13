@@ -11,6 +11,7 @@ export class BlogSummary extends React.Component {
 
                 <div className="blog-card__info">
                     <ReaderGuide blog={this.props.blog}/>
+
                 </div>
             </div>
 
