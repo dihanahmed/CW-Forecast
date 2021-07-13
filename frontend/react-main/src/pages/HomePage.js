@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { AppBar, Toolbar, Typography, makeStyles } from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 import Background from "./../images/green.jpg";
 import "./HomePage.css";
+import {BaseNavBar} from "./components/BaseNavBar";
 
 const useStyles = makeStyles({
   component: {
@@ -32,59 +32,16 @@ const Homepage = () => {
   const classes = useStyles();
   return (
     <div>
-    <div className={classes.design}>
-      <div>
-        <AppBar className={classes.component}>
-          <Toolbar className={classes.container}>
-            <div>
-              <Typography>
-                {" "}
-                <Link to="/" className="navlinks">
-                  Homepage
-                </Link>{" "}
-              </Typography>
-            </div>
-            <div>
-              <Typography>
-                {" "}
-                <Link to="/blog" className="navlinks">
-                  Blogpage
-                </Link>{" "}
-              </Typography>
-            </div>
-            <div>
-              <Typography>
-                {" "}
-                <Link to="/weather" className="navlinks">
-                  Weather
-                </Link>{" "}
-              </Typography>
-            </div>
-            <div>
-              <Typography>
-                {" "}
-                <Link to="/climate" className="navlinks">
-                  Climate
-                </Link>{" "}
-              </Typography>
-            </div>
-            <div>
-              <Typography>
-                {" "}
-                <Link to="/donation" className="navlinks">
-                  Donation
-                </Link>{" "}
-              </Typography>
-            </div>
-          </Toolbar>
-        </AppBar>
-      </div>
-      
+      <div className={classes.design}>
+        <div>
+          <BaseNavBar classes={classes}/>
+        </div>
 
-      <div className='t1'>
-        {/* <Typography variant='h3' color='#ffffff'> CW Forecast</Typography> */}
-        <p className="text"> CW Forecast </p>
-      </div>
+
+        <div className='t1'>
+          {/* <Typography variant='h3' color='#ffffff'> CW Forecast</Typography> */}
+          <p className="text"> CW Forecast </p>
+        </div>
       </div>
     </div>
   );
