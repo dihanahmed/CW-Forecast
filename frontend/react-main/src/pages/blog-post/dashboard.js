@@ -40,12 +40,12 @@ class Dashboard extends React.Component {
 
     render() {
         const useStyles = getUseStyles();
-        const classes = useStyles;
+        
         const { history } = this.props;
 
-        console.log(this.state.blogs);
+        //console.log(this.state.blogs);
         return{
-            
+
         }
     }
 }
