@@ -1,6 +1,7 @@
 
 //User model
 const Blog= require('../../models/blogs');
+const User= require('../../models/users')
 const sessionStorage = require('sessionstorage')
 
 //blog post handle
@@ -28,6 +29,7 @@ function  makeBlog(req,res){
     }
 }
 
+
 function findByEmail(req,res){
 
     Blog.find({email:req.body.email})
@@ -50,18 +52,26 @@ function findByBlogId(req,res) {
     })
 }
 function findAndRemove(req,res){
+
 /*
     sessionStorage.setItem('user','test@test.com')
 */
-    let sessionEmail=sessionStorage.getItem('user')
-    if(sessionEmail===req.body.email)   {
-        Blog.findByIdAndRemove(req.body.blog_id,function(err,res) {
-            if(err){
-                res.send({successful: false})
-            }
 
-        })
-    }
+    let sessionEmail=sessionStorage.getItem('user')
+    Blog.findOne({email:sessionEmail}).
+    then((user)=>{
+        if(!user){
+            res.send({successful:false})
+        }
+        else {
+            Blog.findByIdAndRemove(req.body.blog_id,function(err,res) {
+                if(err){
+                    res.send("NO ID")
+                }
+
+            })
+        }
+    })
 }
 
 function findAll(req,res){
