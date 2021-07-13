@@ -87,16 +87,16 @@ class Addpost extends React.Component{
         
         return(
             <div>
-                <div classname= 'container'>
-                    <div classname = 'form-div'>
+                <div className= 'container'>
+                    <div className = 'form-div'>
                         <form onSubmit={this.onSubmit}>
-                            <input type = 'text' placeholder='title' onChange = {this.changeTitle} value = {this.state.title} classname = 'form-control from-group'/>
+                            <input type = 'text' placeholder='title' onChange = {this.changeTitle} value = {this.state.title} className = 'form-control from-group'/>
 
-                            <input type = 'text' placeholder='content' onChange = {this.changeContent} value = {this.state.content} classname = ''/>
+                            <input type = 'text' placeholder='content' onChange = {this.changeContent} value = {this.state.content} className = 'contentStyle'/>
 
-                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} classname = 'form-control from-group'/>
+                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} className = 'form-control from-group'/>
 
-                            <input type = 'submit'  classname='btn btn-danger btn-block' value = 'Create Post' />
+                            <input type = 'submit'  className='btn btn-danger btn-block' value = 'Create Post' />
 
                         </form>
                     </div>
