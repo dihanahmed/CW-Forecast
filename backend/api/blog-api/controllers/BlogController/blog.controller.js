@@ -1,27 +1,27 @@
-const express=require('express');
-const routers = express.Router()
 
 //User model
 const Blog= require('../../models/blogs');
-const { request } = require('express');
+
 
 //blog post handle
 
 function  makeBlog(req,res){
 
-    const {title, content, email}=req.body
+    const {title, content, email}=req.body;
+
 
     //check required field
     if(!title || !content || !email){
         console.log("please fill up the form to complete the blog")
     }
     else{
-        const newBlog= new Blog({
+         new Blog({
             title,
             content,
             email
-        })
-        newBlog.save()
+        }).save().then(()=>{
+            return res.send({successful:true});
+         });
     
         
     }

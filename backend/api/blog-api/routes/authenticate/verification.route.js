@@ -4,7 +4,7 @@ const checkAuthentication = require("./../../middlewares/authentication/checkAut
 
 
 route.get("/",checkAuthentication.auth,(req,res)=>{
-    res.json({isAuthenticated:true, user:sessionStorage.getItem('user')});
+    res.json({isAuthenticated:true, email:sessionStorage.getItem('user')});
 })
 
 
