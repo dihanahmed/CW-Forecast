@@ -42,3 +42,5 @@ BlogNavbar.propTypes = {
     onClick: PropTypes.func,
     onClick1: PropTypes.func
 };
+
+export default BlogNavbar;
