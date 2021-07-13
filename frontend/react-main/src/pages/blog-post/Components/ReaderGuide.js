@@ -6,22 +6,22 @@ export class ReaderGuide extends React.Component {
         return <>
             <h5>{this.props.blog.title}</h5>
             <p>
-                <a href="#" className="icon-link mr-3">
+                <div className="icon-link mr-3">
                     <i className="fa fa-pencil-square-o">
 
-                    </i>{this.props.blog.email}</a>
-                <a href="#" className="icon-link">
+                    </i>{this.props.blog.email}</div>
+                <div className="icon-link">
                     <i className="fa fa-comments-o">
 
-                    </i> 150</a>
+                    </i> 150</div>
             </p>
             <p>{
                 this.props.blog.content.substring(0, 64)
             }...</p>
-            <a href="#" className="btn btn--with-icon">
+            <div className="btn btn--with-icon">
                 <i className="btn-icon fa fa-long-arrow-right">
 
-                </i>READ MORE</a>
+                </i>READ MORE</div>
         </>;
     }
 }

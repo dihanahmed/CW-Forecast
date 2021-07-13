@@ -7,8 +7,8 @@ import axios from "axios";
 export class BlogWriterSummery extends React.Component {
 
     removeWithID(id){
-        //TODO : ADD PATH
-        axios.post("");
+        //TODO : PULL FROM JISAN
+        axios.post("127.0.0.1:8001/blog-api/blog/post-remove",{blog_id:id});
     }
 
     render() {
