@@ -5,6 +5,10 @@ import axios from 'axios';
 
 class Dashboard extends React.Component {
 
+    renderRedirect = () => {
+        this.props.history.push('/login');
+    };
+
     constructor(props){
         super(props)
         this.state = {
@@ -45,9 +49,9 @@ class Dashboard extends React.Component {
     componentDidMount() {
         axios.get(`http://localhost:8001/blog-api/verify`)
             .then(res => {
-                const blogs = res.data.data;
-                console.log(blogs);
-                this.setState({ blogs: res });
+                if(res.data.isAuthenticated === false){
+                this.renderRedirect(res);
+                }
             })
     }
 
