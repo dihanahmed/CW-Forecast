@@ -10,6 +10,7 @@ function  makeBlog(req,res){
     const {title, content, email}=req.body;
 
 
+
     //check required field
     if(!title || !content || !email){
         console.log("please fill up the form to complete the blog")
@@ -38,6 +39,16 @@ function findByEmail(req,res){
         }) 
 
 }
+function findByBlogId(req,res) {
+    Blog.findById(req.body.blog_id,function(err,blog){
+        if(err){
+                console.log("no")
+            }
+        else {
+            res.json(blog)
+        }
+    })
+}
 
 function findAll(req,res){
     Blog.find()
@@ -53,5 +64,6 @@ function findAll(req,res){
 module.exports={
     makeBlog,
     findByEmail,
-    findAll
+    findAll,
+    findByBlogId
 }
