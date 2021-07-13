@@ -2,6 +2,7 @@
 //User model
 const Blog= require('../../models/blogs');
 
+
 //blog post handle
 
 function  makeBlog(req,res){
@@ -19,7 +20,7 @@ function  makeBlog(req,res){
             content,
             email
         }).save().then(()=>{
-            res.send({successful:true});
+            return res.send({successful:true});
          });
     
         
