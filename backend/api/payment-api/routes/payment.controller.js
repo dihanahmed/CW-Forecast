@@ -4,7 +4,7 @@ const SSLCommerzPayment = require('sslcommerz')
 
 
 routes.get('/', (req, res) => {
-    const data = {
+   /* const data = {
         total_amount: 100,
         currency: 'BDT',
         tran_id: 'REF123', // use unique tran_id for each api call
@@ -40,7 +40,7 @@ routes.get('/', (req, res) => {
         let GatewayPageURL = apiResponse.GatewayPageURL
         res.redirect(GatewayPageURL)
         console.log('Redirecting to: ', GatewayPageURL)
-    });
+    });*/
 })
 
 module.exports =routes
