@@ -19,10 +19,9 @@ class Blogpage extends React.Component {
 
 
     render() {
-        const useStyles = getUseStyles();
-        const classes = useStyles;
+        const classes = getUseStyles();
         const {history} = this.props;
-        console.log(this.state.blogs);
+
 
         return (
             <div>
