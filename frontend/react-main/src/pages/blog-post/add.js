@@ -1,10 +1,16 @@
-import React from "react";
-import {getUseStyles} from "../DonationStyles";
-import {BlogNavbar} from "../blogNavbar";
 import axios from 'axios';
+import React from "react";
+import "./add.css"
+import {makeStyles } from "@material-ui/core";
 
-class Dashboard extends React.Component {
+const useStyles = makeStyles({
+    design: {
+        width: "400px",
+        height: "500px"
+    }
+})
 
+class Addpost extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -55,6 +61,9 @@ class Dashboard extends React.Component {
         event.preventDefault()
 
         const registered = {
+            title: this.state.title,
+            email: this.state.email,
+            content: this.state.content
         }
 
         axios.post('http://localhost:8001/blog-api/blog/add', registered)
@@ -66,39 +75,35 @@ class Dashboard extends React.Component {
         
 
         this.setState({
-            
+            title:'',
+            email:'',
+            content:''
         })
-        this.props.history.push('/d')
+        this.props.history.push('/dashboard');
     }
+    
 
-    render() {
-        const useStyles = getUseStyles();
-        const classes = useStyles;
-        const { history } = this.props;
-
-        console.log(this.state.blogs);
-        return (
+    render(){
+        
+        return(
             <div>
+                <div classname= 'container'>
+                    <div classname = 'form-div'>
+                        <form onSubmit={this.onSubmit}>
+                            <input type = 'text' placeholder='title' onChange = {this.changeTitle} value = {this.state.title} classname = 'form-control from-group'/>
 
-                <BlogNavbar classes={classes} onClick={() => {
-                    history.push("/registration")
-                }} onClick1={() => {
-                    history.push("/login")
-                }}/>
+                            <input type = 'text' placeholder='content' onChange = {this.changeContent} value = {this.state.content} classname = ''/>
 
-                <div>Blog Posts:
-                    <div>
+                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} classname = 'form-control from-group'/>
 
-                   </div>
+                            <input type = 'submit'  classname='btn btn-danger btn-block' value = 'Create Post' />
+
+                        </form>
+                    </div>
                 </div>
-
-
-
-
-
             </div>
-        )
+        );
     }
 }
 
-export default Dashboard;
+export default Addpost;
