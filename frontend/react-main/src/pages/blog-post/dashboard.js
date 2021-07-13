@@ -14,8 +14,8 @@ class Dashboard extends React.Component {
         this.props.history.push('/login');
     };
 
-    loadUserBlogs = () =>{
-        axios.get(`http://localhost:8001/blog-api/blog/user-get`)
+    loadUserBlogs = (email) =>{
+        axios.post(`http://localhost:8001/blog-api/blog/user-get`,{email:email})
             .then(res => {
                 this.setState({ blogs: res.data });
                 console.log(this.state.blogs);
@@ -29,7 +29,8 @@ class Dashboard extends React.Component {
                 if(res.data.isAuthenticated === false){
                 this.renderRedirect(res)}
                 else {
-                    this.loadUserBlogs();
+                    console.log(res.data);
+                    this.loadUserBlogs(res.data.email);
                     }
             })
     }
