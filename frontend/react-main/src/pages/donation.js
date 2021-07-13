@@ -18,7 +18,7 @@ const useStyles = getUseStyles();
 
 	  const handleRoute = (data) =>{
 
-		axios.post('http://localhost:8001/blog-api/donation', data)
+		axios.post('http://localhost:8001/blog-api/donation', "${data}")
         .then((response) => {
           this.setState({ redirect: true })
         });

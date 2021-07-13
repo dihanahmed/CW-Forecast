@@ -7,27 +7,14 @@ const Blogpost = () => {
    return( <>
 
 
-    <div className="blog_post">
-    <div className="site_header">
-
-    </div>
-
-    <div className="page_name">
-    </div>
-
-    <div className="container">
-        <div className="left_side">
-            <div className="blog_posts">
-
-            </div>
-        </div>
-        <div className="right_side">
-            <div className="blog_index">
-
-            </div>
-        </div>
-    </div>
-</div>
+        componentDidMount() {
+        axios.get(`http://localhost:8001/blog-api/verify`)
+            .then(res => {
+                const blogs = res.data.data;
+                console.log(blogs);
+                this.setState({ blogs: res });
+            })
+    }
 
     </>)
 

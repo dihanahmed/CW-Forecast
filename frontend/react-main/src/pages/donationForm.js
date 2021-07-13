@@ -39,7 +39,7 @@ class DonationForm extends Component{
         event.preventDefault()
 
         const registered = {
-            donorName: this.state.name,
+            donorName: this.state.donorName,
             email: this.state.email,
             phone: this.state.phone
         }

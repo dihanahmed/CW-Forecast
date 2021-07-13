@@ -11,6 +11,7 @@ import {Donation} from './pages/donation';
 import Registration from './pages/registration';
 import Login from './pages/login';
 import DonationForm from './pages/donationForm';
+import Dashboard from './pages/blog-post/dashboard'
 
 ReactDOM.render(
 
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route exact path="/registration" component = {Registration} />
         <Route exact path="/login" component = {Login} />
         <Route exact path="/donationform" component = {DonationForm} /> 
+        <Route exact path="/dashboard" component = {Dashboard} /> 
 
 	    </Switch>
     </Router>,
