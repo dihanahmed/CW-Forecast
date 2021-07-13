@@ -3,6 +3,7 @@ import {getUseStyles} from "./DonationStyles";
 import {BlogNavbar} from "./blogNavbar";
 import axios from 'axios';
 import {BlogSummary} from "./blog-post/Components/BlogSummary";
+import {BaseNavBar} from "./components/BaseNavBar";
 
 class Blogpage extends React.Component {
 
@@ -25,6 +26,7 @@ class Blogpage extends React.Component {
 
         return (
             <div>
+
 
                 <BlogNavbar classes={classes} onClick={() => {
                     history.push("/registration")

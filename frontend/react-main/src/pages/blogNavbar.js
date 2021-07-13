@@ -1,40 +1,95 @@
 import React from "react";
-import {AppBar, Toolbar} from "@material-ui/core";
+import {AppBar, makeStyles, Toolbar} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import * as PropTypes from "prop-types";
+import Background from "../images/green.jpg";
+import {Link} from "react-router-dom";
 
-export class BlogNavbar extends React.Component {
 
-    render() {
-        return <AppBar className={this.props.classes.component}>
-            <Toolbar className={this.props.classes.container}>
-                <Typography variant="h4"> Blog</Typography>
+const useStyles = makeStyles({
+    component: {
+        background: "#FFFFFF",
+        color: "black",
+    },
+    container: {
+        justifyContent: "center",
+    },
+    design: {
+        backgroundImage: `url(${Background})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        width: "100vw",
+        height: "100vh",
+    },
+});
 
-                <Typography variant="h4">
-                    <div>
-                        <button
-                            onClick={this.props.onClick}
-                        >
-                            Register Your Account
-                        </button>
 
-                    </div>
-
+export function BlogNavbar(props) {
+    const classes = useStyles();
+    return <AppBar className={classes.component}>
+        <Toolbar className={classes.container}>
+            <div>
+                <Typography>
+                    {" "}
+                    <Link to="/" className="navlinks">
+                        Homepage
+                    </Link>{" "}
                 </Typography>
-
-                <Typography variant="h4">
-                    <div>
-                        <button
-                            onClick={this.props.onClick1}
-                        >
-                            Login to Your Account
-                        </button>
-                    </div>
-
+            </div>
+            <div>
+                <Typography>
+                    {" "}
+                    <Link to="/blog" className="navlinks">
+                        Blogpage
+                    </Link>{" "}
                 </Typography>
-            </Toolbar>
-        </AppBar>;
-    }
+            </div>
+            <div>
+                <Typography>
+                    {" "}
+                    <Link to="/weather" className="navlinks">
+                        Weather
+                    </Link>{" "}
+                </Typography>
+            </div>
+            <div>
+                <Typography>
+                    {" "}
+                    <Link to="/climate" className="navlinks">
+                        Climate
+                    </Link>{" "}
+                </Typography>
+            </div>
+            <div>
+                <Typography>
+                    {" "}
+                    <Link to="/donation" className="navlinks">
+                        Donation
+                    </Link>{" "}
+                </Typography>
+            </div>
+            <div>
+            <Typography>
+                {" "}
+                <Link to="/Login" className="navlinks">
+                    Login
+                </Link>
+                {" "}
+            </Typography>
+            </div>
+            <div>
+            <Typography>
+                {" "}
+                <Link to="/Registration" className="navlinks">
+                    Register
+                </Link>
+                {" "}
+
+            </Typography>
+            </div>
+        </Toolbar>
+    </AppBar>;
 }
 
 BlogNavbar.propTypes = {
