@@ -24,7 +24,6 @@ class Blogpage extends React.Component {
         const {history} = this.props;
         console.log("Printing states from render");
 
-        console.log(this.state.blogs);
         return (
             <div>
 
