@@ -9,10 +9,10 @@ module.exports ={
 
     validateData: (request,response,next)=>{
         const data = {
-            donorName: request.body.name,
+            donorName: request.body.donorName,
             email: request.body.email,
             phone: request.body.phone,
-            treeID: request.body.treeID,
+            treeID: request.body.treeID
         }
         console.log(data);
         if(isEmpty(data.phone)||isEmpty(data.email)||isEmpty(data.treeID) || isEmpty(data.donorName)){
