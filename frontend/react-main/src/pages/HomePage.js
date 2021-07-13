@@ -34,7 +34,7 @@ const Homepage = () => {
     <div>
       <div className={classes.design}>
         <div>
-          <BaseNavBar classes={classes}/>
+          <BaseNavBar/>
         </div>
 
 

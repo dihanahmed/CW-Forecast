@@ -3,6 +3,7 @@ import {getUseStyles} from "../DonationStyles";
 import {BlogNavbar} from "../blogNavbar";
 import axios from 'axios';
 import {BlogSummary} from "./Components/BlogSummary";
+import {BaseNavBar} from "../components/BaseNavBar";
 
 class Dashboard extends React.Component {
 
@@ -58,7 +59,9 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-
+                <div>
+                    <BaseNavBar/>
+                </div>
                 <div>
                     Blog Posts:
                     <div>
