@@ -3,6 +3,7 @@ import {AppBar, makeStyles, Toolbar, Typography} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import * as PropTypes from "prop-types";
 import Background from "../../images/green.jpg";
+import axios from "axios";
 
 
 const useStyles = makeStyles({
@@ -25,6 +26,9 @@ const useStyles = makeStyles({
 
 
 export function DashboardNavBar(props) {
+    const handleLogout = () =>{
+        axios.get("http://localhost:8001/blog-api/logout")
+    }
     const classes = useStyles()
     return <AppBar className={classes.component}>
         <Toolbar className={classes.container}>
@@ -74,6 +78,14 @@ export function DashboardNavBar(props) {
                     {" "}
                     <Link to="/Addpost" className="navlinks">
                         Create Post
+                    </Link>{" "}
+                </Typography>
+            </div>
+            <div onClick={()=>handleLogout()}>
+                <Typography>
+                    {" "}
+                    <Link to="/blog"  className="navlinks">
+                        Logout
                     </Link>{" "}
                 </Typography>
             </div>

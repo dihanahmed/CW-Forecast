@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from "react";
 import "./add.css"
 import {makeStyles } from "@material-ui/core";
+import {DashboardNavBar} from "../components/DashboardNavBar";
 
 const useStyles = makeStyles({
     design: {
@@ -48,10 +49,20 @@ class Addpost extends React.Component{
     //     blogs:[]
     // }
 
+
+    renderRedirect = () => {
+        this.props.history.push('/login');
+    };
+
     componentDidMount() {
         axios.get(`http://localhost:8001/blog-api/verify`)
             .then(res => {
-                this.setState({email:res.data.email});
+                if(res.data.isAuthenticated === false){
+                    this.renderRedirect()}
+                else {
+                    console.log(res.data);
+                    this.setState({email:res.data.email});
+                }
             })
     }
 
@@ -84,6 +95,8 @@ class Addpost extends React.Component{
     render(){
         
         return(
+            <>
+                <DashboardNavBar/>
             <div>
                 <div className= 'container'>
                     <div className = 'form-div'>
@@ -99,6 +112,7 @@ class Addpost extends React.Component{
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 }
