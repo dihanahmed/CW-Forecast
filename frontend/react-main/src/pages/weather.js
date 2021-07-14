@@ -4,42 +4,31 @@ import axios from "axios";
 
 class Weather extends Component{
 
-	// state = {
-	// 	cityName: []
-	// }
+	state = {
+	    cityName: ""
+    }
 
     constructor(props){
-        super(props)
-        this.state = {
-            cityName: '',
-        }
-        this.changeCityName = this.changeCityName.bind(this)
+     super(props);
 
     }
 
     changeCityName(event){
-        this.setState({
-            cityName:event.target.value
-        })
+
+        this.state.cityName = event.target.value;
+
     }
 
 
 
     onSubmit(event){
         event.preventDefault()
-
-			const cityName = this.cityName
-        
-
-        axios.post('http://localhost:8001/get/Weather', cityName)
+        const cityValue = document.getElementById("city").value;
+        axios.post('http://localhost:8001/getWeather', {city:cityValue})
         .then((response) => {
+            document.getElementById("weather-data").innerText = JSON.stringify(response.data);
         });
 
-        
-
-        this.setState({
-            cityName:''
-        })
     }
 
     
@@ -47,17 +36,21 @@ class Weather extends Component{
     render(){
         return(
             <div>
-                <div classname= 'container'>
-                    <div classname = 'form-div'>
+                <div className= 'container'>
+                    <div className = 'form-div'>
                         <form onSubmit={this.onSubmit}>
 
-                            <input type = 'text' placeholder='cityName' onChange = {this.changeCityName} value = {this.state.cityName} classname = 'form-control from-group'/>
+                            <input id="city" type = 'text' placeholder='cityName' className = 'form-control from-group'/>
 
-                            <input type = 'submit' classname='btn btn-danger btn-block' value = 'Submit' />
+                            <input type = 'submit' className='btn btn-danger btn-block' value = 'Submit' />
 
                         </form>
                     </div>
                 </div>
+                <duv id="weather-data">
+
+                </duv>
+
             </div>
         );
     }
