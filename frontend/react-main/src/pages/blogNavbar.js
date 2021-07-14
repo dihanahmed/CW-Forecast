@@ -88,6 +88,16 @@ export function BlogNavbar(props) {
 
             </Typography>
             </div>
+            <div>
+                <Typography>
+                    {" "}
+                    <Link to="/dashboard" className="navlinks">
+                        My Blogs
+                    </Link>
+                    {" "}
+
+                </Typography>
+            </div>
         </Toolbar>
     </AppBar>;
 }
