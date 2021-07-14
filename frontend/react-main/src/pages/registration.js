@@ -132,7 +132,7 @@ class Registration extends Component{
                     </div>
 
                     <p>Already have an account?</p>
-                    <input onClick={this.goToLogin} type = 'submit' classname='btn btn-danger btn-block' value = 'Login koro toh' />
+                    <input onClick={this.goToLogin} type = 'submit' classname='btn btn-danger btn-block' value = 'Login' />
                 </div>
             </div>
         );

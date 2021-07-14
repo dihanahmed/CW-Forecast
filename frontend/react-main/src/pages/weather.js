@@ -4,9 +4,9 @@ import axios from "axios";
 
 class Weather extends Component{
 
-	state = {
-		cityName: []
-	}
+	// state = {
+	// 	cityName: []
+	// }
 
     constructor(props){
         super(props)
