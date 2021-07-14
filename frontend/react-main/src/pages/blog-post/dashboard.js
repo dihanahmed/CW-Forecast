@@ -2,7 +2,7 @@ import React from "react";
 import {getUseStyles} from "../DonationStyles";
 import {BlogNavbar} from "../blogNavbar";
 import axios from 'axios';
-import {BlogSummary} from "./Components/BlogSummary";
+import {BlogWriterSummery} from "./Components/BlogWritersSummery";
 import {BaseNavBar} from "../components/BaseNavBar";
 
 class Dashboard extends React.Component {
@@ -68,9 +68,8 @@ class Dashboard extends React.Component {
 
                         {this.state.blogs.map((blog, i) => {
                             console.log("Entered");
-                            return (<BlogSummary blog={blog}/>)
+                            return (<BlogWriterSummery blog={blog} history = {this.props.history}/>)
                         })}
-
                     </div>
                 </div>
 

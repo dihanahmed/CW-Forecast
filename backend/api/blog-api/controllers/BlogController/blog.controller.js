@@ -52,6 +52,7 @@ function findByBlogId(req,res) {
     })
 }
 function findAndRemove(req,res){
+    console.log(req.body);
 
 /*
     sessionStorage.setItem('user','test@test.com')

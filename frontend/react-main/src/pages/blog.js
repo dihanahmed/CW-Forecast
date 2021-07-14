@@ -43,7 +43,7 @@ class Blogpage extends React.Component {
 
                         {this.state.blogs.map((blog, i) => {
                             console.log("Entered");
-                            return (<BlogSummary blog={blog}/>)
+                            return (<BlogSummary blog={blog} history = {this.props.history}/>)
                         })}
 
                     </div>
