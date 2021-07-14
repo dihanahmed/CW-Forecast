@@ -7,8 +7,11 @@ import axios from "axios";
 export class BlogWriterSummery extends React.Component {
 
     removeWithID(id){
-        //TODO : PULL FROM JISAN
-        axios.post("127.0.0.1:8001/blog-api/blog/post-remove",{blog_id:id});
+        const sendData = {blog_id:id};
+        console.log(sendData);
+        axios.post("http://localhost:8001/blog-api/blog/post-remove",sendData);
+      //  window.location.reload();
+
     }
 
     render() {
