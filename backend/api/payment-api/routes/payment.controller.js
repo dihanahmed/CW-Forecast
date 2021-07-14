@@ -38,13 +38,13 @@ routes.get('/', (req, res) => {
         sslcommer.init(data).then(apiResponse => {
             // Redirect the user to payment gateway
             let GatewayPageURL = apiResponse.GatewayPageURL
-/*
-            res.json({redirectURL: GatewayPageURL})
-*/
-            console.log(GatewayPageURL)
 
-            res.redirect(GatewayPageURL)
-            console.log('Redirecting to: ', GatewayPageURL)
+           return  res.json({redirectURL: GatewayPageURL})
+            //
+            // console.log(GatewayPageURL)
+            //
+            // res.redirect(GatewayPageURL)
+            // console.log('Redirecting to: ', GatewayPageURL)
         });
 
 })
