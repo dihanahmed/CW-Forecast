@@ -1,6 +1,6 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core";
-import Background from "./../images/green.jpg";
+import Background from "./../images/green2.jpg";
 import "./HomePage.css";
 import {BaseNavBar} from "./components/BaseNavBar";
 
