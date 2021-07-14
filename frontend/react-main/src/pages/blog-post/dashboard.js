@@ -29,7 +29,8 @@ class Dashboard extends React.Component {
         axios.get(`http://localhost:8001/blog-api/verify`)
             .then(res => {
                 if(res.data.isAuthenticated === false){
-                this.renderRedirect(res)}
+                this.renderRedirect()
+                }
                 else {
                     console.log(res.data);
                     this.loadUserBlogs(res.data.email);

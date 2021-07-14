@@ -49,10 +49,20 @@ class Addpost extends React.Component{
     //     blogs:[]
     // }
 
+
+    renderRedirect = () => {
+        this.props.history.push('/login');
+    };
+
     componentDidMount() {
         axios.get(`http://localhost:8001/blog-api/verify`)
             .then(res => {
-                this.setState({email:res.data.email});
+                if(res.data.isAuthenticated === false){
+                    this.renderRedirect()}
+                else {
+                    console.log(res.data);
+                    this.setState({email:res.data.email});
+                }
             })
     }
 
