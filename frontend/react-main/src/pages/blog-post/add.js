@@ -51,9 +51,7 @@ class Addpost extends React.Component{
     componentDidMount() {
         axios.get(`http://localhost:8001/blog-api/verify`)
             .then(res => {
-                const blogs = res.data.data;
-                console.log(blogs);
-                this.setState({ blogs: res });
+                this.setState({email:res.data.email});
             })
     }
 
@@ -94,7 +92,6 @@ class Addpost extends React.Component{
 
                             <input type = 'text' placeholder='content' onChange = {this.changeContent} value = {this.state.content} className = 'contentStyle'/>
 
-                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} className = 'form-control from-group'/>
 
                             <input type = 'submit'  className='btn btn-danger btn-block' value = 'Create Post' />
 

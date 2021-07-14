@@ -1,9 +1,8 @@
 import React from "react";
-import {AppBar, makeStyles, Toolbar} from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-import * as PropTypes from "prop-types";
-import Background from "../images/green.jpg";
+import {AppBar, makeStyles, Toolbar, Typography} from "@material-ui/core";
 import {Link} from "react-router-dom";
+import * as PropTypes from "prop-types";
+import Background from "../../images/green.jpg";
 
 
 const useStyles = makeStyles({
@@ -25,8 +24,8 @@ const useStyles = makeStyles({
 });
 
 
-export function BlogNavbar(props) {
-    const classes = useStyles();
+export function DashboardNavBar(props) {
+    const classes = useStyles()
     return <AppBar className={classes.component}>
         <Toolbar className={classes.container}>
             <div>
@@ -69,43 +68,17 @@ export function BlogNavbar(props) {
                     </Link>{" "}
                 </Typography>
             </div>
-            <div>
-            <Typography>
-                {" "}
-                <Link to="/Login" className="navlinks">
-                    Login
-                </Link>
-                {" "}
-            </Typography>
-            </div>
-            <div>
-            <Typography>
-                {" "}
-                <Link to="/Registration" className="navlinks">
-                    Register
-                </Link>
-                {" "}
 
-            </Typography>
-            </div>
             <div>
                 <Typography>
                     {" "}
-                    <Link to="/dashboard" className="navlinks">
-                        My Blogs
-                    </Link>
-                    {" "}
-
+                    <Link to="/Addpost" className="navlinks">
+                        Create Post
+                    </Link>{" "}
                 </Typography>
             </div>
         </Toolbar>
     </AppBar>;
 }
 
-BlogNavbar.propTypes = {
-    classes: PropTypes.func,
-    onClick: PropTypes.func,
-    onClick1: PropTypes.func
-};
-
-export default BlogNavbar;
+DashboardNavBar.propTypes = {classes: PropTypes.any};

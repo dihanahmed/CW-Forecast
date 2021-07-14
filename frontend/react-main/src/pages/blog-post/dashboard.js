@@ -4,6 +4,7 @@ import {BlogNavbar} from "../blogNavbar";
 import axios from 'axios';
 import {BlogWriterSummery} from "./Components/BlogWritersSummery";
 import {BaseNavBar} from "../components/BaseNavBar";
+import {DashboardNavBar} from "../components/DashboardNavBar";
 
 class Dashboard extends React.Component {
 
@@ -60,7 +61,7 @@ class Dashboard extends React.Component {
         return (
             <div>
                 <div>
-                    <BaseNavBar/>
+                    <DashboardNavBar/>
                 </div>
                 <div>
                     Blog Posts:
