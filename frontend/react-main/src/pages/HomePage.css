@@ -8,16 +8,16 @@
 }
 
 .navlinks:hover {
-  border-bottom: 4px solid rgb(184, 245, 197);
+  border-bottom: 4px solid rgb(245, 244, 184);
   transition: all 0.2s ease-out;
 }
 
 .text {
   font-size: 100px;
-  color: white;
+  color: rgb(53, 58, 7);
   text-align: center;
 }
 
 .t1{
-  padding: 10px;
+  padding: 135px;
 }
