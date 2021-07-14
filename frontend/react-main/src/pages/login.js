@@ -81,7 +81,7 @@ class Login extends Component{
                     </div>
 
                     <p>Forget password?</p>
-                    <input onClick={this.registerBack} type = 'submit' classname='btn btn-danger btn-block' value = 'Register kore asho, jao' />
+                    <input onClick={this.registerBack} type = 'submit' classname='btn btn-danger btn-block' value = 'Register' />
                 </div>
             </div>
         );
