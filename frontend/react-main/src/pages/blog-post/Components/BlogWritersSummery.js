@@ -21,7 +21,7 @@ export class BlogWriterSummery extends React.Component {
 
 
                 <div className="blog-card__info">
-                    <ReaderGuide blog={this.props.blog}/>
+                    <ReaderGuide blog={this.props.blog} history = {this.props.history}/>
                     <div
                         onClick={()=>{this.removeWithID(this.props.blog._id)}}
                         className="btn btn--with-icon">

@@ -68,7 +68,7 @@ class Dashboard extends React.Component {
 
                         {this.state.blogs.map((blog, i) => {
                             console.log("Entered");
-                            return (<BlogWriterSummery blog={blog}/>)
+                            return (<BlogWriterSummery blog={blog} history = {this.props.history}/>)
                         })}
                     </div>
                 </div>

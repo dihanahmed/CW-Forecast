@@ -9,6 +9,7 @@ class Article extends React.Component {
 
     constructor(props){
         super(props)
+        console.log(this.props);
 
     }
 
@@ -17,14 +18,17 @@ class Article extends React.Component {
     render() {
 
 
+
         return (
             <div>
-
-                <BaseNavBar/>
-
                 <div>
-                    {this.props.location.state.blog.title}
+                <BaseNavBar/>
                 </div>
+
+
+                <h2>
+                    {this.props.location.state.blog.title}
+                </h2>
                 <div>
                     {this.props.location.state.blog.content}
                 </div>
@@ -33,4 +37,4 @@ class Article extends React.Component {
     }
 }
 
-export default {Article};
+export default Article;
