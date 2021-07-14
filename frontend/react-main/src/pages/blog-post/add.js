@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from "react";
 import "./add.css"
 import {makeStyles } from "@material-ui/core";
+import {DashboardNavBar} from "../components/DashboardNavBar";
 
 const useStyles = makeStyles({
     design: {
@@ -84,6 +85,8 @@ class Addpost extends React.Component{
     render(){
         
         return(
+            <>
+                <DashboardNavBar/>
             <div>
                 <div className= 'container'>
                     <div className = 'form-div'>
@@ -99,6 +102,7 @@ class Addpost extends React.Component{
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 }
