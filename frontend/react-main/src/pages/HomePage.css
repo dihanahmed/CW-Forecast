@@ -8,7 +8,7 @@
 }
 
 .navlinks:hover {
-  border-bottom: 4px solid rgb(245, 244, 184);
+  border-bottom: 4px solid rgb(68, 119, 65);
   transition: all 0.2s ease-out;
 }
 
