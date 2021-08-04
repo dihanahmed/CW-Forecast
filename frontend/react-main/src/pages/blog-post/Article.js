@@ -1,12 +1,11 @@
 import React from "react";
-import {getUseStyles} from "../DonationStyles";
 import {BlogNavbar} from "../blogNavbar";
-import axios from 'axios';
-import {BaseNavBar} from "../components/BaseNavBar";
-import {DashboardNavBar} from "../components/DashboardNavBar";
+import Markdown from 'react-markdown'
+
 
 class Article extends React.Component {
 
+     src = "# Load the markdown document"
 
     constructor(props){
         super(props)
@@ -28,12 +27,18 @@ class Article extends React.Component {
                 </div>
 
 
+
                 <h2>
                     {this.props.location.state.blog.title}
                 </h2>
-                <div style={{whiteSpace:"pre-wrap"}}>
-                    {this.props.location.state.blog.content}
+                <div>
+                    <Markdown>
+                        {this.props.location.state.blog.content}
+                    </Markdown>
+
                 </div>
+
+
             </div>
         )
     }
