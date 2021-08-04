@@ -11,6 +11,7 @@ class Article extends React.Component {
     constructor(props){
         super(props)
         console.log(this.props);
+        console.log(this.props.location.state.blog.content);
 
     }
 
@@ -30,7 +31,7 @@ class Article extends React.Component {
                 <h2>
                     {this.props.location.state.blog.title}
                 </h2>
-                <div>
+                <div style={{whiteSpace:"pre-wrap"}}>
                     {this.props.location.state.blog.content}
                 </div>
             </div>

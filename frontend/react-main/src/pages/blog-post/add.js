@@ -60,7 +60,6 @@ class Addpost extends React.Component{
                 if(res.data.isAuthenticated === false){
                     this.renderRedirect()}
                 else {
-                    console.log(res.data);
                     this.setState({email:res.data.email});
                 }
             })
@@ -69,26 +68,27 @@ class Addpost extends React.Component{
     onSubmit(event){
         event.preventDefault()
 
-        const registered = {
+        const article = {
             title: this.state.title,
             email: this.state.email,
             content: this.state.content
         }
 
-        axios.post('http://localhost:8001/blog-api/blog/add', registered)
-        .then((response) => {
-            console.log(this.state);
-          this.setState({ redirect: true })
-        });
+         axios.post('http://localhost:8001/blog-api/blog/add', article)
+         .then((response) => {
+             console.log("axios",article,response);
+          // this.setState({ redirect: true })
+         });
 
+        console.log("not axios: ",article.content);
         
-
-        this.setState({
-            title:'',
-            email:'',
-            content:''
-        })
-        this.props.history.push('/dashboard');
+        //
+        // this.setState({
+        //     title:'',
+        //     email:'',
+        //     content:''
+        // })
+        // this.props.history.push('/dashboard');
     }
     
 
@@ -98,13 +98,13 @@ class Addpost extends React.Component{
             <>
                 <DashboardNavBar/>
             <div>
-                <div className= 'container'>
+                <div className= 'container' style={{marginTop:200}}>
                     <div className = 'form-div'>
                         <form onSubmit={this.onSubmit}>
+                            Write your mind
                             <input type = 'text' placeholder='title' onChange = {this.changeTitle} value = {this.state.title} className = 'form-control from-group'/>
 
-                            <input type = 'text' placeholder='content' onChange = {this.changeContent} value = {this.state.content} className = 'contentStyle'/>
-
+                            <textarea  placeholder='content/markdown supported' onChange = {this.changeContent} value = {this.state.content} className = 'contentStyle'> </textarea>
 
                             <input type = 'submit'  className='btn btn-danger btn-block' value = 'Create Post' />
 
