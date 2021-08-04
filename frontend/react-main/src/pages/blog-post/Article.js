@@ -3,6 +3,7 @@ import {getUseStyles} from "../DonationStyles";
 import {BlogNavbar} from "../blogNavbar";
 import axios from 'axios';
 import {BaseNavBar} from "../components/BaseNavBar";
+import {DashboardNavBar} from "../components/DashboardNavBar";
 
 class Article extends React.Component {
 
@@ -21,8 +22,8 @@ class Article extends React.Component {
 
         return (
             <div>
-                <div>
-                <BaseNavBar/>
+                <div style={{marginTop:100}}>
+                <BlogNavbar/>
                 </div>
 
 
