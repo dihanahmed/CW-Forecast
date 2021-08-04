@@ -129,13 +129,15 @@ class Registration extends Component{
                         <form onSubmit={this.onSubmit}>
                             <input type = 'text' placeholder='name' onChange = {this.changeName} value = {this.state.name} className = 'form-control from-group'/>
 
+                            <input type = 'text' placeholder='phone' onChange = {this.changePhone} value = {this.state.phone} className = 'form-control from-group'/>
+
                             <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} className = 'form-control from-group'/>
 
                             <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} className = 'form-control from-group'/>
 
-                            <input type = 'text' placeholder='phone' onChange = {this.changePhone} value = {this.state.phone} className = 'form-control from-group'/>
-
                             <input type = 'password' placeholder='confirm' onChange = {this.confirmPassword} value = {this.state.confirm} className = 'form-control from-group'/>
+
+
 
                             <input type = 'submit' className='btn btn-success btn-block' value = 'Submit' />
 
