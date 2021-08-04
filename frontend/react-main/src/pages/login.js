@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {BaseNavBar} from "./components/BaseNavBar";
+import BlogNavbar from "./blogNavbar";
 
 
 class Login extends Component{
@@ -66,22 +68,30 @@ class Login extends Component{
     render(){
         return(
             <div>
-                <div classname= 'container'>
-                    <div classname = 'form-div'>
+                <BlogNavbar/>
+                <div className="h-100 justify-content-center align-items-center" style={{ marginTop: 100}}>
+                <div >
+
+                    Log in
+
+                    <div className = 'form-div'>
+
+
                         <form onSubmit={this.onSubmit}>
 
-                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} classname = 'form-control from-group'/>
+                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} className = 'form-control from-group'/>
 
-                            <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} classname = 'form-control from-group'/>
+                            <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} className = 'form-control from-group'/>
 
-                            <input type = 'submit' classname='btn btn-danger btn-block' value = 'Submit' />
+                            <input type = 'submit' className='btn btn-success btn-block' value = 'Submit' />
 
                         </form>
 
                     </div>
 
-                    <p>Forget password?</p>
-                    <input onClick={this.registerBack} type = 'submit' classname='btn btn-danger btn-block' value = 'Register' />
+                    <input onClick={this.registerBack} type = 'submit' className='btn btn-primary btn-block' value = 'Join!' />
+                </div>
+
                 </div>
             </div>
         );
