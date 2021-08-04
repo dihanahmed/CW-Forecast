@@ -1,15 +1,16 @@
 import React from "react";
-import {getUseStyles} from "../DonationStyles";
 import {BlogNavbar} from "../blogNavbar";
-import axios from 'axios';
-import {BaseNavBar} from "../components/BaseNavBar";
+import Markdown from 'react-markdown'
+
 
 class Article extends React.Component {
 
+     src = "# Load the markdown document"
 
     constructor(props){
         super(props)
         console.log(this.props);
+        console.log(this.props.location.state.blog.content);
 
     }
 
@@ -21,17 +22,23 @@ class Article extends React.Component {
 
         return (
             <div>
-                <div>
-                <BaseNavBar/>
+                <div style={{marginTop:100}}>
+                <BlogNavbar/>
                 </div>
+
 
 
                 <h2>
                     {this.props.location.state.blog.title}
                 </h2>
                 <div>
-                    {this.props.location.state.blog.content}
+                    <Markdown>
+                        {this.props.location.state.blog.content}
+                    </Markdown>
+
                 </div>
+
+
             </div>
         )
     }
