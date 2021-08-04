@@ -77,18 +77,18 @@ class Addpost extends React.Component{
          axios.post('http://localhost:8001/blog-api/blog/add', article)
          .then((response) => {
              console.log("axios",article,response);
-          // this.setState({ redirect: true })
+             this.setState({ redirect: true })
          });
 
         console.log("not axios: ",article.content);
         
-        //
-        // this.setState({
-        //     title:'',
-        //     email:'',
-        //     content:''
-        // })
-        // this.props.history.push('/dashboard');
+
+        this.setState({
+            title:'',
+            email:'',
+            content:''
+        })
+        this.props.history.push('/dashboard');
     }
     
 
