@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import {BaseNavBar} from "./components/BaseNavBar";
 import BlogNavbar from "./blogNavbar";
+import {Card, Row} from "react-bootstrap";
+import {CardHeader, Container} from "@material-ui/core";
 
 
-class Login extends Component{
-    constructor(props){
+class Login extends Component {
+    constructor(props) {
         super(props)
         this.state = {
             email: '',
@@ -18,25 +20,25 @@ class Login extends Component{
 
     }
 
-    changeEmail(event){
+    changeEmail(event) {
         this.setState({
-            email:event.target.value
+            email: event.target.value
         })
     }
 
-    changePassword(event){
+    changePassword(event) {
         this.setState({
-            password:event.target.value
+            password: event.target.value
         })
     }
 
-    registerBack(event){
+    registerBack(event) {
         event.preventDefault();
         this.props.history.push('/registration');
 
     }
 
-	onSubmit(event){
+    onSubmit(event) {
         event.preventDefault()
 
         const loggedIn = {
@@ -45,54 +47,61 @@ class Login extends Component{
         }
 
         axios.post('http://localhost:8001/blog-api/login', loggedIn)
-        .then((response) => {
-           console.log(response);
-            if(response.data.loginSuccessful){
-                 this.setState({ redirect: true })
-                this.props.history.push('/dashboard');
-            }
+            .then((response) => {
+                console.log(response);
+                if (response.data.loginSuccessful) {
+                    this.setState({redirect: true})
+                    this.props.history.push('/dashboard');
+                }
 
-        });
+            });
 
-        
 
         this.setState({
-            email:'',
-            password:''
+            email: '',
+            password: ''
         })
-	//
+        //
     }
 
-    
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <BlogNavbar/>
-                <div className="h-100 justify-content-center align-items-center" style={{ marginTop: 100}}>
-                <div >
+                <Container className="d-flex vh-100">
+                    <Row className="m-auto align-self-center">
+                        <BlogNavbar/>
+                        <Card style={{width: 500}}>
 
-                    Log in
-
-                    <div className = 'form-div'>
+                                 <Card.Title><div className="text-center">Log in</div></Card.Title>
 
 
-                        <form onSubmit={this.onSubmit}>
+                                    <div className='form-div'>
 
-                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} className = 'form-control from-group'/>
 
-                            <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} className = 'form-control from-group'/>
+                                        <form onSubmit={this.onSubmit}>
 
-                            <input type = 'submit' className='btn btn-success btn-block' value = 'Submit' />
+                                            <input type='text' placeholder='email' onChange={this.changeEmail}
+                                                   value={this.state.email} className='form-control from-group'/>
 
-                        </form>
+                                            <input type='password' placeholder='password' onChange={this.changePassword}
+                                                   value={this.state.password} className='form-control from-group'/>
 
-                    </div>
+                                            <input type='submit' className='btn btn-success btn-block' value='Submit'/>
 
-                    <input onClick={this.registerBack} type = 'submit' className='btn btn-primary btn-block' value = 'Join!' />
-                </div>
+                                        </form>
 
-                </div>
+                                    </div>
+
+                                    <input onClick={this.registerBack} type='submit'
+                                           className='btn btn-primary btn-block' value='Join!'/>
+
+
+
+
+                        </Card>
+                    </Row>
+                </Container>
             </div>
         );
     }

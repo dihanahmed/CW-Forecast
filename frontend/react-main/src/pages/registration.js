@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 //import { Switch, Route } from "react-router-dom";
 //import { Redirect } from "react-router-dom";
 import axios from 'axios';
+import BlogNavbar from "./blogNavbar";
+import {Card,Row} from "react-bootstrap";
+import { Container} from "@material-ui/core";
+
 //import {useHistory} from "react-router-dom";
 //Home = require("./login");
 
@@ -113,27 +117,39 @@ class Registration extends Component{
     render(){
         return(
             <div>
-                <div classname= 'container'>
-                    <div classname = 'form-div'>
+                <Container className="d-flex vh-100">
+                    <Row className="m-auto align-self-center">
+                        <BlogNavbar/>
+                        <Card style={{width: 500}}>
+
+                            <Card.Title><div className="text-center">Create Your Account</div></Card.Title>
+
+
+                            <div className='form-div'>
                         <form onSubmit={this.onSubmit}>
-                            <input type = 'text' placeholder='name' onChange = {this.changeName} value = {this.state.name} classname = 'form-control from-group'/>
+                            <input type = 'text' placeholder='name' onChange = {this.changeName} value = {this.state.name} className = 'form-control from-group'/>
 
-                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} classname = 'form-control from-group'/>
+                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} className = 'form-control from-group'/>
 
-                            <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} classname = 'form-control from-group'/>
+                            <input type = 'password' placeholder='password' onChange = {this.changePassword} value = {this.state.password} className = 'form-control from-group'/>
 
-                            <input type = 'text' placeholder='phone' onChange = {this.changePhone} value = {this.state.phone} classname = 'form-control from-group'/>
+                            <input type = 'text' placeholder='phone' onChange = {this.changePhone} value = {this.state.phone} className = 'form-control from-group'/>
 
-                            <input type = 'password' placeholder='confirm' onChange = {this.confirmPassword} value = {this.state.confirm} classname = 'form-control from-group'/>
+                            <input type = 'password' placeholder='confirm' onChange = {this.confirmPassword} value = {this.state.confirm} className = 'form-control from-group'/>
 
-                            <input type = 'submit' classname='btn btn-danger btn-block' value = 'Submit' />
+                            <input type = 'submit' className='btn btn-success btn-block' value = 'Submit' />
 
                         </form>
                     </div>
 
+
+
                     <p>Already have an account?</p>
-                    <input onClick={this.goToLogin} type = 'submit' classname='btn btn-danger btn-block' value = 'Login' />
-                </div>
+                    <input onClick={this.goToLogin} type = 'submit' className='btn btn-primary btn-block' value = 'Login' />
+
+                        </Card>
+                    </Row>
+                </Container>
             </div>
         );
     }
