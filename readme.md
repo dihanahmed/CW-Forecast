@@ -1,16 +1,16 @@
 # Installation Guide
 
-run `npm install` in cw-forecast/backend <br>
-run `npm install` in cw-forecast/frontend/react-main <br>
+Run `npm install` in cw-forecast/backend <br>
+Run `npm install` in cw-forecast/frontend/react-main <br>
 
 
 # Run
 
-in cw-forecast/backend, run: 
+In cw-forecast/backend, run: 
 `npm start`
 
 
-in cw-forecast/frontend/react-main, run: 
+In cw-forecast/frontend/react-main, run: 
 `npm start`
 
 
