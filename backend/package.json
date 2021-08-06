@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "test",
-    "dev": "nodemon start"
+    "dev": "nodemon start",
+    "start": "nodemon start"
   },
   "author": "",
   "license": "ISC",

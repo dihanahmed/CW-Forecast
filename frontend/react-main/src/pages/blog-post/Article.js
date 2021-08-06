@@ -28,7 +28,7 @@ class Article extends React.Component {
 
 
 
-                <h2>
+                <h2 className="text-center">
                     {this.props.location.state.blog.title}
                 </h2>
                 <div>
