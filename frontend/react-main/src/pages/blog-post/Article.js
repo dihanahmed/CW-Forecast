@@ -1,6 +1,7 @@
 import React from "react";
 import {BlogNavbar} from "../blogNavbar";
 import Markdown from 'react-markdown'
+import {Card, Container, Row} from "react-bootstrap";
 
 
 class Article extends React.Component {
@@ -26,17 +27,28 @@ class Article extends React.Component {
                 <BlogNavbar/>
                 </div>
 
+                <Container className="d-flex">
+                    <Row className="m-auto align-self-center">
+                        <Card style={{width: 1000}} border="success">
+
+                            <Card.Title>
+                                <h1 className="text-center">{this.props.location.state.blog.title}</h1>
+                            </Card.Title>
+
+                            <div className='container markdown'>
+                                <div>
+                                    <Markdown>
+                                        {this.props.location.state.blog.content}
+                                    </Markdown>
+
+                                </div>
+
+                            </div>
 
 
-                <h2 className="text-center">
-                    {this.props.location.state.blog.title}
-                </h2>
-                <div>
-                    <Markdown>
-                        {this.props.location.state.blog.content}
-                    </Markdown>
-
-                </div>
+                        </Card>
+                    </Row>
+                </Container>
 
 
             </div>

@@ -68,9 +68,6 @@ class Weather extends Component {
 
                                 ):
 
-
-
-
                                         ( <>
 
                                 <div hidden>

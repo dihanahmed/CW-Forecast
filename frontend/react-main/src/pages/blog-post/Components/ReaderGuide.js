@@ -1,5 +1,6 @@
 import React from "react";
 import * as PropTypes from "prop-types";
+import {Card, Container, Row} from "react-bootstrap";
 
 export function ReaderGuide(props) {
 
@@ -10,28 +11,39 @@ export function ReaderGuide(props) {
         });
     }
     return <>
-        <h5>{props.blog.title}</h5>
-        <p>
-            <div className="icon-link mr-3">
-                <i className="fa fa-pencil-square-o">
 
-                </i>{props.blog._id}</div>
-            <div className="icon-link">
-                <i className="fa fa-comments-o">
 
-                </i> 150
-            </div>
-        </p>
-        <p>{
-            props.blog.content.substring(0, 64)
-        }...</p>
-        <div className="btn btn--with-icon" onClick={() => {
-            openBlog()
-        }}>
-            <i className="btn-icon fa fa-long-arrow-right">
 
-            </i>READ MORE
-        </div>
+                    <Card.Title>
+                        <div className="text-center">{props.blog.title}</div>
+                    </Card.Title>
+                    <Card.Subtitle>
+
+                    </Card.Subtitle>
+
+                    <div className='container'>
+                        <div>
+                            {props.blog.content.substring(0, 256)}...
+                        </div>
+                        <br/>
+
+                        <div className="d-flex justify-content-center flex-row">
+                            <div className="btn btn-outline-warning rounded-pill btn-xs" style={{cursor:"pointer"}} onClick={() => {
+                                openBlog()
+                            }}>
+                                READ MORE
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
     </>;
 }
 
