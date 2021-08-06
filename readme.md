@@ -1,7 +1,17 @@
 # Installation Guide
 
-There is no guide
-`npm install` into backend folder<br>
-`npm install` into react-main folder<br>
+run `npm install` in cw-forecast/backend <br>
+run `npm install` in cw-forecast/frontend/react-main <br>
 
-## Let me know if you have any queries
+
+# Run
+
+in cw-forecast/backend, run: 
+`npm start`
+
+
+in cw-forecast/frontend/react-main, run: 
+`npm start`
+
+
+Access the output with: `http://127.0.0.1:3000`
