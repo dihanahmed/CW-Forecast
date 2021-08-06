@@ -29,13 +29,13 @@ class Article extends React.Component {
 
                 <Container className="d-flex">
                     <Row className="m-auto align-self-center">
-                        <Card style={{width: 1000}} border="success">
+                        <Card style={{width: 1000}} className="border-0">
 
                             <Card.Title>
-                                <h1 className="text-center">{this.props.location.state.blog.title}</h1>
+                                <h1 className="text-center border border-primary rounded-pill ">{this.props.location.state.blog.title}</h1>
                             </Card.Title>
 
-                            <div className='container markdown'>
+                            <div className='container markdown border border-success rounded-lg'>
                                 <div>
                                     <Markdown>
                                         {this.props.location.state.blog.content}
