@@ -14,7 +14,7 @@ import DonationForm from './pages/donationForm';
 import Dashboard from './pages/blog-post/dashboard'
 import Addpost from './pages/blog-post/add';
 import Article from './pages/blog-post/Article'
-
+import "bootstrap/dist/css/bootstrap.min.css"
 ReactDOM.render(
 
     <Router>

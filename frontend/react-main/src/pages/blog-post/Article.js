@@ -1,15 +1,17 @@
 import React from "react";
-import {getUseStyles} from "../DonationStyles";
 import {BlogNavbar} from "../blogNavbar";
-import axios from 'axios';
-import {BaseNavBar} from "../components/BaseNavBar";
+import Markdown from 'react-markdown'
+import {Card, Container, Row} from "react-bootstrap";
+
 
 class Article extends React.Component {
 
+     src = "# Load the markdown document"
 
     constructor(props){
         super(props)
         console.log(this.props);
+        console.log(this.props.location.state.blog.content);
 
     }
 
@@ -21,17 +23,34 @@ class Article extends React.Component {
 
         return (
             <div>
-                <div>
-                <BaseNavBar/>
+                <div style={{marginTop:100}}>
+                <BlogNavbar/>
                 </div>
 
+                <Container className="d-flex">
+                    <Row className="m-auto align-self-center">
+                        <Card style={{width: 1000}} className="border-0">
 
-                <h2>
-                    {this.props.location.state.blog.title}
-                </h2>
-                <div>
-                    {this.props.location.state.blog.content}
-                </div>
+                            <Card.Title>
+                                <h1 className="text-center border border-primary rounded-pill ">{this.props.location.state.blog.title}</h1>
+                            </Card.Title>
+
+                            <div className='container markdown border border-success rounded-lg'>
+                                <div>
+                                    <Markdown>
+                                        {this.props.location.state.blog.content}
+                                    </Markdown>
+
+                                </div>
+
+                            </div>
+
+
+                        </Card>
+                    </Row>
+                </Container>
+
+
             </div>
         )
     }
