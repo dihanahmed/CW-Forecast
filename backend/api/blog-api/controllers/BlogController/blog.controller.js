@@ -67,8 +67,10 @@ function findAndRemove(req,res){
         else {
             Blog.findByIdAndRemove(req.body.blog_id,function(err,res) {
                 if(err){
-                    res.send("NO ID")
+                    res.json({successful:false});
                 }
+
+                res.json({successful:true});
 
             })
         }
