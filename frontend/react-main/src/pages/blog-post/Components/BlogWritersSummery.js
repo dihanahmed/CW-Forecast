@@ -9,16 +9,17 @@ export class BlogWriterSummery extends React.Component {
 
     removeWithID(id) {
         const sendData = {blog_id: id};
-        console.log(sendData);
         axios.post("http://localhost:8001/blog-api/blog/post-remove", sendData);
-        //  window.location.reload();
+        window.location.reload();
+
+
 
     }
 
     render() {
         console.log(this.props.blog._id);
         return <>
-            <div className="container mt-5">
+            <div className="container mt-5" id={this.props.blog._id}>
 
 
                 <div>
@@ -31,9 +32,9 @@ export class BlogWriterSummery extends React.Component {
                                     onClick={() => {
                                         this.removeWithID(this.props.blog._id)
                                     }}
-                                    className="d-flex justify-content-center flex-row">
-                                    <div className="btn btn-outline-danger rounded-pill btn-lg">
-                                        Remove
+                                    className="d-flex flex-row justify-content-end ">
+                                    <div className="btn img-fluid btn-outline-danger rounded-pill btn-lg img_container btn-sm">
+                                        <img alt="Remove" src="https://cdn.iconscout.com/icon/free/png-32/bin-61-267454.png"/>
                                     </div>
                                 </div>
 
