@@ -14,7 +14,7 @@ fetchAvailableCities = (req,res)=>{
 
 function coordinateWeather(latitude, longitude, res) {
     forecastIo.forecast(latitude, longitude, options).then(function (data) {
-        res.send(data)
+        res.json(data)
     });
 }
 
