@@ -3,7 +3,6 @@ import * as PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Storm from "../../../images/Storm.jpg";
 import night from "../../../images/night.jpg";
-import './weather.css';
 // export function getUseStyles() {
 //     return makeStyles({
 //         design: {
@@ -31,27 +30,33 @@ import './weather.css';
 //     },
 // });
 
-const weather = this.cityData.currently.summary;
 
-function backgroundChange(weather) {
-  if (weather == "Humid and Mostly Cloudy") {
-  document.body.style.backgroundImage = `url(${night})`;
-  }
-   else if (weather == "Rainy") {
-  document.body.style.backgroundImage = `url(${Storm})`;
-   }
-
-}
 
 //Humid and Mostly Cloudy
 
 export class CityWeatherDataCard extends Component {
     render() {
+
+        const weather = this.props.cityData.currently.summary;
+
+        console.log(weather)
+
+        function backgroundChange(weather) {
+            if (weather == "Humid and Mostly Cloudy") {
+                document.body.style.backgroundImage = `url(${'Storm'})`;
+            }
+            else if (weather == "Rainy") {
+                document.body.style.backgroundImage = `url(${Storm})`;
+            }
+
+        }
         return (
 
 
             <div id="weather">
                 <div className="container-fluid">
+
+
 
 
                     <div className="card p-4">
