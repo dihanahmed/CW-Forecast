@@ -1,4 +1,10 @@
-
+#weather {
+    background-image: url('../../../images/night.jpg');
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 #heading {
     font-size: 55px;
@@ -7,6 +13,14 @@
 
 .temp {
     place-items: center
+}
+
+.container-fluid {
+    background-image: url('../../../images/night.jpg');
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .temp-details>p>span,
