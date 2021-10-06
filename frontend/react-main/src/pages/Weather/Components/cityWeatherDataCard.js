@@ -41,17 +41,21 @@ export class CityWeatherDataCard extends Component {
 
         console.log(weather)
 
-        function backgroundChange(weather) {
-            if (weather == "Humid and Mostly Cloudy") {
-                document.body.style.backgroundImage = `url("https://raw.githubusercontent.com/Sadman-Saadat/CW-Forecast/frontend-works/frontend/react-main/src/images/night.jpg")`;
-            }
-            else if (weather == "Rainy") {
-                document.body.style.backgroundImage = `url(${Storm})`;
-            }
-
+        // function backgroundChange(weather) {
+        if (weather == "Humid and Partly Cloudy") {
+            document.body.style.backgroundImage = `url("https://raw.githubusercontent.com/Sadman-Saadat/CW-Forecast/frontend-works/frontend/react-main/src/images/night.jpg")`;
+            // console.log("gese?");
+        }
+        else if (weather == "Rainy") {
+            document.body.style.backgroundImage = `url(${Storm})`;
+        }
+        else if (weather == "Overcast") {
+            document.body.style.backgroundImage = `url(${Storm})`;
         }
 
-        backgroundChange();
+        // }
+
+        // backgroundChange(weather);
         return (
 
 
