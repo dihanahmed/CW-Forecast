@@ -43,13 +43,15 @@ export class CityWeatherDataCard extends Component {
 
         function backgroundChange(weather) {
             if (weather == "Humid and Mostly Cloudy") {
-                document.body.style.backgroundImage = `url(${'Storm'})`;
+                document.body.style.backgroundImage = `url("https://raw.githubusercontent.com/Sadman-Saadat/CW-Forecast/frontend-works/frontend/react-main/src/images/night.jpg")`;
             }
             else if (weather == "Rainy") {
                 document.body.style.backgroundImage = `url(${Storm})`;
             }
 
         }
+
+        backgroundChange();
         return (
 
 
