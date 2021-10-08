@@ -21,6 +21,11 @@ const cities ={
     JASHORE: {
         latitude: 23.170664,
         longitude: 89.212418
+    },
+
+    NEWYORK: {
+        latitude: 43.000000,
+        longitude: 75.000000
     }
 
 }

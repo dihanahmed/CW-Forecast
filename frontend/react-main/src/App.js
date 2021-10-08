@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
 import Background from '../src/images/green.jpg';
 
-const  useStyles = makeStyles({
+const useStyles = makeStyles({
 	component: {
 		background: '#FFFFFF',
 		color: 'black'
@@ -14,17 +14,17 @@ const  useStyles = makeStyles({
 	design: {
 		backgroundImage: `url(${Background})`,
 		backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh',
-		
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+		width: '100vw',
+		height: '100vh',
+
 	}
 });
 
 // const Header = () => {
 // 	return (
-		
+
 // 	)
 // };
 
@@ -38,7 +38,7 @@ const App = () => {
 	)
 };
 
-export {App } ;
+export { App };
 
 
 
