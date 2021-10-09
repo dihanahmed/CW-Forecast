@@ -19,6 +19,14 @@ export class BlogWriterSummery extends React.Component {
 
     }
 
+    showBlogEditor(blog){
+
+        this.props.history.push({
+            pathname: '/edit',
+            state:{blog: blog}
+        });
+    }
+
     render() {
         console.log(this.props.blog._id);
         return <>
@@ -33,7 +41,9 @@ export class BlogWriterSummery extends React.Component {
                                 <div className="justify-content-center"
                                      style={{display: 'flex', flexDirection: 'row'}}
                                 >
-                                    <div
+                                    <div onClick={()=>{
+                                        this.showBlogEditor(this.props.blog);
+                                    }}
                                         className="d-flex flex-row justify-content-end ">
                                         <div
                                             className="btn img-fluid btn-outline-success rounded-pill btn-lg img_container btn-sm">

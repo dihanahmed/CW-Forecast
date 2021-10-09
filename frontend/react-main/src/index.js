@@ -14,6 +14,7 @@ import DonationForm from './pages/donationForm';
 import Dashboard from './pages/blog-post/dashboard'
 import Addpost from './pages/blog-post/add';
 import Article from './pages/blog-post/Article'
+import ArticleEdit from './pages/blog-post/ArticleEdit'
 import "bootstrap/dist/css/bootstrap.min.css"
 ReactDOM.render(
 
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Route exact path="/dashboard" component = {Dashboard} /> 
         <Route exact path="/addpost" component = {Addpost} />
         <Route exact path="/view" component = {Article} />
+        <Route exact path="/edit" component = {ArticleEdit} />
 
 	    </Switch>
     </Router>,
