@@ -1,6 +1,6 @@
 import React from "react";
-import {AppBar, makeStyles, Toolbar, Typography} from "@material-ui/core";
-import {Link} from "react-router-dom";
+import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import * as PropTypes from "prop-types";
 import Background from "../../images/green.jpg";
 
@@ -68,8 +68,16 @@ export function BaseNavBar(props) {
                     </Link>{" "}
                 </Typography>
             </div>
+            <div>
+                <Typography>
+                    {" "}
+                    <Link to="/aboutus" className="navlinks">
+                        About Us
+                    </Link>{" "}
+                </Typography>
+            </div>
         </Toolbar>
     </AppBar>;
 }
 
-BaseNavBar.propTypes = {classes: PropTypes.any};
+BaseNavBar.propTypes = { classes: PropTypes.any };

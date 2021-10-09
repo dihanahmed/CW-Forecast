@@ -3,6 +3,9 @@ import * as PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Storm from "../../../images/Storm.jpg";
 import night from "../../../images/night.jpg";
+import Midnoon from "../../../images/noon4.jpg";
+
+//import Date from "./Date";
 // export function getUseStyles() {
 //     return makeStyles({
 //         design: {
@@ -38,24 +41,34 @@ export class CityWeatherDataCard extends Component {
     render() {
 
         const weather = this.props.cityData.currently.summary;
+        const time = new Date(this.props.cityData.currently.time * 1000).getHours();
+        //const hour = time.getHours();
+        // console.log(time);
 
         console.log(weather)
 
-        // function backgroundChange(weather) {
-        if (weather == "Humid and Partly Cloudy") {
-            document.body.style.backgroundImage = `url("https://raw.githubusercontent.com/Sadman-Saadat/CW-Forecast/frontend-works/frontend/react-main/src/images/night.jpg")`;
-            // console.log("gese?");
-        }
-        else if (weather == "Rainy") {
-            document.body.style.backgroundImage = `url(${Storm})`;
-        }
-        else if (weather == "Overcast") {
-            document.body.style.backgroundImage = `url(${Storm})`;
+        function backgroundChange(weather, time) {
+
+            console.log(time);
+            if (weather == "Humid and Mostly Cloudy") {
+                document.body.style.backgroundImage = `url(${Midnoon})`;
+                // console.log("gese?");
+            }
+            else if (weather == "Rainy") {
+                document.body.style.backgroundImage = `url(${Storm})`;
+            }
+            else if (weather == "Humid and Partly Cloudy" && time > '5') {
+                document.body.style.backgroundImage = `url(${night})`;
+            }
+            else if (weather == "Overcast") {
+                document.body.style.backgroundImage = `url(${Storm})`;
+            }
+
+
+
         }
 
-        // }
-
-        // backgroundChange(weather);
+        backgroundChange(weather, time);
         return (
 
 
@@ -94,7 +107,7 @@ export class CityWeatherDataCard extends Component {
                                     <span> {this.props.cityData.currently.uvIndex}h </span></p>
                             </div>
 
-                            <div><img src="https://i.imgur.com/Qw7npIg.png" width="100px" /></div>
+                            {/* <div><img src="https://i.imgur.com/Qw7npIg.png" width="100px" /></div> */}
                         </div>
                     </div>
 
