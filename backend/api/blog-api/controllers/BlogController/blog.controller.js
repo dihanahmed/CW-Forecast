@@ -89,7 +89,7 @@ function findAll(req, res) {
 
 async function updateRequest(req, res) {
    await Blog.updateOne({_id: req.body._id},
-        {$set: {title: "I Have Done DB",content:req.body.content}}
+        {$set: {title:req.body.title, content:req.body.content}}
     ).then((blog) => {
         res.json(blog)
     }).catch((error) => {
