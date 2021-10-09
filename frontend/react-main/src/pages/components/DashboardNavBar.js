@@ -1,6 +1,6 @@
 import React from "react";
-import {AppBar, makeStyles, Toolbar, Typography} from "@material-ui/core";
-import {Link} from "react-router-dom";
+import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import * as PropTypes from "prop-types";
 import Background from "../../images/green.jpg";
 import axios from "axios";
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 
 
 export function DashboardNavBar(props) {
-    const handleLogout = () =>{
+    const handleLogout = () => {
         axios.get("http://localhost:8001/blog-api/logout")
     }
     const classes = useStyles()
@@ -76,15 +76,24 @@ export function DashboardNavBar(props) {
             <div>
                 <Typography>
                     {" "}
+                    <Link to="/donation" className="navlinks">
+                        About Us
+                    </Link>{" "}
+                </Typography>
+            </div>
+
+            <div>
+                <Typography>
+                    {" "}
                     <Link to="/Addpost" className="navlinks">
                         Create Post
                     </Link>{" "}
                 </Typography>
             </div>
-            <div onClick={()=>handleLogout()}>
+            <div onClick={() => handleLogout()}>
                 <Typography>
                     {" "}
-                    <Link to="/blog"  className="navlinks">
+                    <Link to="/blog" className="navlinks">
                         Logout
                     </Link>{" "}
                 </Typography>
@@ -93,4 +102,4 @@ export function DashboardNavBar(props) {
     </AppBar>;
 }
 
-DashboardNavBar.propTypes = {classes: PropTypes.any};
+DashboardNavBar.propTypes = { classes: PropTypes.any };
