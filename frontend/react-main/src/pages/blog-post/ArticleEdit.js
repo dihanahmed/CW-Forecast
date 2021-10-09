@@ -12,23 +12,26 @@ const useStyles = makeStyles({
 })
 
 class ArticleEdit extends React.Component{
+
+
+
     constructor(props){
-        super(props)
-        this.state = {
-            title: '',
-            content: '',
-            mail: '',
+        super(props);
+        this.state={
+            content: props.history.location.state.blog.content
         }
+
         this.changeTitle = this.changeTitle.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
         this.changeContent = this.changeContent.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
 
+
     }
 
     changeTitle(event){
         this.setState({
-            title:event.target.value
+            description: ''
         })
     }
 
@@ -65,16 +68,20 @@ class ArticleEdit extends React.Component{
             })
     }
 
-    onSubmit(event){
-        event.preventDefault()
+
+
+
+    onSubmit(){
+
 
         const article = {
-            title: this.state.title,
-            email: this.state.email,
-            content: this.state.content
+            _id: this.props.history.location.state.blog._id,
+            title: window.document.getElementById("article_title").value,
+            content: window.document.getElementById("article_content").value
+
         }
 
-        axios.post('http://localhost:8001/blog-api/blog/add', article)
+        axios.post('http://localhost:8001/blog-api/blog/update', article)
             .then((response) => {
                 console.log("axios",article,response);
                 this.setState({ redirect: true })
@@ -95,23 +102,28 @@ class ArticleEdit extends React.Component{
     render(){
 
         const passedProps = this.props.history.location.state;
-        console.log(passedProps)
-
         return(
+
             <>
                 <DashboardNavBar/>
                 <div>
                     <div className= 'container' style={{marginTop:200}}>
                         <div className = 'form-div'>
-                            <form onSubmit={this.onSubmit}>
-                                Write your mind
-                                <input type = 'text' placeholder='title' onChange = {this.changeTitle} value = {passedProps.blog.title} className = 'form-control from-group'/>
 
-                                <textarea  placeholder='content/markdown supported' onChange = {this.changeContent} value = {passedProps.blog.content} className = 'contentStyle'> </textarea>
+                                What changes do u wanna make?
+                                <input type = 'text' id="article_title" placeholder='title'  defaultValue = {passedProps.blog.title} className = 'form-control from-group'/>
 
-                                <input type = 'submit'  className='btn btn-danger btn-block' value = 'Save changes' />
+                                <textarea
+                                    id="article_content"
+                                    placeholder='content/markdown supported'
+                                    className = 'contentStyle'
+                                    value={this.state.content}
+                                    onChange={this.changeContent}
+                                > </textarea>
 
-                            </form>
+                                <input type = 'submit' onClick={()=>{this.onSubmit()}} className='btn btn-danger btn-block' defaultValue = 'Save changes' />
+
+
                         </div>
                     </div>
                 </div>

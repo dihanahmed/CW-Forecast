@@ -16,6 +16,7 @@ import Dashboard from './pages/blog-post/dashboard'
 import Addpost from './pages/blog-post/add';
 import Article from './pages/blog-post/Article'
 import "bootstrap/dist/css/bootstrap.min.css"
+import ArticleEdit from "./pages/blog-post/ArticleEdit";
 ReactDOM.render(
 
     <Router>
@@ -24,13 +25,15 @@ ReactDOM.render(
 				<Route exact path="/blog" component={Blogpage }/>
         <Route exact path="/weather" component={Weather }/>
         <Route exact path="/climate" component={Climate }/>
-        <Route exact path="/donation" component={Donation }/><Route exact path="/aboutus" component={Aboutus} />
+        <Route exact path="/donation" component={Donation }/>
+           <Route exact path="/aboutus" component={Aboutus} />
         <Route exact path="/registration" component = {Registration} />
         <Route exact path="/login" component = {Login} />
         <Route exact path="/donationform" component = {DonationForm} /> 
         <Route exact path="/dashboard" component = {Dashboard} /> 
         <Route exact path="/addpost" component = {Addpost} />
         <Route exact path="/view" component = {Article} />
+        <Route exact path="/edit" component = {ArticleEdit} />
 
 	    </Switch>
     </Router>,
