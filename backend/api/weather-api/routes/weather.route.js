@@ -11,6 +11,7 @@ var options = {
 var forecastIo = new ForecastIo('2286dd2204e405b21ad2dec95e789d49');
 
 route.post('/',weatherController.fetchWeatherByCity);
+route.get('/',weatherController.getLocationByGeolocation)
 
 
 //
