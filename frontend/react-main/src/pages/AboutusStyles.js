@@ -1,9 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
+import Sadman from "../images/Sadman.jpg";
+import Labnan from "../images/Labnan.png";
+import Jisan from "../images/Jisan.jpg";
+import Dihan from "../images/Dihan.jpg";
+
+//E5D2AC
 
 
 
 export function getUseStyles() {
     return makeStyles({
+
+        full: {
+            backgroundColor: '#FFF2D9'
+        },
         component: {
             background: '#C6CAB1',
             color: 'black'
@@ -13,54 +23,75 @@ export function getUseStyles() {
             height: '80px'
         },
 
+        pidea: {
+            marginTop: '100px',
+            padding: '8px 10px 50px 60px',
+        },
+
         root1: {
             backgroundColor: '#e4f4ef',
             maxWidth: 1000,
-            marginRight: '80px'
+            marginRight: '60px'
 
         },
 
         root2: {
             backgroundColor: '#dad6db',
             maxWidth: 1000,
-            marginLeft: '70px',
-            marginRight: '80px'
+            marginLeft: '60px',
+            marginRight: '60px'
 
         },
         root3: {
             backgroundColor: '#E3EEAB',
             maxWidth: 1000,
-            marginLeft: '70px'
+            marginLeft: '60px',
+            marginRight: '60px'
+
+        },
+        root4: {
+            backgroundColor: '#E3EEAB',
+            maxWidth: 1000,
+            marginLeft: '60px'
 
         },
         media1: {
-            //backgroundImage: `url(${Background1})`,
+            backgroundImage: `url(${Sadman})`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             width: '100vw',
             height: '30vh',
         },
-        // media2: {
-        //     backgroundImage: `url(${Background2})`,
-        //     backgroundSize: 'contain',
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundPosition: '-30px 0px',
-        //     width: '100vw',
-        //     height: '30vh',
-        // },
-        // media3: {
-        //     backgroundImage: `url(${Background3})`,
-        //     backgroundSize: 'contain',
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundPosition: '-30px 0px',
-        //     width: '100vw',
-        //     height: '30vh',
-        // },
-        // btn: {
-        //     marginLeft: '20px'
-        // },
+        media2: {
+            backgroundImage: `url(${Labnan})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '-30px 0px',
+            width: '100vw',
+            height: '30vh',
+        },
+        media3: {
+            backgroundImage: `url(${Jisan})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '-30px 0px',
+            width: '100vw',
+            height: '30vh',
+        },
+
+        media4: {
+            backgroundImage: `url(${Dihan})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '-30px 0px',
+            width: '100vw',
+            height: '30vh',
+        },
+        btn: {
+            marginLeft: '20px'
+        },
         allcards: {
-            padding: '200px 100px 500px 70px',
+            padding: '80px 100px 500px 70px',
             maxWidth: '2000px',
             display: 'flex',
             flexDirection: 'wrap',
