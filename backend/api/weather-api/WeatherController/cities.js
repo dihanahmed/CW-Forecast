@@ -1,4 +1,4 @@
-const cities ={
+const cities = {
     DHAKA: {
         latitude: 23.810331,
         longitude: 90.412521
@@ -30,17 +30,17 @@ const cities ={
 
 }
 
-fetchCoordinate = (city)=>{
+fetchCoordinate = (city) => {
     const cityData = cities[city];
-    if(cityData === null || cityData === undefined) return {successful:false}
+    if (cityData === null || cityData === undefined) return {successful: false}
     cityData.successful = true;
     return cities[city];
 
 }
 
 
-fetchCities =() =>{
-   return cities;
+fetchCities = () => {
+    return cities;
 }
 
 module.exports = {
