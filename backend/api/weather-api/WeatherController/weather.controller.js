@@ -14,7 +14,7 @@ fetchAvailableCities = (req,res)=>{
 
 function coordinateWeather(latitude, longitude, res) {
     forecastIo.forecast(latitude, longitude, options).then(function (data) {
-        res.send(data)
+        res.json(data)
     });
 }
 
@@ -28,14 +28,32 @@ fetchWeatherByCoordinate = (req, res) =>{
 fetchWeatherByCity =(req,res)=>{
  let city = req.body.city.toString().toUpperCase();
  let coordinate = cityInfo.fetchCoordinate(city);
- console.log(coordinate);
- if(!coordinate.successful) return res.json({successful: false});
- coordinateWeather(coordinate.latitude,coordinate.longitude,res);
+ res.send(coordinate)
+ // if(!coordinate.successful) return res.json({successful: false});
+ // coordinateWeather(coordinate.latitude,coordinate.longitude,res);
+}
+
+
+getLocationByGeolocation = (req,res)=>{
+    const { Navigator } = require("node-navigator");
+    const navigator = new Navigator();
+
+    navigator.geolocation.getCurrentPosition((response, error) => {
+        if (error) res.send(error);
+        else {
+            let latitude=response["latitude"]
+            let longitude=response["longitude"]
+            res.json(`${latitude} and ${longitude}` );
+        }
+    });
+        // Your city
+
 }
 
 
 module.exports = {
    fetchWeatherByCoordinate,
     fetchWeatherByCity,
-    fetchAvailableCities
+    fetchAvailableCities,
+    getLocationByGeolocation
 }

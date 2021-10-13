@@ -8,17 +8,29 @@ import {Card, Container, Row} from "react-bootstrap";
 export class BlogWriterSummery extends React.Component {
 
     removeWithID(id) {
-        const sendData = {blog_id: id};
-        console.log(sendData);
-        axios.post("http://localhost:8001/blog-api/blog/post-remove", sendData);
-        //  window.location.reload();
+        if (window.confirm("Are You Sure?")) {
 
+            const sendData = {blog_id: id};
+            axios.post("http://localhost:8001/blog-api/blog/post-remove", sendData).then(data => {
+                window.location.reload();
+            })
+
+        }
+
+    }
+
+    showBlogEditor(blog){
+
+        this.props.history.push({
+            pathname: '/edit',
+            state:{blog: blog}
+        });
     }
 
     render() {
         console.log(this.props.blog._id);
         return <>
-            <div className="container mt-5">
+            <div className="container mt-5" id={this.props.blog._id}>
 
 
                 <div>
@@ -26,16 +38,32 @@ export class BlogWriterSummery extends React.Component {
                         <Row className="m-auto align-self-center">
                             <Card style={{width: 1000}} border="success" className="rounded-3">
                                 <ReaderGuide blog={this.props.blog} history={this.props.history}/>
-
-                                <div
-                                    onClick={() => {
-                                        this.removeWithID(this.props.blog._id)
+                                <div className="justify-content-center"
+                                     style={{display: 'flex', flexDirection: 'row'}}
+                                >
+                                    <div onClick={()=>{
+                                        this.showBlogEditor(this.props.blog);
                                     }}
-                                    className="d-flex justify-content-center flex-row">
-                                    <div className="btn btn-outline-danger rounded-pill btn-lg">
-                                        Remove
+                                        className="d-flex flex-row justify-content-end ">
+                                        <div
+                                            className="btn img-fluid btn-outline-success rounded-pill btn-lg img_container btn-sm">
+                                            <img alt="Edit" src="/image/edit.png"/>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        onClick={() => {
+                                            this.removeWithID(this.props.blog._id)
+                                        }}
+                                        className="d-flex flex-row justify-content-end ">
+                                        <div
+                                            className="btn img-fluid btn-outline-danger rounded-pill btn-lg img_container btn-sm">
+                                            <img alt="Remove"
+                                                 src="https://cdn.iconscout.com/icon/free/png-32/bin-61-267454.png"/>
+                                        </div>
                                     </div>
                                 </div>
+
 
                             </Card>
                         </Row>
