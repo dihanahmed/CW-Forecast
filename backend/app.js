@@ -27,7 +27,7 @@ app.use('/blog-api', blogApi);
 app.use('/getWeather', getWeather)
 app.use('/donation-api', donationApi)
 app.use('/payment', paymentControllerApi)
-app.use('/aboutus',)
+
 
 
 app.get("/express", ((req, res) => {

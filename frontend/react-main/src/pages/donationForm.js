@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+
 import axios from 'axios';
 
-class DonationForm extends Component{
-    constructor(props){
+import "./donationForm.css"
+
+class DonationForm extends Component {
+    constructor(props) {
         super(props)
         this.state = {
             donorName: '',
@@ -16,26 +19,26 @@ class DonationForm extends Component{
 
     }
 
-    changeDonorName(event){
+    changeDonorName(event) {
         this.setState({
-            donorName:event.target.value
+            donorName: event.target.value
         })
     }
 
-    changeEmail(event){
+    changeEmail(event) {
         this.setState({
-            email:event.target.value
+            email: event.target.value
         })
     }
 
-    changePhone(event){
+    changePhone(event) {
         this.setState({
-            phone:event.target.value
+            phone: event.target.value
         })
     }
 
 
-    onSubmit(event){
+    onSubmit(event) {
         event.preventDefault()
 
         const registered = {
@@ -46,41 +49,75 @@ class DonationForm extends Component{
         }
 
         axios.post('http://localhost:8001/donation-api/donate', registered)
-        .then((response) => {
-            console.log(this.state);
-            axios.get('http://localhost:8001/payment').then((response) =>{
-                const url = response.data.redirectURL;
-               window.location.href = url;
-            })
-          this.setState({ redirect: true })
-        });
+            .then((response) => {
+                console.log(this.state);
+                axios.get('http://localhost:8001/payment').then((response) => {
+                    const url = response.data.redirectURL;
+                    window.location.href = url;
+                })
+                this.setState({ redirect: true })
+            });
 
-        
+
 
     }
 
 
-    render(){
-        return(
+    render() {
+
+        return (
             <div>
-                <div classname= 'container'>
-                    <div classname = 'form-div'>
-                        <form onSubmit={this.onSubmit}>
-                            <input type = 'text' placeholder='donorName' onChange = {this.changeDonorName} value = {this.state.donorName} classname = 'form-control from-group'/>
+                <legend>Donation Form</legend>
+                <form onSubmit={this.onSubmit}>
+                    <div className="container_donor">
 
-                            <input type = 'text' placeholder='email' onChange = {this.changeEmail} value = {this.state.email} classname = 'form-control from-group'/>
+                        <div className='text_donor'>
 
-                            <input type = 'text' placeholder='phone' onChange = {this.changePhone} value = {this.state.phone} classname = 'form-control from-group'/>
+                            <div class="row">
 
-                            <input type = 'submit' classname='btn btn-danger btn-block' value = 'Submit' />
+                                <div class="col-25">
+                                    <label for="dname">Donor Name</label>
+                                </div>
 
-                        </form>
+                                <div class="col-75">
+                                    <input className="donorname" type='text' onChange={this.changeDonorName} value={this.state.donorName} />
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="demail">Email</label>
+                                </div>
+                                <div class="col-75">
+                                    <input className="email" type='text' onChange={this.changeEmail} value={this.state.email} />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="dphone">Phone</label>
+                                </div>
+                                <div class="col-75">
+                                    <input className="phone" type='text' onChange={this.changePhone} value={this.state.phone} />
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div className="submitbtn">
+                            <input className="submit_donor" type='submit' value='Submit' />
+                        </div>
+
+
                     </div>
-                </div>
+
+                </form>
             </div>
         );
     }
-    
+
 }
 
 export default DonationForm;
