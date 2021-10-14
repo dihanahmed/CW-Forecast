@@ -63,7 +63,7 @@ function findAndRemove(req, res) {
         if (!user) {
             res.send({successful: false})
         } else {
-            Blog.findByIdAndRemove(req.body.blog_id, function (err, res) {
+            Blog.findByIdAndRemove(req.body.blog_id, function (err) {
                 if (err) {
                     res.json({successful: false});
                 }

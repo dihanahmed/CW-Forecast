@@ -25,17 +25,18 @@ fetchWeatherByCoordinate = (req, res) => {
 
 }
 
-fetchWeatherByCity = (req, res) => {
+
+
+fetchWeatherByCity =(req,res)=>{
     let city = req.body.city.toString().toUpperCase();
     let coordinate = cityInfo.fetchCoordinate(city);
-    res.send(coordinate)
-    // if(!coordinate.successful) return res.json({successful: false});
-    // coordinateWeather(coordinate.latitude,coordinate.longitude,res);
+    if(!coordinate.successful) return res.json({successful: false});
+    coordinateWeather(coordinate.latitude,coordinate.longitude,res);
 }
 
+getLocationByGeolocation = (req,res)=>{
+    const { Navigator } = require("node-navigator");
 
-getLocationByGeolocation = (req, res) => {
-    const {Navigator} = require("node-navigator");
     const navigator = new Navigator();
 
     navigator.geolocation.getCurrentPosition((response, error) => {
