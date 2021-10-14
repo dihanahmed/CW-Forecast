@@ -12,8 +12,8 @@ const route = express.Router()
 route.use(addAuthenticateOption.addAuthHeader)
 route.use('/login', loginRouter);
 route.use('/register', registerRouter);
-route.use('/blog',blogRouter)
-route.use('/verify',verificationRoute)
-route.get('/logout',authController.logOut);
+route.use('/blog', blogRouter)
+route.use('/verify', verificationRoute)
+route.get('/logout', authController.logOut);
 
 module.exports = route;
