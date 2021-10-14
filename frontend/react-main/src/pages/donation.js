@@ -48,7 +48,7 @@ const useStyles = getUseStyles();
 				</CardContent>
 				</CardActionArea>
 				<CardActions>
-				<Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(1)}}>
+				<Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(100)}}>
 					Donate
 				</Button>
 				</CardActions>
@@ -70,7 +70,7 @@ const useStyles = getUseStyles();
 		  </CardContent>
 		</CardActionArea>
 		<CardActions>
-		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(2)}}>
+		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(200)}}>
 			Donate
 		  </Button>
 		</CardActions>
@@ -90,7 +90,7 @@ const useStyles = getUseStyles();
 		  </CardContent>
 		</CardActionArea>
 		<CardActions>
-		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(3)}}>
+		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(500)}}>
 			Donate
 		  </Button>
 		</CardActions>

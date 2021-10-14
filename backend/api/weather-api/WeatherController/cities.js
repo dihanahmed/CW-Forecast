@@ -31,6 +31,10 @@ const cities = {
     GAZIPUR: {
         latitude: 23.999941,
         longitude: 90.420273
+    },
+    MOSCOW:{
+        latitude:55.7558,
+        longitude:37.6173
     }
 
 }
