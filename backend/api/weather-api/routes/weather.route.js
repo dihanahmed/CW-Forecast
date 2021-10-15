@@ -13,8 +13,7 @@ var forecastIo = new ForecastIo('2286dd2204e405b21ad2dec95e789d49');
 route.post('/',weatherController.fetchWeatherByCity);
 route.get('/',weatherController.getLocationByGeolocation);
 route.post('/hourly',weatherController.fetchWeatherByCityAndHourly)
-
-
+route.post('/mamun',weatherController.getMamun)
 //
 // route.get('/',(req, res) =>{
 //     forecastIo.forecast('51.506', '-0.127',options).then(function(data) {

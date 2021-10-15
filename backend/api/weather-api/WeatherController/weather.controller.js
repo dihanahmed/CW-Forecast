@@ -1,6 +1,10 @@
+
+
 const ForecastIo = require('forecastio');
 const forecastIo = new ForecastIo('2286dd2204e405b21ad2dec95e789d49');
 const cityInfo = require('./cities');
+const request = require('request');
+const stream = require("stream");
 
 
 const options = {
@@ -34,8 +38,9 @@ fetchWeatherByCoordinate = (req, res) => {
 fetchWeatherByCity =(req,res)=>{
     let city = req.body.city.toString().toUpperCase();
     let coordinate = cityInfo.fetchCoordinate(city);
-    if(!coordinate.successful) return res.json({successful: false});
-    coordinateWeather(coordinate.latitude,coordinate.longitude,res);
+    res.json(fetchMamun(city))
+   /* if(!coordinate.successful) return res.json({successful: false});
+    coordinateWeather(coordinate.latitude,coordinate.longitude,res);*/
 }
 fetchWeatherByCityAndHourly=(req,res)=>{
     let city = req.body.city.toString().toUpperCase();
@@ -67,10 +72,28 @@ function getWeather(req,res) {
     let coordinate = cityInfo.fetchCoordinate(city);
     coordinateWeather(req.body.city,options2)
 }
+
+
+getMamun = (req, res) => {
+    let city = req.body.city.toString().toUpperCase();
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9dd687e56990c001e77aa23b2db5ab5c`
+    /* var url = `http://api.openweathermap.org/data/2.5/weather?`
+         +`lat=${latitude}&lon=${longitude}&appid=${API_KEY}`*/
+
+    request({url: url, json: true}, function (error, response) {
+        if (error) {
+            console.log('Unable to connect to Forecast API');
+        } else {
+            console.log(response.body.coord.lon)
+            res.json(response.body.coord.lon)
+        }
+    })
+}
 module.exports = {
     fetchWeatherByCoordinate,
     fetchWeatherByCity,
     fetchAvailableCities,
     getLocationByGeolocation,
-    fetchWeatherByCityAndHourly
+    fetchWeatherByCityAndHourly,
+    getMamun
 }
