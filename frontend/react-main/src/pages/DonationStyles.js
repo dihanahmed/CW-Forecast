@@ -1,15 +1,15 @@
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Background1 from "../images/pexels-felix-mittermeier-957024.jpg";
 import Background2 from "../images/media2.jpg";
 import Background3 from "../images/shobuj.jpg";
 
 export function getUseStyles() {
     return makeStyles({
-        component: {
+        component_don: {
             background: '#C6CAB1',
             color: 'black'
         },
-        container: {
+        container_don: {
             justifyContent: 'center',
             height: '80px'
         },
