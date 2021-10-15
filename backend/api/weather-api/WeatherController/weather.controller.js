@@ -39,8 +39,8 @@ fetchWeatherByCity =(req,res)=>{
     let city = req.body.city.toString().toUpperCase();
     let coordinate = cityInfo.fetchCoordinate(city);
     res.json(fetchMamun(city))
-   /* if(!coordinate.successful) return res.json({successful: false});
-    coordinateWeather(coordinate.latitude,coordinate.longitude,res);*/
+   if(!coordinate.successful) return res.json({successful: false});
+    coordinateWeather(coordinate.latitude,coordinate.longitude,res);
 }
 fetchWeatherByCityAndHourly=(req,res)=>{
     let city = req.body.city.toString().toUpperCase();
@@ -84,8 +84,8 @@ getMamun = (req, res) => {
         if (error) {
             console.log('Unable to connect to Forecast API');
         } else {
-            console.log(response.body.coord.lon)
-            res.json(response.body.coord.lon)
+            coordinateWeather(response.body.coord.lat,response.body.coord.lon,res);
+
         }
     })
 }
