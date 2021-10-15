@@ -50,14 +50,14 @@ class DonationForm extends Component {
 
         axios.post('http://localhost:8001/donation-api/donate', registered)
 
-        .then((response) => {
-            console.log(this.state);
-            axios.post('http://localhost:8001/payment',{total_amount:this.props.location.state.treeID}).then((response) =>{
-                const url = response.data.redirectURL;
-               window.location.href = url;
-            })
-          this.setState({ redirect: true })
-        });
+            .then((response) => {
+                console.log(this.state);
+                axios.post('http://localhost:8001/payment', { total_amount: this.props.location.state.treeID }).then((response) => {
+                    const url = response.data.redirectURL;
+                    window.location.href = url;
+                })
+                this.setState({ redirect: true })
+            });
 
     }
 
@@ -66,13 +66,13 @@ class DonationForm extends Component {
 
         return (
             <div>
-                <legend>Donation Form</legend>
+                <legend className='head_donor'>Donation Form</legend>
                 <form onSubmit={this.onSubmit}>
                     <div className="container_donor">
 
                         <div className='text_donor'>
 
-                            <div class="row">
+                            <div className="row">
 
                                 <div class="col-25">
                                     <label for="dname">Donor Name</label>

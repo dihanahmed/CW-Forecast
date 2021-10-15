@@ -5,15 +5,23 @@
   body{
     /* background-image: none !important; */
   }
+  .head_donor {
+    text-align: center;
+  }
 .container_donor {
-    /* justify-content: center; */
-    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: column; 
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
 }
+
+/* .row {
+  justify-content: center;
+    align-items: center;
+} */
 
 /* input[type=text], select, textarea {
     width: 93%;
@@ -44,16 +52,17 @@
   } */
 
   .col-25 {
-    padding-left: 12px;
+    padding-left: 300px;
     /* float: left; */
-    width: 20%;
-    margin-top: 6px;  
+    width: 50%;
+    margin-top: 6px; 
+    
     /* border: 1px solid #000000; */
   }
   
   .col-75 {
     /* float: left; */
-    width: 80%;
+    width: 50%;
     margin-top: 6px;
     /* border: 1px solid #000000; */
   }
@@ -75,6 +84,8 @@
   }
 
   .text_donor{
+    justify-content: center;
+    align-items: center;
     width: 93%;
     padding: 12px;
     border: 1px solid #ccc;
