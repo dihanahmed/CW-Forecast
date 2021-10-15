@@ -5,6 +5,7 @@ import { Card, Container, Row } from "react-bootstrap";
 import { CityWeatherDataCard } from "./Weather/Components/cityWeatherDataCard";
 
 
+
 class Weather extends Component {
 
     state = {
@@ -44,6 +45,8 @@ class Weather extends Component {
             });
 
     }
+
+
 
 
     render() {

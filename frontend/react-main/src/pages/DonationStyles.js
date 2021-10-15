@@ -11,7 +11,10 @@ export function getUseStyles() {
         },
         container_don: {
             justifyContent: 'center',
-            height: '80px'
+            display: 'flex',
+            textAlign: 'center',
+            flexGrow: '1'
+            // height: '80px'
         },
 
         root1: {
@@ -65,6 +68,11 @@ export function getUseStyles() {
             maxWidth: '2000px',
             display: 'flex',
             flexDirection: 'wrap',
+        },
+        back_btn: {
+            // float: "left",
+            // marginLeft: "20px",
+            // padding: "50px"
         }
 
     });

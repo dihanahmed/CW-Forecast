@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import { AppBar, Toolbar } from '@material-ui/core';
 import { getUseStyles } from "./DonationStyles";
 import { useEffect } from 'react';
+import { useHistory } from "react-router-dom";
+
 
 
 const useStyles = getUseStyles();
@@ -35,13 +37,19 @@ export default function Donation(props) {
 
 
 	const classes = useStyles();
+	let history = useHistory();
 
 	return (
 		<div className={classes.allcards}>
 
 			<AppBar className={classes.component_don}>
-				<Toolbar className={classes.container_don}>
-					<Typography variant="h4"> Donation </Typography>
+				<Toolbar >
+					<div className={classes.back_btn}>
+						<button onClick={() => history.goBack()}>Back</button>
+					</div>
+					<div className={classes.container_don}>
+						<Typography variant="h4"> Donation </Typography>
+					</div>
 				</Toolbar>
 			</AppBar>
 

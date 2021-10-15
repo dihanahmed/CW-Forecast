@@ -66,13 +66,13 @@ class DonationForm extends Component {
 
         return (
             <div>
-                <legend>Donation Form</legend>
+                <legend className='head_donor'>Donation Form</legend>
                 <form onSubmit={this.onSubmit}>
                     <div className="container_donor">
 
                         <div className='text_donor'>
 
-                            <div class="row">
+                            <div className="row">
 
                                 <div class="col-25">
                                     <label for="dname">Donor Name</label>
