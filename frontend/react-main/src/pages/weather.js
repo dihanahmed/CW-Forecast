@@ -33,8 +33,8 @@ class Weather extends Component {
 
     }
 
-    onSubmit(event) {
-        event.preventDefault()
+    onSubmitCurrent() {
+
         axios.get('http://localhost:8001/getWeather')
             .then((response) => {
                 console.log(response.data);
@@ -69,13 +69,17 @@ class Weather extends Component {
                                         <input id="city" type='text' placeholder='cityName'
                                             className='form-control from-group' />
 
-                                        <input type='submit' className='btn btn-danger btn-block' value='Show' />
-
                                         <div>
-                                            <input type='submit' className="allweather" value='Current Location Weather' />
+                                            <input type='submit' className='btn btn-danger btn-block' value='Show' />
                                         </div>
-
                                     </form>
+
+                                    <div >
+                                        <input onClick={() => { this.onSubmitCurrent() }} type='submit' className="allweather" value='Current Location Weather' />
+                                    </div>
+
+
+
                                 </div>
                             </div>
 
