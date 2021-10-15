@@ -57,8 +57,8 @@ export class CityWeatherDataCard extends Component {
             else if (weather == "Rainy") {
                 document.body.style.backgroundImage = `url(${Storm})`;
             }
-            else if (weather == "Humid and Partly Cloudy" && time > '5') {
-                document.body.style.backgroundImage = `url(${night})`;
+            else if (weather == "Humid and Partly Cloudy") {
+                document.body.style.backgroundImage = `url(${Midnoon})`;
             }
             else if (weather == "Overcast") {
                 document.body.style.backgroundImage = `url(${Storm})`;
