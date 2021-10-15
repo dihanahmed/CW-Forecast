@@ -31,13 +31,19 @@ const cities = {
     GAZIPUR: {
         latitude: 23.999941,
         longitude: 90.420273
+    },
+    MOSCOW:{
+        latitude:55.7558,
+        longitude:37.6173
     }
 
 }
 
 fetchCoordinate = (city) => {
     const cityData = cities[city];
-    if (cityData === null || cityData === undefined) return { successful: false }
+
+    if (cityData === null || cityData === undefined) return {successful: false}
+
     cityData.successful = true;
     return cities[city];
 

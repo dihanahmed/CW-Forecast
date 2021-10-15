@@ -49,16 +49,15 @@ class DonationForm extends Component {
         }
 
         axios.post('http://localhost:8001/donation-api/donate', registered)
-            .then((response) => {
-                console.log(this.state);
-                axios.get('http://localhost:8001/payment').then((response) => {
-                    const url = response.data.redirectURL;
-                    window.location.href = url;
-                })
-                this.setState({ redirect: true })
-            });
 
-
+        .then((response) => {
+            console.log(this.state);
+            axios.post('http://localhost:8001/payment',{total_amount:this.props.location.state.treeID}).then((response) =>{
+                const url = response.data.redirectURL;
+               window.location.href = url;
+            })
+          this.setState({ redirect: true })
+        });
 
     }
 

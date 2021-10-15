@@ -100,13 +100,55 @@ export default function Donation(props) {
 					</CardContent>
 				</CardActionArea>
 				<CardActions>
-					<Button size="small" color="primary" className={classes.btn} onClick={() => { handleRoute(3) }}>
-						Donate
-					</Button>
+				<Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(100)}}>
+					Donate
+				</Button>
 				</CardActions>
 			</Card>
+	  <br/>
 
-		</div>
+	  
+
+	  <Card className={classes.root2}>
+		<CardActionArea>
+		  <CardMedia className={classes.media2}/>
+		  <CardContent>
+			<Typography gutterBottom variant="h5" component="h2">
+			  Donation-2
+			</Typography>
+			<Typography variant="body2" color="textSecondary" component="p">
+			  300 taka
+			</Typography>
+		  </CardContent>
+		</CardActionArea>
+		<CardActions>
+		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(300)}}>
+			Donate
+		  </Button>
+		</CardActions>
+	  </Card>
+	  <br/>
+
+	  <Card className={classes.root3}>
+		<CardActionArea>
+		  <CardMedia className={classes.media3}/>
+		  <CardContent>
+			<Typography gutterBottom variant="h5" component="h2">
+			  Donation-3
+			</Typography>
+			<Typography variant="body2" color="textSecondary" component="p">
+			  500 taka
+			</Typography>
+		  </CardContent>
+		</CardActionArea>
+		<CardActions>
+		  <Button size="small" color="primary" className={classes.btn} onClick={()=>{handleRoute(500)}}>
+			Donate
+		  </Button>
+		</CardActions>
+	  </Card>
+
+	  </div>
 	)
 }
 

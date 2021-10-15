@@ -19,11 +19,14 @@
     "mongoose": "^5.13.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "node-navigator": "^1.0.1",
     "sslcommerz": "^1.6.6",
     "sslcommerz-lts": "^1.0.1"
   },
   "devDependencies": {
+    "ipapi.co": "^0.3.0",
     "nodemon": "^2.0.9",
+    "request": "^2.88.2",
     "sessionstorage": "^0.1.0"
   }
 }
