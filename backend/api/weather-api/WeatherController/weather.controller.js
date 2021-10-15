@@ -7,6 +7,10 @@ const options = {
     units: 'si',
     exclude: 'minutely,hourly,daily,hourly'
 }
+const options2={
+    units: "si",
+    exclude: 'currently,minutely,daily'
+}
 
 fetchAvailableCities = (req, res) => {
     res.send(city.fetchCities);
@@ -33,7 +37,14 @@ fetchWeatherByCity =(req,res)=>{
     if(!coordinate.successful) return res.json({successful: false});
     coordinateWeather(coordinate.latitude,coordinate.longitude,res);
 }
-
+fetchWeatherByCityAndHourly=(req,res)=>{
+    let city = req.body.city.toString().toUpperCase();
+    let coordinate=cityInfo.fetchCoordinate(city);
+    if(!coordinate.successful)return res.json({successful: false});
+    forecastIo.forecast(coordinate.latitude, coordinate.longitude, options2).then(function (data) {
+        res.json(data)
+    });
+}
 getLocationByGeolocation = (req,res)=>{
     const { Navigator } = require("node-navigator");
 
@@ -51,10 +62,15 @@ getLocationByGeolocation = (req,res)=>{
     });
 }
 
-
+function getWeather(req,res) {
+    let city = req.body.city.toString().toUpperCase();
+    let coordinate = cityInfo.fetchCoordinate(city);
+    coordinateWeather(req.body.city,options2)
+}
 module.exports = {
     fetchWeatherByCoordinate,
     fetchWeatherByCity,
     fetchAvailableCities,
-    getLocationByGeolocation
+    getLocationByGeolocation,
+    fetchWeatherByCityAndHourly
 }
