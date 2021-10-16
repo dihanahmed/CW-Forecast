@@ -18,6 +18,23 @@
     padding: 20px;
 }
 
+.wholeForm {
+  margin-top: 67px;
+}
+
+.dFormBar {
+  background: '#C6CAB1';
+  color: 'black'
+}
+
+.headingForm {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  flex-grow: 1;
+  color: black;
+}
+
 /* .row {
   justify-content: center;
     align-items: center;
@@ -52,18 +69,23 @@
   } */
 
   .col-25 {
-    padding-left: 300px;
+    padding-left: 180px;
     /* float: left; */
     width: 50%;
-    margin-top: 6px; 
+    /* margin-top: 2px;  */
+    font-size: 30px;
     
     /* border: 1px solid #000000; */
   }
   
   .col-75 {
     /* float: left; */
+    padding-top: 13px;
     width: 50%;
     margin-top: 6px;
+    /* padding-left: 20px; */
+    align-items: center;
+    
     /* border: 1px solid #000000; */
   }
   
@@ -86,11 +108,21 @@
   .text_donor{
     justify-content: center;
     align-items: center;
-    width: 93%;
+    width: 50%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+  }
+
+  .back_donor {
+    background-color: hsl(0, 90%, 41%);
+    color: white;
+    margin: -9px 210px;
+    padding: 12px 70px;
+    border: none;
+    border-radius: 8px;
+    width: 35%
   }
 
   
