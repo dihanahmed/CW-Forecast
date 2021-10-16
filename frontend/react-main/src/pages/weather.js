@@ -56,7 +56,7 @@ class Weather extends Component {
                 <div style={{marginTop: 80}}/>
                 <Container className="d-flex vh-100">
                     <Row className="m-auto ">
-                        <Card style={{width: window.innerWidth - 200}}>
+                        <Card style={{width: window.innerWidth - 300}}>
 
 
                             <Card.Title>
