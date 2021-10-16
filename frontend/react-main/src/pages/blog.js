@@ -13,7 +13,9 @@ class Blogpage extends React.Component {
         blogs: []
     }
     Abcd() {
-        document.body.style.backgroundImage = blogbackground;
+        console.log("?")
+        document.body.style.backgroundImage = "url('/image/ultano_nouka.jpg')";
+        document.body.style.backgroundAttachment = "fixed";
 
     };
     // useEffect(async () => {
@@ -35,9 +37,7 @@ class Blogpage extends React.Component {
 
 
         return (
-            <div style={{
-                backgroundImage: `url(${blogbackground})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh', backgroundAttachment: "fixed"
-            }}>
+           <div>
 
 
                 <BlogNavbar classes={classes} onClick={() => {
