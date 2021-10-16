@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { AppBar, Toolbar } from '@material-ui/core';
+import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 
 import axios from 'axios';
 
@@ -37,7 +42,6 @@ class DonationForm extends Component {
         })
     }
 
-
     onSubmit(event) {
         event.preventDefault()
 
@@ -64,55 +68,72 @@ class DonationForm extends Component {
 
     render() {
 
+
         return (
             <div>
-                <legend className='head_donor'>Donation Form</legend>
-                <form onSubmit={this.onSubmit}>
-                    <div className="container_donor">
 
-                        <div className='text_donor'>
+                <AppBar style={{ background: '#C6CAB1' }} className="dFormBar">
+                    <Toolbar >
+                        <div className="headingForm">
+                            <Typography style={{ textColor: 'black' }} variant="h4"> Donation Form</Typography>
+                        </div>
+                    </Toolbar>
+                </AppBar>
 
-                            <div className="row">
 
-                                <div class="col-25">
-                                    <label for="dname">Donor Name</label>
+                <div className="wholeForm">
+                    <form onSubmit={this.onSubmit}>
+                        <div className="container_donor">
+
+                            <div className='text_donor'>
+
+                                <div className="row">
+
+                                    <div class="col-25">
+                                        <label for="dname">Donor Name</label>
+                                    </div>
+
+                                    <div class="col-75">
+                                        <input className="donorname" type='text' onChange={this.changeDonorName} value={this.state.donorName} />
+                                    </div>
                                 </div>
 
-                                <div class="col-75">
-                                    <input className="donorname" type='text' onChange={this.changeDonorName} value={this.state.donorName} />
+
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="demail">Email</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input className="email" type='text' onChange={this.changeEmail} value={this.state.email} />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="dphone">Phone</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input className="phone" type='text' onChange={this.changePhone} value={this.state.phone} />
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="bothbtn">
+                                <div className="submitbtn">
+                                    <input className="submit_donor" type='submit' value='Submit' />
+                                </div>
+
+                                <div className="backbutton">
+                                    <input onClick={() => this.props.history.goBack()} className="back_donor" type='submit' value='Back' />
                                 </div>
                             </div>
 
-
-                            <div class="row">
-                                <div class="col-25">
-                                    <label for="demail">Email</label>
-                                </div>
-                                <div class="col-75">
-                                    <input className="email" type='text' onChange={this.changeEmail} value={this.state.email} />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-25">
-                                    <label for="dphone">Phone</label>
-                                </div>
-                                <div class="col-75">
-                                    <input className="phone" type='text' onChange={this.changePhone} value={this.state.phone} />
-
-                                </div>
-                            </div>
 
                         </div>
 
-                        <div className="submitbtn">
-                            <input className="submit_donor" type='submit' value='Submit' />
-                        </div>
-
-
-                    </div>
-
-                </form>
+                    </form>
+                </div>
             </div>
         );
     }
