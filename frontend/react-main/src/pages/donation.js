@@ -32,6 +32,7 @@ export default function Donation(props) {
 	const Abcd = () => {
 		document.body.style.backgroundImage = donationBack;
 		document.body.style.backgroundAttachment = "fixed";
+		document.body.classList.add("no-sroll")
 
 	};
 	useEffect(async () => {
@@ -41,11 +42,12 @@ export default function Donation(props) {
 
 	const classes = useStyles();
 	let history = useHistory();
+	//document.body.style.overflow = "hidden";
 
 	return (
 		<div style={{
 			backgroundImage: `url(${donationBack})`,
-			backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
+			backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh', overflow: 'hidden'
 		}}>
 			<div className={classes.allcards}>
 
