@@ -13,7 +13,7 @@ const options = {
 }
 const options2={
     units: "si",
-    exclude: 'currently,minutely,daily'
+    exclude: 'minutely,daily'
 }
 
 fetchAvailableCities = (req, res) => {
@@ -87,7 +87,24 @@ getLocationByGeolocation = (req,res)=>{
     coordinateWeather(req.body.city,options2)
 }*/
 
+getHourlyWeatherFromCurrent = (req, res) => {
+    const { Navigator } = require("node-navigator");
 
+    const navigator = new Navigator();
+
+    navigator.geolocation.getCurrentPosition((response, error) => {
+        if (error) res.send(error);
+        else {
+            let latitude = response["latitude"]
+            let longitude = response["longitude"];
+            forecastIo.forecast(latitude, longitude, options2).then(function (data) {
+                res.json(data)
+            });
+
+        }
+    });
+
+}
 getMamun = (req, res) => {
     let city = req.body.city.toString().toUpperCase();
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9dd687e56990c001e77aa23b2db5ab5c`
@@ -135,5 +152,6 @@ module.exports = {
     getLocationByGeolocation,
     fetchWeatherByCityAndHourly,
     getMamun,
-    getCityName
+    getCityName,
+    getHourlyWeatherFromCurrent
 }
