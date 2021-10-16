@@ -27,7 +27,7 @@ export default function Aboutus() {
                 </div>
                 <div className={classes.allcards}>
 
-                    <AppBar className={classes.component}>
+                    {/* <AppBar className={classes.component}>
                         <Toolbar >
                             <div className={classes.back_btn_about}>
                                 <button onClick={() => history.goBack()}>Back</button>
@@ -36,7 +36,11 @@ export default function Aboutus() {
                                 <Typography variant="h4"> About Us </Typography>
                             </div>
                         </Toolbar>
-                    </AppBar>
+                    </AppBar> */}
+
+                    <div>
+                        <BaseNavBar />
+                    </div>
 
                     <Card className={classes.root1}>
                         <CardActionArea>
