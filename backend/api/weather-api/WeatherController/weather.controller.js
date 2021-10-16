@@ -44,11 +44,25 @@ fetchWeatherByCity =(req,res)=>{
 }
 fetchWeatherByCityAndHourly=(req,res)=>{
     let city = req.body.city.toString().toUpperCase();
-    let coordinate=cityInfo.fetchCoordinate(city);
-    if(!coordinate.successful)return res.json({successful: false});
-    forecastIo.forecast(coordinate.latitude, coordinate.longitude, options2).then(function (data) {
+/*    let coordinate=cityInfo.fetchCoordinate(city);
+    if(!coordinate.successful)return res.json({successful: false});*/
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9dd687e56990c001e77aa23b2db5ab5c`
+    request({url: url, json: true}, function (error, response) {
+        if (error) {
+            console.log('Unable to connect to Forecast API');
+        } else {
+/*
+            coordinateWeather(response.body.coord.lat,response.body.coord.lon,res);
+*/
+            forecastIo.forecast(response.body.coord.lat, response.body.coord.lon, options2).then(function (data) {
+                res.json(data)
+            });
+
+        }
+    })
+  /*  forecastIo.forecast(coordinate.latitude, coordinate.longitude, options2).then(function (data) {
         res.json(data)
-    });
+    });*/
 }
 getLocationByGeolocation = (req,res)=>{
     const { Navigator } = require("node-navigator");
