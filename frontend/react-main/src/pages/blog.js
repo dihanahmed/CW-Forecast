@@ -5,6 +5,7 @@ import axios from 'axios';
 import { BlogSummary } from "./blog-post/Components/BlogSummary";
 import { BaseNavBar } from "./components/BaseNavBar";
 import { useEffect } from 'react';
+import blogbackground from '../images/blog5.jpg'
 
 class Blogpage extends React.Component {
 
@@ -12,7 +13,7 @@ class Blogpage extends React.Component {
         blogs: []
     }
     Abcd() {
-        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundImage = blogbackground;
 
     };
     // useEffect(async () => {
@@ -34,7 +35,9 @@ class Blogpage extends React.Component {
 
 
         return (
-            <div>
+            <div style={{
+                backgroundImage: `url(${blogbackground})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh'
+            }}>
 
 
                 <BlogNavbar classes={classes} onClick={() => {
