@@ -47,30 +47,7 @@ export class CityWeatherDataCard extends Component {
 
         console.log(weather)
 
-        function backgroundChange(weather, time) {
 
-            console.log(time);
-            if (weather === "Humid and Mostly Cloudy") {
-                document.body.style.backgroundImage = `url(${Midnoon})`;
-                // console.log("gese?");
-            }
-            else if (weather === "Rainy") {
-                document.body.style.backgroundImage = `url(${Storm})`;
-            }
-            else if (weather === "Humid and Partly Cloudy") {
-                document.body.style.backgroundImage = `url(${Midnoon})`;
-            }
-            else if (weather === "Overcast") {
-                document.body.style.backgroundImage = `url(${Storm})`;
-            }
-
-            document.body.style.backgroundAttachment="fixed";
-
-
-
-        }
-
-        backgroundChange(weather, time);
         return (
 
 

@@ -3,9 +3,41 @@ import axios from "axios";
 import {BaseNavBar} from "./components/BaseNavBar";
 import {Card, Container, Row} from "react-bootstrap";
 import {CityWeatherDataCard} from "./Weather/Components/cityWeatherDataCard";
+import Midnoon from "../images/noon4.jpg";
+import Storm from "../images/Storm.jpg";
+
+
+
+
+
 
 
 class Weather extends Component {
+
+
+     backgroundChange(weather, time) {
+
+        console.log(time);
+        if (weather === "Humid and Mostly Cloudy") {
+            document.body.style.backgroundImage = `url(${Midnoon})`;
+            // console.log("gese?");
+        }
+        else if (weather === "Rainy") {
+            document.body.style.backgroundImage = `url(${Storm})`;
+        }
+        else if (weather === "Humid and Partly Cloudy") {
+            document.body.style.backgroundImage = `url(${Midnoon})`;
+        }
+        else if (weather === "Humid and Overcast") {
+            document.body.style.backgroundImage = `url(${Storm})`;
+        }
+
+        document.body.style.backgroundAttachment="fixed";
+
+
+
+    }
+
 
     state = {
         cityName: "",
@@ -28,7 +60,18 @@ class Weather extends Component {
                     cityData: response.data,
                     cityName: cityValue
                 })
+
+                let truth;
+                console.log(truth=  response.data.currently !== undefined)
+                if(truth){
+                    console.log("CHANGE")
+                    this.backgroundChange(response.data.currently.summary,
+                        new Date(response.data.currently.time * 1000).getHours()
+                    )
+                }
             });
+
+
 
     }
 
@@ -42,7 +85,17 @@ class Weather extends Component {
                 this.setState({
                     cityData: response.data,
                     cityName: "Your Residence"
-                })
+                });
+                let truth;
+                console.log(truth=  response.data.currently !== undefined)
+                if(truth){
+                    console.log("CHANGE")
+                    this.backgroundChange(response.data.currently.summary,
+                        new Date(response.data.currently.time * 1000).getHours()
+                        )
+                }
+
+
             });
 
     }
