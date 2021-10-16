@@ -13,7 +13,7 @@ const options = {
 }
 const options2={
     units: "si",
-    exclude: 'currently,minutely,daily'
+    exclude: 'minutely,daily'
 }
 
 fetchAvailableCities = (req, res) => {
