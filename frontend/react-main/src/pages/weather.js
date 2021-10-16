@@ -33,6 +33,9 @@ class Weather extends Component {
         else if (weather === "Humid and Overcast") {
             document.body.style.backgroundImage = `url(${Storm})`;
         }
+        else if(weather.toUpperCase() === "CLEAR"){
+            document.body.style.backgroundImage = `url(${Midnoon})`;
+        }
 
         document.body.style.backgroundAttachment="fixed";
 
