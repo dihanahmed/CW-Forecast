@@ -13,8 +13,8 @@ const useStyles = makeStyles({
     justifyContent: "center",
   },
   design: {
-    backgroundImage: `url(${Background})`,
-    backgroundPosition: "center",
+    backgroundImage: `url('/image/ultano_nouka.jpg')`,
+    //backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     width: "100vw",
