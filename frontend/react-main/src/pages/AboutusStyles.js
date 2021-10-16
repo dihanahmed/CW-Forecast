@@ -20,7 +20,9 @@ export function getUseStyles() {
         },
         container: {
             justifyContent: 'center',
-            height: '80px'
+            display: 'flex',
+            textAlign: 'center',
+            flexGrow: '1'
         },
 
         pidea: {

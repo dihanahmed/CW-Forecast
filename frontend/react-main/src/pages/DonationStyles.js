@@ -1,17 +1,20 @@
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Background1 from "../images/pexels-felix-mittermeier-957024.jpg";
 import Background2 from "../images/media2.jpg";
 import Background3 from "../images/shobuj.jpg";
 
 export function getUseStyles() {
     return makeStyles({
-        component: {
+        component_don: {
             background: '#C6CAB1',
             color: 'black'
         },
-        container: {
+        container_don: {
             justifyContent: 'center',
-            height: '80px'
+            display: 'flex',
+            textAlign: 'center',
+            flexGrow: '1'
+            // height: '80px'
         },
 
         root1: {
@@ -65,6 +68,11 @@ export function getUseStyles() {
             maxWidth: '2000px',
             display: 'flex',
             flexDirection: 'wrap',
+        },
+        back_btn: {
+            // float: "left",
+            // marginLeft: "20px",
+            // padding: "50px"
         }
 
     });

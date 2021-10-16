@@ -16,6 +16,7 @@ const useStyles = getUseStyles();
 export default function Aboutus() {
 
     const classes = useStyles();
+    let history = useHistory();
 
     return (
         <>
@@ -27,8 +28,13 @@ export default function Aboutus() {
                 <div className={classes.allcards}>
 
                     <AppBar className={classes.component}>
-                        <Toolbar className={classes.container}>
-                            <Typography variant="h4"> About Us </Typography>
+                        <Toolbar >
+                            <div className={classes.back_btn_about}>
+                                <button onClick={() => history.goBack()}>Back</button>
+                            </div>
+                            <div className={classes.container}>
+                                <Typography variant="h4"> About Us </Typography>
+                            </div>
                         </Toolbar>
                     </AppBar>
 
