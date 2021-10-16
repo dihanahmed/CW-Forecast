@@ -13,7 +13,7 @@ const options = {
 }
 const options2={
     units: "si",
-    exclude: 'currently,minutely,daily'
+    exclude: 'minutely,daily'
 }
 
 fetchAvailableCities = (req, res) => {
@@ -23,6 +23,8 @@ fetchAvailableCities = (req, res) => {
 function coordinateWeather(latitude, longitude, res) {
     forecastIo.forecast(latitude, longitude, options).then(function (data) {
         res.json(data)
+    }).catch(function () {
+        res.send(404)
     });
 }
 
@@ -44,11 +46,31 @@ fetchWeatherByCity =(req,res)=>{
 }
 fetchWeatherByCityAndHourly=(req,res)=>{
     let city = req.body.city.toString().toUpperCase();
-    let coordinate=cityInfo.fetchCoordinate(city);
-    if(!coordinate.successful)return res.json({successful: false});
-    forecastIo.forecast(coordinate.latitude, coordinate.longitude, options2).then(function (data) {
+/*    let coordinate=cityInfo.fetchCoordinate(city);
+    if(!coordinate.successful)return res.json({successful: false});*/
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9dd687e56990c001e77aa23b2db5ab5c`
+    request({url: url, json: true}, function (error, response) {
+        if (error) {
+            res.json({successful: false});
+        } else {
+/*
+            coordinateWeather(response.body.coord.lat,response.body.coord.lon,res);
+*/
+            //console.log(response)
+            if(response.body.cod=='404') {res.json({successful: false})}
+                else{
+                forecastIo.forecast(response.body.coord.lat, response.body.coord.lon, options2).then(function (data) {
+                    res.json(data)
+                });
+            }
+
+
+
+        }
+    })
+  /*  forecastIo.forecast(coordinate.latitude, coordinate.longitude, options2).then(function (data) {
         res.json(data)
-    });
+    });*/
 }
 getLocationByGeolocation = (req,res)=>{
     const { Navigator } = require("node-navigator");
@@ -73,7 +95,24 @@ getLocationByGeolocation = (req,res)=>{
     coordinateWeather(req.body.city,options2)
 }*/
 
+getHourlyWeatherFromCurrent = (req, res) => {
+    const { Navigator } = require("node-navigator");
 
+    const navigator = new Navigator();
+
+    navigator.geolocation.getCurrentPosition((response, error) => {
+        if (error) res.send(error);
+        else {
+            let latitude = response["latitude"]
+            let longitude = response["longitude"];
+            forecastIo.forecast(latitude, longitude, options2).then(function (data) {
+                res.json(data)
+            });
+
+        }
+    });
+
+}
 getMamun = (req, res) => {
     let city = req.body.city.toString().toUpperCase();
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9dd687e56990c001e77aa23b2db5ab5c`
@@ -82,9 +121,14 @@ getMamun = (req, res) => {
 
     request({url: url, json: true}, function (error, response) {
         if (error) {
-            console.log('Unable to connect to Forecast API');
+            res.json({success: false})
         } else {
-            coordinateWeather(response.body.coord.lat,response.body.coord.lon,res);
+
+            if(response.cod='404') {res.send(404)}
+            else {
+
+                coordinateWeather(response.body.coord.lat,response.body.coord.lon,res);
+            }
 
         }
     })
@@ -104,7 +148,7 @@ getCityName=(req,res)=>{
             let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
             request({url: url, json: true}, function (error, response) {
                 if (error) {
-                    console.log('Unable to connect to Forecast API');
+                   res.json({success: false});
                 } else {
                     res.json(response.body.name);
                 }
@@ -121,5 +165,6 @@ module.exports = {
     getLocationByGeolocation,
     fetchWeatherByCityAndHourly,
     getMamun,
-    getCityName
+    getCityName,
+    getHourlyWeatherFromCurrent
 }

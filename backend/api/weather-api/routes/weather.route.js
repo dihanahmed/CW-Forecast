@@ -13,6 +13,7 @@ var forecastIo = new ForecastIo('2286dd2204e405b21ad2dec95e789d49');
 route.post('/',weatherController.getMamun);
 route.get('/',weatherController.getLocationByGeolocation);
 route.post('/hourly',weatherController.fetchWeatherByCityAndHourly)
+route.get('/hourly',weatherController.getHourlyWeatherFromCurrent)
 route.post('/mamun',weatherController.getMamun)
 route.get('/boom',weatherController.getCityName)
 //
