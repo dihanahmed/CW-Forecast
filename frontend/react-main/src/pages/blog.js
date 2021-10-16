@@ -36,7 +36,7 @@ class Blogpage extends React.Component {
 
         return (
             <div style={{
-                backgroundImage: `url(${blogbackground})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh'
+                backgroundImage: `url(${blogbackground})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh', backgroundAttachment: "fixed"
             }}>
 
 

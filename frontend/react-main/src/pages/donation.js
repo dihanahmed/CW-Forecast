@@ -11,6 +11,7 @@ import { getUseStyles } from "./DonationStyles";
 import { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import donationBack from '../images/donationback5.jpg'
+import { BaseNavBar } from './components/BaseNavBar';
 
 
 
@@ -30,6 +31,7 @@ export default function Donation(props) {
 
 	const Abcd = () => {
 		document.body.style.backgroundImage = donationBack;
+		document.body.style.backgroundAttachment = "fixed";
 
 	};
 	useEffect(async () => {
@@ -47,7 +49,7 @@ export default function Donation(props) {
 		}}>
 			<div className={classes.allcards}>
 
-				<AppBar className={classes.component_don}>
+				{/* <AppBar className={classes.component_don}>
 					<Toolbar >
 						<div className={classes.back_btn}>
 							<button onClick={() => history.goBack()}>Back</button>
@@ -56,9 +58,11 @@ export default function Donation(props) {
 							<Typography variant="h4"> Donation </Typography>
 						</div>
 					</Toolbar>
-				</AppBar>
+				</AppBar> */}
 
-
+				<div>
+					<BaseNavBar />
+				</div>
 
 
 
