@@ -40,12 +40,7 @@ import Midnoon from "../../../images/noon4.jpg";
 export class CityWeatherDataCard extends Component {
     render() {
 
-        const weather = this.props.cityData.currently.summary;
-        const time = new Date(this.props.cityData.currently.time * 1000).getHours();
-        //const hour = time.getHours();
-        // console.log(time);
 
-        console.log(weather)
 
 
         return (
@@ -63,27 +58,27 @@ export class CityWeatherDataCard extends Component {
                         {/* <div styles={{ backgroundImage: `url(Storm)` }}> </div> */}
                         {/* <div styles={{ backgroundImage: `url(${Storm})` }}> </div> */}
                         <div className="d-flex">
-                            <h6>{new Date(this.props.cityData.currently.time * 1000).toLocaleTimeString()}</h6>
+                            <h6>{new Date(this.props.cityData.hourly.data[this.props.index].time * 1000).toLocaleTimeString()}</h6>
                         </div>
                         <div className="row">
                         <div className="d-flex flex-column temp  mb-3 col-sm-6">
                             <h1 className="mb-0 font-weight-bold"
-                                id="heading"> {this.props.cityData.currently.temperature}° C </h1>
-                            <span className="small grey">{this.props.cityData.currently.summary}</span>
+                                id="heading"> {this.props.cityData.hourly.data[this.props.index].temperature}° C </h1>
+                            <span className="small grey">{this.props.cityData.hourly.data[this.props.index].summary}</span>
                         </div>
                         <div className="d-flex col-sm-6">
                             <div className="temp-details flex-grow-1">
                                 <p className="my-1"><img alt="Wind Speed" src="/image/weather-wind.png"
                                     height="17px" />
-                                    <span>{this.props.cityData.currently.windSpeed} Km/h </span>
+                                    <span>{this.props.cityData.hourly.data[this.props.index].windSpeed} Km/h </span>
                                 </p>
                                 <p className="my-1"><img alt="Precipitation"
                                     src="/image/weather-precipitation.png"
                                     height="17px" />
-                                    <span> {this.props.cityData.currently.precipProbability * 100}% </span></p>
+                                    <span> {this.props.cityData.hourly.data[this.props.index].precipProbability * 100}% </span></p>
                                 <p className="my-1"><img alt="UV Index" src="/image/weather-uv.png"
                                     height="17px" />
-                                    <span> {this.props.cityData.currently.uvIndex}h </span></p>
+                                    <span> {this.props.cityData.hourly.data[this.props.index].uvIndex}h </span></p>
                             </div>
 
                             {/* <div><img src="https://i.imgur.com/Qw7npIg.png" width="100px" /></div> */}

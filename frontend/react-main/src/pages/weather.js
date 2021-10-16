@@ -6,6 +6,8 @@ import {CityWeatherDataCard} from "./Weather/Components/cityWeatherDataCard";
 import Midnoon from "../images/noon4.jpg";
 import Storm from "../images/Storm.jpg";
 
+import {rgbToHex} from "@material-ui/core";
+
 
 
 
@@ -53,22 +55,24 @@ class Weather extends Component {
     onSubmit(event) {
         event.preventDefault()
         const cityValue = document.getElementById("city").value;
-        axios.post('http://localhost:8001/getWeather', {city: cityValue})
+        axios.post('http://localhost:8001/getWeather/hourly', {city: cityValue})
             .then((response) => {
+                let truth;
+                console.log(truth=  response.data.currently !== undefined)
+                if(truth){
+                    response.data.hourly.data[0] = response.data.currently;
+                    this.backgroundChange(response.data.currently.summary,
+                        new Date(response.data.currently.time * 1000).getHours()
+                    )
+                }
+
                 console.log(response.data);
                 this.setState({
                     cityData: response.data,
                     cityName: cityValue
                 })
 
-                let truth;
-                console.log(truth=  response.data.currently !== undefined)
-                if(truth){
-                    console.log("CHANGE")
-                    this.backgroundChange(response.data.currently.summary,
-                        new Date(response.data.currently.time * 1000).getHours()
-                    )
-                }
+
             });
 
 
@@ -79,21 +83,23 @@ class Weather extends Component {
         if (this.submitted) return;
         this.submitted = true;
 
-        axios.get('http://localhost:8001/getWeather')
+        axios.get('http://localhost:8001/getWeather/hourly')
             .then((response) => {
+                let truth;
+                console.log(truth=  response.data.currently !== undefined)
+                if(truth){
+                    response.data.hourly.data[0] = response.data.currently;
+                    this.backgroundChange(response.data.currently.summary,
+                        new Date(response.data.currently.time * 1000).getHours()
+                    )
+                }
+
                 console.log(response.data);
                 this.setState({
                     cityData: response.data,
                     cityName: "Your Residence"
                 });
-                let truth;
-                console.log(truth=  response.data.currently !== undefined)
-                if(truth){
-                    console.log("CHANGE")
-                    this.backgroundChange(response.data.currently.summary,
-                        new Date(response.data.currently.time * 1000).getHours()
-                        )
-                }
+
 
 
             });
@@ -109,7 +115,7 @@ class Weather extends Component {
                 <div style={{marginTop: 80}}/>
                 <Container className="d-flex vh-100">
                     <Row className="m-auto ">
-                        <Card style={{width: window.innerWidth - 300}}>
+                        <Card className="transparentBG" style={{width: window.innerWidth - 300}}>
 
 
                             <Card.Title>
@@ -140,52 +146,21 @@ class Weather extends Component {
 
                             {this.state.cityData.currently !== undefined ? (<div className="d-flex">
 
-                                <h6 style={{marginLeft:20}} className="justify-content-center">{this.state.cityName}</h6>
+                                <h6 style={{marginLeft: 20}}
+                                    className="justify-content-center">{this.state.cityName}</h6>
 
                             </div>) : (<></>)}
 
                             <div id="weather-data">
 
 
-                                {
-                                    this.state.cityData.currently !== undefined ?
 
-                                        (<CityWeatherDataCard cityName={this.state.cityName}
-                                                              cityData={this.state.cityData}/>
-
-                                        ) :
-
-                                        (<>
-
-                                            <div hidden>
-                                                Actual City Data
-                                                {JSON.stringify(this.state.cityData)}
-                                            </div>
-
-                                        </>)}
                             </div>
 
-                            <div id="weather-data">
-                                {
-                                    this.state.cityData.currently !== undefined ?
-
-                                        (<CityWeatherDataCard cityName={this.state.cityName}
-                                                              cityData={this.state.cityData}/>
-
-                                        ) :
-
-                                        (<>
-
-                                            <div hidden>
-                                                Actual City Data
-                                                {JSON.stringify(this.state.cityData)}
-                                            </div>
-
-                                        </>)}
-                            </div>
-
-
-
+                            {this.showWeatherAtXthHour(0)}
+                            {this.showWeatherAtXthHour(5)}
+                            {this.showWeatherAtXthHour(11)}
+                            {this.showWeatherAtXthHour(17)}
 
 
                         </Card>
@@ -195,6 +170,30 @@ class Weather extends Component {
 
             </div>
         );
+    }
+
+    showWeatherAtXthHour(index) {
+        return <div id="weather-data">
+            {
+                this.state.cityData.currently !== undefined ?
+
+                    (<CityWeatherDataCard cityName={this.state.cityName}
+                                          cityData={this.state.cityData}
+                                          index={index}
+
+                        />
+
+                    ) :
+
+                    (<>
+
+                        <div hidden>
+                            Actual City Data
+                            {JSON.stringify(this.state.cityData)}
+                        </div>
+
+                    </>)}
+        </div>;
     }
 }
 
