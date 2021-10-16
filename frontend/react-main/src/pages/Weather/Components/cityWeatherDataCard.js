@@ -64,6 +64,8 @@ export class CityWeatherDataCard extends Component {
                 document.body.style.backgroundImage = `url(${Storm})`;
             }
 
+            document.body.style.backgroundAttachment="fixed";
+
 
 
         }
@@ -86,12 +88,13 @@ export class CityWeatherDataCard extends Component {
                         <div className="d-flex">
                             <h6>{new Date(this.props.cityData.currently.time * 1000).toLocaleTimeString()}</h6>
                         </div>
-                        <div className="d-flex flex-column temp mt-5 mb-3">
+                        <div className="row">
+                        <div className="d-flex flex-column temp  mb-3 col-sm-6">
                             <h1 className="mb-0 font-weight-bold"
                                 id="heading"> {this.props.cityData.currently.temperature}° C </h1>
                             <span className="small grey">{this.props.cityData.currently.summary}</span>
                         </div>
-                        <div className="d-flex">
+                        <div className="d-flex col-sm-6">
                             <div className="temp-details flex-grow-1">
                                 <p className="my-1"><img alt="Wind Speed" src="/image/weather-wind.png"
                                     height="17px" />
@@ -107,6 +110,7 @@ export class CityWeatherDataCard extends Component {
                             </div>
 
                             {/* <div><img src="https://i.imgur.com/Qw7npIg.png" width="100px" /></div> */}
+                        </div>
                         </div>
                     </div>
 
