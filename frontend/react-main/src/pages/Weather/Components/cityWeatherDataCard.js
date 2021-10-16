@@ -82,9 +82,8 @@ export class CityWeatherDataCard extends Component {
 
                         {/* <div style={{ backgroundImage: `url(${Storm})` }}></div> */}
                         {/* <div styles={{ backgroundImage: `url(Storm)` }}> </div> */}
+                        {/* <div styles={{ backgroundImage: `url(${Storm})` }}> </div> */}
                         <div className="d-flex">
-                            {/* <div styles={{ backgroundImage: `url(${Storm})` }}> </div> */}
-                            <h6 className="flex-grow-1">{this.props.cityName}</h6>
                             <h6>{new Date(this.props.cityData.currently.time * 1000).toLocaleTimeString()}</h6>
                         </div>
                         <div className="d-flex flex-column temp mt-5 mb-3">

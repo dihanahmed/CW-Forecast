@@ -84,6 +84,7 @@ getMamun = (req, res) => {
         if (error) {
             console.log('Unable to connect to Forecast API');
         } else {
+            if(response.body.coord === undefined) response.sendStatus(404);
             coordinateWeather(response.body.coord.lat,response.body.coord.lon,res);
 
         }
