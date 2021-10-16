@@ -56,9 +56,15 @@ fetchWeatherByCityAndHourly=(req,res)=>{
 /*
             coordinateWeather(response.body.coord.lat,response.body.coord.lon,res);
 */
-            forecastIo.forecast(response.body.coord.lat, response.body.coord.lon, options2).then(function (data) {
-                res.json(data)
-            });
+            //console.log(response)
+            if(response.body.cod=='404') {res.json({successful: false})}
+                else{
+                forecastIo.forecast(response.body.coord.lat, response.body.coord.lon, options2).then(function (data) {
+                    res.json(data)
+                });
+            }
+
+
 
         }
     })
