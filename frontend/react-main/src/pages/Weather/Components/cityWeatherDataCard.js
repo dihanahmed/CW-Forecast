@@ -93,15 +93,15 @@ export class CityWeatherDataCard extends Component {
                         </div>
                         <div className="d-flex">
                             <div className="temp-details flex-grow-1">
-                                <p className="my-1"><img alt="Wind Speed" src="https://i.imgur.com/B9kqOzp.png"
+                                <p className="my-1"><img alt="Wind Speed" src="/image/weather-wind.png"
                                     height="17px" />
                                     <span>{this.props.cityData.currently.windSpeed} Km/h </span>
                                 </p>
                                 <p className="my-1"><img alt="Precipitation"
-                                    src="https://cdn2.iconfinder.com/data/icons/line-weather/130/Rain-64.png"
+                                    src="/image/weather-precipitation.png"
                                     height="17px" />
                                     <span> {this.props.cityData.currently.precipProbability * 100}% </span></p>
-                                <p className="my-1"><img alt="UV Index" src="https://i.imgur.com/wGSJ8C5.png"
+                                <p className="my-1"><img alt="UV Index" src="/image/weather-uv.png"
                                     height="17px" />
                                     <span> {this.props.cityData.currently.uvIndex}h </span></p>
                             </div>
