@@ -15,7 +15,9 @@
 .component{
     background: rgb(255,255,255);
     color: rgb(0,0,0);
+    font-family: dosis;
 }
 .container{
-    justifyContent: "center",
+    justifyContent: "center";
+    /* font-family: dosis; */
 }

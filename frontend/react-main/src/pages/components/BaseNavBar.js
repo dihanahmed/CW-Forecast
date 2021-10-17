@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     },
     container: {
         justifyContent: "center",
+        fontFamily: "dosis"
     },
     design: {
         backgroundPosition: "center",

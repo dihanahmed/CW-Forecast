@@ -1,12 +1,12 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import {BaseNavBar} from "./components/BaseNavBar";
-import {Card, Container, Row} from "react-bootstrap";
-import {CityWeatherDataCard} from "./Weather/Components/cityWeatherDataCard";
+import { BaseNavBar } from "./components/BaseNavBar";
+import { Card, Container, Row } from "react-bootstrap";
+import { CityWeatherDataCard } from "./Weather/Components/cityWeatherDataCard";
 import Midnoon from "../images/noon4.jpg";
 import Storm from "../images/Storm.jpg";
 
-import {rgbToHex} from "@material-ui/core";
+import { rgbToHex } from "@material-ui/core";
 
 
 
@@ -17,7 +17,7 @@ import {rgbToHex} from "@material-ui/core";
 class Weather extends Component {
 
 
-     backgroundChange(weather, time) {
+    backgroundChange(weather, time) {
 
         console.log(time);
         if (weather === "Humid and Mostly Cloudy") {
@@ -33,11 +33,11 @@ class Weather extends Component {
         else if (weather === "Humid and Overcast") {
             document.body.style.backgroundImage = `url(${Storm})`;
         }
-        else if(weather.toUpperCase() === "CLEAR"){
+        else if (weather.toUpperCase() === "CLEAR") {
             document.body.style.backgroundImage = `url(${Midnoon})`;
         }
 
-        document.body.style.backgroundAttachment="fixed";
+        document.body.style.backgroundAttachment = "fixed";
 
 
 
@@ -58,11 +58,11 @@ class Weather extends Component {
     onSubmit(event) {
         event.preventDefault()
         const cityValue = document.getElementById("city").value;
-        axios.post('http://localhost:8001/getWeather/hourly', {city: cityValue})
+        axios.post('http://localhost:8001/getWeather/hourly', { city: cityValue })
             .then((response) => {
                 let truth;
-                console.log(truth=  response.data.currently !== undefined)
-                if(truth){
+                console.log(truth = response.data.currently !== undefined)
+                if (truth) {
                     response.data.hourly.data[0] = response.data.currently;
                     this.backgroundChange(response.data.currently.summary,
                         new Date(response.data.currently.time * 1000).getHours()
@@ -89,8 +89,8 @@ class Weather extends Component {
         axios.get('http://localhost:8001/getWeather/hourly')
             .then((response) => {
                 let truth;
-                console.log(truth=  response.data.currently !== undefined)
-                if(truth){
+                console.log(truth = response.data.currently !== undefined)
+                if (truth) {
                     response.data.hourly.data[0] = response.data.currently;
                     this.backgroundChange(response.data.currently.summary,
                         new Date(response.data.currently.time * 1000).getHours()
@@ -114,11 +114,11 @@ class Weather extends Component {
         this.onSubmitCurrent();
         return (
             <div>
-                <BaseNavBar/>
-                <div style={{marginTop: 80}}/>
+                <BaseNavBar />
+                <div style={{ marginTop: 80 }} />
                 <Container className="d-flex vh-100">
                     <Row className="m-auto ">
-                        <Card className="transparentBG" style={{width: window.innerWidth - 300}}>
+                        <Card className="transparentBG" style={{ width: window.innerWidth - 750 }}>
 
 
                             <Card.Title>
@@ -130,8 +130,8 @@ class Weather extends Component {
                                     <form onSubmit={this.onSubmit.bind(this)}>
                                         <div className="row">
                                             <div className="col-sm-10"><input id="city" type='text'
-                                                                              placeholder='cityName'
-                                                                              className='form-control from-group'/>
+                                                placeholder='cityName'
+                                                className='form-control from-group' />
                                             </div>
 
                                             <div className="col-sm-2">
@@ -149,7 +149,7 @@ class Weather extends Component {
 
                             {this.state.cityData.currently !== undefined ? (<div className="d-flex">
 
-                                <h6 style={{marginLeft: 20}}
+                                <h6 style={{ marginLeft: 20 }}
                                     className="justify-content-center">{this.state.cityName}</h6>
 
                             </div>) : (<></>)}
@@ -181,10 +181,10 @@ class Weather extends Component {
                 this.state.cityData.currently !== undefined ?
 
                     (<CityWeatherDataCard cityName={this.state.cityName}
-                                          cityData={this.state.cityData}
-                                          index={index}
+                        cityData={this.state.cityData}
+                        index={index}
 
-                        />
+                    />
 
                     ) :
 
