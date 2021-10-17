@@ -101,10 +101,13 @@ class Addpost extends React.Component{
                 <div className= 'container' style={{marginTop:200}}>
                     <div className = 'form-div'>
                         <form onSubmit={this.onSubmit}>
-                            Write your mind
-                            <input type = 'text' placeholder='title' onChange = {this.changeTitle} value = {this.state.title} className = 'form-control from-group'/>
+                            <div style={{backgroundColor:'rgba(255,255,255,.9)'}}>
+                                <h2>What do you wanna write?</h2>
+                            </div>
 
-                            <textarea  placeholder='content/markdown supported' onChange = {this.changeContent} value = {this.state.content} className = 'contentStyle'> </textarea>
+                            <input type = 'text' style={{backgroundColor:'rgba(255,255,255,.9)'}} placeholder='title' onChange = {this.changeTitle} value = {this.state.title} className = 'form-control from-group'/>
+
+                            <textarea  style={{backgroundColor:'rgba(255,255,255,.9)'}} placeholder='content/markdown supported' onChange = {this.changeContent} value = {this.state.content} className = 'contentStyle'> </textarea>
 
                             <input type = 'submit'  className='btn btn-danger btn-block' value = 'Create Post' />
 
