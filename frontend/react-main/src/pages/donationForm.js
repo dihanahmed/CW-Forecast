@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { AppBar, Toolbar } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
+import { BaseNavBar } from './components/BaseNavBar';
 
 import axios from 'axios';
 
@@ -72,13 +73,17 @@ class DonationForm extends Component {
         return (
             <div>
 
-                <AppBar style={{ background: '#C6CAB1' }} className="dFormBar">
+                {/* <AppBar style={{ background: '#C6CAB1' }} className="dFormBar">
                     <Toolbar >
                         <div className="headingForm">
                             <Typography style={{ textColor: 'black' }} variant="h4"> Donation Form</Typography>
                         </div>
                     </Toolbar>
-                </AppBar>
+                </AppBar> */}
+
+                <div>
+                    <BaseNavBar />
+                </div>
 
 
                 <div className="wholeForm">

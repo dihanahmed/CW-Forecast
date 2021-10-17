@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {BaseNavBar} from "./components/BaseNavBar";
+import React, { Component } from 'react';
+import { BaseNavBar } from "./components/BaseNavBar";
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,9 +7,9 @@ import CardActionArea from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import {AppBar, Toolbar} from '@material-ui/core';
-import {getUseStyles} from "./AboutusStyles";
-import {useHistory} from "react-router-dom";
+import { AppBar, Toolbar } from '@material-ui/core';
+import { getUseStyles } from "./AboutusStyles";
+import { useHistory } from "react-router-dom";
 
 const useStyles = getUseStyles();
 
@@ -20,11 +20,11 @@ export default function Aboutus() {
 
     return (
         <>
-            <div style={{overflow: 'hidden'}}>
+            <div style={{ overflow: 'hidden' }}>
                 <div className={classes.full}>
 
 
-                    <div style={{marginTop: 65, textAlign: "center"}}>
+                    <div style={{ marginTop: 65, textAlign: "center" }}>
                         <h2>CW Forecast</h2>
 
                         <h6> A project on Climate Simulation, Weather Forecasting and Weather Related Blogs </h6>
@@ -32,7 +32,7 @@ export default function Aboutus() {
                         <h6>All codes are open sourced. This project can be located in following repositories. </h6>
                         <p><a href="https://github.com/Machine-Learning-Project-LJSD/CW-Forecast.git"> Website </a><a
                             href="https://github.com/Machine-Learning-Project-LJSD/Terrain-Generator.git"> CW-Island </a><a
-                            href="https://github.com/Machine-Learning-Project-LJSD/CW-bot.git"> Bot </a></p>
+                                href="https://github.com/Machine-Learning-Project-LJSD/CW-bot.git"> Bot </a></p>
                     </div>
                     <div className={classes.allcards}>
 
@@ -48,68 +48,68 @@ export default function Aboutus() {
                     </AppBar> */}
 
                         <div>
-                            <BaseNavBar/>
+                            <BaseNavBar />
                         </div>
 
                         <Card className={classes.root1}>
                             <CardActionArea>
-                                <CardMedia className={classes.media1}/>
+                                <CardMedia className={classes.media1} />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                    <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'cinzel' }}>
                                         Sadman Saadat
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" component="p" style={{ fontFamily: 'cinzel' }}>
                                         Email: sadmansaadat26@iut-dhaka.edu
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                <Button size="small" color="primary" className={classes.btn} style={{ fontFamily: 'cinzel' }} onClick={() => {
                                     window.location.href = "https://github.com/Sadman-Saadat"
                                 }}>
                                     Github Profile
                                 </Button>
                             </CardActions>
                         </Card>
-                        <br/>
+                        <br />
 
 
                         <Card className={classes.root2}>
                             <CardActionArea>
-                                <CardMedia className={classes.media2}/>
+                                <CardMedia className={classes.media2} />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                    <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'cinzel' }}>
                                         Khalid Masum
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" component="p" style={{ fontFamily: 'cinzel' }}>
                                         Email: khalidmasum@iut-dhaka.edu
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                <Button size="small" color="primary" style={{ fontFamily: 'cinzel' }} className={classes.btn} onClick={() => {
                                     window.location.href = "https://github.com/Labnann"
                                 }}>
                                     Github Profile
                                 </Button>
                             </CardActions>
                         </Card>
-                        <br/>
+                        <br />
 
                         <Card className={classes.root3}>
                             <CardActionArea>
-                                <CardMedia className={classes.media3}/>
+                                <CardMedia className={classes.media3} />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                    <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'cinzel' }}>
                                         Jisan Anam
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" component="p" style={{ fontFamily: 'cinzel' }}>
                                         Email: jishananam@iut-dhaka.edu
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                <Button size="small" color="primary" style={{ fontFamily: 'cinzel' }} className={classes.btn} onClick={() => {
                                     window.location.href = "https://github.com/Jisan129"
                                 }}>
                                     Github Profile
@@ -119,18 +119,18 @@ export default function Aboutus() {
 
                         <Card className={classes.root4}>
                             <CardActionArea>
-                                <CardMedia className={classes.media4}/>
+                                <CardMedia className={classes.media4} />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Hasnaine Ahmed Dihan
+                                    <Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'cinzel' }}>
+                                        Hasnaine Ahmed
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    <Typography variant="body2" color="textSecondary" component="p" style={{ fontFamily: 'cinzel' }}>
                                         Email: hasnainedihan@iut-dhaka.edu
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                <Button size="small" color="primary" style={{ fontFamily: 'cinzel' }} className={classes.btn} onClick={() => {
                                     window.location.href = "https://github.com/dihanahmed"
                                 }}>
                                     Github Profile
@@ -146,4 +146,4 @@ export default function Aboutus() {
 
 }
 
-export {Aboutus};
+export { Aboutus };

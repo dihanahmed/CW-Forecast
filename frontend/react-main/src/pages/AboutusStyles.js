@@ -12,7 +12,8 @@ export function getUseStyles() {
     return makeStyles({
 
         full: {
-            backgroundColor: '#FFF2D9'
+            backgroundColor: '#FFF2D9',
+            fontFamily: 'cinzel'
         },
         component: {
             background: '#C6CAB1',

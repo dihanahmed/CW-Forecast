@@ -73,11 +73,11 @@ export default function Donation(props) {
 					<CardActionArea>
 						<CardMedia className={classes.media1} />
 						<CardContent>
-							<Typography gutterBottom variant="h5" component="h2">
-								Donation-3
+							<Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'cinzel' }}>
+								Donation-1
 							</Typography>
-							<Typography variant="body2" color="textSecondary" component="p">
-								100 taka
+							<Typography variant="body2" color="textSecondary" component="p" style={{ fontFamily: 'cinzel' }}>
+								100 Taka
 							</Typography>
 						</CardContent>
 					</CardActionArea>
@@ -95,11 +95,11 @@ export default function Donation(props) {
 					<CardActionArea>
 						<CardMedia className={classes.media2} />
 						<CardContent>
-							<Typography gutterBottom variant="h5" component="h2">
+							<Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'cinzel' }}>
 								Donation-2
 							</Typography>
-							<Typography variant="body2" color="textSecondary" component="p">
-								300 taka
+							<Typography variant="body2" color="textSecondary" component="p" style={{ fontFamily: 'cinzel' }}>
+								300 Taka
 							</Typography>
 						</CardContent>
 					</CardActionArea>
@@ -115,11 +115,11 @@ export default function Donation(props) {
 					<CardActionArea>
 						<CardMedia className={classes.media3} />
 						<CardContent>
-							<Typography gutterBottom variant="h5" component="h2">
+							<Typography gutterBottom variant="h5" component="h2" style={{ fontFamily: 'cinzel' }}>
 								Donation-3
 							</Typography>
-							<Typography variant="body2" color="textSecondary" component="p">
-								500 taka
+							<Typography variant="body2" color="textSecondary" component="p" style={{ fontFamily: 'cinzel' }}>
+								500 Taka
 							</Typography>
 						</CardContent>
 					</CardActionArea>

@@ -123,7 +123,7 @@ class Weather extends Component {
 
 
                             <Card.Title>
-                                <div className="text-center">Weather</div>
+                                <div style={{ fontFamily: 'cinzel' }} className="text-center">Weather</div>
                             </Card.Title>
 
                             <div className='container'>
