@@ -8,14 +8,13 @@ import {Link} from "react-router-dom";
 
 const useStyles = makeStyles({
     component: {
-        background: "#FFFFFF",
-        color: "black",
+        background: "#DDDDDDDD",
     },
+
     container: {
         justifyContent: "center",
     },
     design: {
-        backgroundImage: `url(${Background})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

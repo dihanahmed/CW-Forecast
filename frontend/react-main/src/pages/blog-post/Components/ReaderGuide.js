@@ -28,7 +28,7 @@ export function ReaderGuide(props) {
                         <br/>
 
                         <div className="d-flex justify-content-center flex-row">
-                            <div className="btn btn-outline-warning rounded-pill btn-xs" style={{cursor:"pointer"}} onClick={() => {
+                            <div className="btn btn-outline-danger rounded-pill btn-xs" style={{cursor:"pointer"}} onClick={() => {
                                 openBlog()
                             }}>
                                 READ MORE

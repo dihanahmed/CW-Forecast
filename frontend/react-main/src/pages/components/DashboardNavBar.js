@@ -8,7 +8,7 @@ import axios from "axios";
 
 const useStyles = makeStyles({
     component: {
-        background: "#FFFFFF",
+        background: "#DDDDDDDD",
         color: "black",
     },
     container: {
@@ -77,7 +77,7 @@ export function DashboardNavBar(props) {
                 <Typography>
                     {" "}
                     <Link to="/donation" className="navlinks">
-                        About Us
+                        About
                     </Link>{" "}
                 </Typography>
             </div>

@@ -2,14 +2,22 @@ import React from "react";
 import { BaseNavBar } from "./components/BaseNavBar";
 import { Card } from "react-bootstrap";
 import "./climate.css";
+
+
 const Climate = () => {
 
-	document.body.style.backgroundImage = "none";
+	function openANewTab() {
+		window.open("http://127.0.0.1:8080/")
+	}
+
+	window.document.body.style.backgroundImage="url('/image/ultano_nouka.jpg')";
+	window.document.body.style.backgroundAttachment="fixed";
+
 
 	return (
 		<div>
 			<BaseNavBar />
-			<h1>Climate</h1>
+			<h1>ClimateSimulator</h1>
 			<br /><br /><br />
 
 
@@ -25,6 +33,16 @@ const Climate = () => {
 				</iframe>
 
 			</div>
+
+			<button style={
+				{
+					position:"absolute", left:'75%', top: '75%'
+				}
+			}
+					className="btn btn-outline-success" onClick={openANewTab}
+			>Open In A New Tab</button>
+
+
 
 
 

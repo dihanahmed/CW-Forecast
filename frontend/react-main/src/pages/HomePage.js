@@ -1,8 +1,8 @@
 import React from "react";
-import {makeStyles} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import Background from "./../images/green2.jpg";
 import "./HomePage.css";
-import {BaseNavBar} from "./components/BaseNavBar";
+import { BaseNavBar } from "./components/BaseNavBar";
 
 const useStyles = makeStyles({
   component: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
   design: {
     backgroundImage: `url(${Background})`,
-    backgroundPosition: "center",
+    //backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     width: "100vw",
@@ -34,7 +34,7 @@ const Homepage = () => {
     <div>
       <div className={classes.design}>
         <div>
-          <BaseNavBar/>
+          <BaseNavBar />
         </div>
 
 

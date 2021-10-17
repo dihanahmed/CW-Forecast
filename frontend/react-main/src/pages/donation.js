@@ -10,6 +10,8 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import { getUseStyles } from "./DonationStyles";
 import { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
+import donationBack from '../images/donationback5.jpg'
+import { BaseNavBar } from './components/BaseNavBar';
 
 
 
@@ -28,7 +30,9 @@ export default function Donation(props) {
 	}
 
 	const Abcd = () => {
-		document.body.style.backgroundImage = "none";
+		document.body.style.backgroundImage = donationBack;
+		document.body.style.backgroundAttachment = "fixed";
+		document.body.classList.add("no-sroll")
 
 	};
 	useEffect(async () => {
@@ -38,87 +42,95 @@ export default function Donation(props) {
 
 	const classes = useStyles();
 	let history = useHistory();
+	//document.body.style.overflow = "hidden";
 
 	return (
-		<div className={classes.allcards}>
+		<div style={{
+			backgroundImage: `url(${donationBack})`,
+			backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh', overflow: 'hidden'
+		}}>
+			<div className={classes.allcards}>
 
-			<AppBar className={classes.component_don}>
-				<Toolbar >
-					<div className={classes.back_btn}>
-						<button onClick={() => history.goBack()}>Back</button>
-					</div>
-					<div className={classes.container_don}>
-						<Typography variant="h4"> Donation </Typography>
-					</div>
-				</Toolbar>
-			</AppBar>
+				{/* <AppBar className={classes.component_don}>
+					<Toolbar >
+						<div className={classes.back_btn}>
+							<button onClick={() => history.goBack()}>Back</button>
+						</div>
+						<div className={classes.container_don}>
+							<Typography variant="h4"> Donation </Typography>
+						</div>
+					</Toolbar>
+				</AppBar> */}
 
-
-
-
-
-
-			<Card className={classes.root1}>
-				<CardActionArea>
-					<CardMedia className={classes.media1} />
-					<CardContent>
-						<Typography gutterBottom variant="h5" component="h2">
-							Donation-3
-						</Typography>
-						<Typography variant="body2" color="textSecondary" component="p">
-							100 taka
-						</Typography>
-					</CardContent>
-				</CardActionArea>
-				<CardActions>
-					<Button size="small" color="primary" className={classes.btn} onClick={() => { handleRoute(100) }}>
-						Donate
-					</Button>
-				</CardActions>
-			</Card>
-			<br />
+				<div>
+					<BaseNavBar />
+				</div>
 
 
 
-			<Card className={classes.root2}>
-				<CardActionArea>
-					<CardMedia className={classes.media2} />
-					<CardContent>
-						<Typography gutterBottom variant="h5" component="h2">
-							Donation-2
-						</Typography>
-						<Typography variant="body2" color="textSecondary" component="p">
-							300 taka
-						</Typography>
-					</CardContent>
-				</CardActionArea>
-				<CardActions>
-					<Button size="small" color="primary" className={classes.btn} onClick={() => { handleRoute(300) }}>
-						Donate
-					</Button>
-				</CardActions>
-			</Card>
-			<br />
 
-			<Card className={classes.root3}>
-				<CardActionArea>
-					<CardMedia className={classes.media3} />
-					<CardContent>
-						<Typography gutterBottom variant="h5" component="h2">
-							Donation-3
-						</Typography>
-						<Typography variant="body2" color="textSecondary" component="p">
-							500 taka
-						</Typography>
-					</CardContent>
-				</CardActionArea>
-				<CardActions>
-					<Button size="small" color="primary" className={classes.btn} onClick={() => { handleRoute(500) }}>
-						Donate
-					</Button>
-				</CardActions>
-			</Card>
+				<Card className={classes.root1}>
+					<CardActionArea>
+						<CardMedia className={classes.media1} />
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="h2">
+								Donation-3
+							</Typography>
+							<Typography variant="body2" color="textSecondary" component="p">
+								100 taka
+							</Typography>
+						</CardContent>
+					</CardActionArea>
+					<CardActions>
+						<Button size="small" color="primary" className={classes.btn} onClick={() => { handleRoute(100) }}>
+							Donate
+						</Button>
+					</CardActions>
+				</Card>
+				<br />
 
+
+
+				<Card className={classes.root2}>
+					<CardActionArea>
+						<CardMedia className={classes.media2} />
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="h2">
+								Donation-2
+							</Typography>
+							<Typography variant="body2" color="textSecondary" component="p">
+								300 taka
+							</Typography>
+						</CardContent>
+					</CardActionArea>
+					<CardActions>
+						<Button size="small" color="primary" className={classes.btn} onClick={() => { handleRoute(300) }}>
+							Donate
+						</Button>
+					</CardActions>
+				</Card>
+				<br />
+
+				<Card className={classes.root3}>
+					<CardActionArea>
+						<CardMedia className={classes.media3} />
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="h2">
+								Donation-3
+							</Typography>
+							<Typography variant="body2" color="textSecondary" component="p">
+								500 taka
+							</Typography>
+						</CardContent>
+					</CardActionArea>
+					<CardActions>
+						<Button size="small" color="primary" className={classes.btn} onClick={() => { handleRoute(500) }}>
+							Donate
+						</Button>
+					</CardActions>
+				</Card>
+
+			</div>
 		</div>
 	)
 }

@@ -2,19 +2,17 @@ import React from "react";
 import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import * as PropTypes from "prop-types";
-import Background from "../../images/green.jpg";
+
 
 
 const useStyles = makeStyles({
     component: {
-        background: "#FFFFFF",
-        color: "black",
+        background: "#DDDDDDDD",
     },
     container: {
         justifyContent: "center",
     },
     design: {
-        backgroundImage: `url(${Background})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -72,7 +70,7 @@ export function BaseNavBar(props) {
                 <Typography>
                     {" "}
                     <Link to="/aboutus" className="navlinks">
-                        About Us
+                        About
                     </Link>{" "}
                 </Typography>
             </div>
