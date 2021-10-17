@@ -5,6 +5,7 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
+    font-family: cinzel;
 }
 
 .navlinks:hover {
@@ -15,7 +16,12 @@
 .component{
     background: rgb(255,255,255);
     color: rgb(0,0,0);
+    font-family: dosis;
 }
 .container{
-    justifyContent: "center",
+    justifyContent: "center";
+    /* font-family: dosis; */
+}
+.names {
+    /* font-family: cinzel; */
 }
