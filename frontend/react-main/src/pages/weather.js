@@ -118,7 +118,8 @@ class Weather extends Component {
                 <div style={{ marginTop: 80 }} />
                 <Container className="d-flex vh-100">
                     <Row className="m-auto ">
-                        <Card className="transparentBG" style={{ width: window.innerWidth - 750 }}>
+                        <Card className="transparentBG" style={{ width: window.innerWidth - 600 }}>
+
 
 
                             <Card.Title>

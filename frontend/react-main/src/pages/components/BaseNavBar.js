@@ -71,7 +71,7 @@ export function BaseNavBar(props) {
                 <Typography>
                     {" "}
                     <Link to="/aboutus" className="navlinks">
-                        About Us
+                        About
                     </Link>{" "}
                 </Typography>
             </div>
