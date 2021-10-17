@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BaseNavBar } from "./components/BaseNavBar";
+import React, {Component} from 'react';
+import {BaseNavBar} from "./components/BaseNavBar";
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,9 +7,9 @@ import CardActionArea from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { AppBar, Toolbar } from '@material-ui/core';
-import { getUseStyles } from "./AboutusStyles";
-import { useHistory } from "react-router-dom";
+import {AppBar, Toolbar} from '@material-ui/core';
+import {getUseStyles} from "./AboutusStyles";
+import {useHistory} from "react-router-dom";
 
 const useStyles = getUseStyles();
 
@@ -20,11 +20,19 @@ export default function Aboutus() {
 
     return (
         <>
-            <div style={{ overflow: 'hidden' }}>
+            <div style={{overflow: 'hidden'}}>
                 <div className={classes.full}>
 
-                    <div>
-                        <Typography variant="" className={classes.pidea}>This is a weather and climate related project. </Typography>
+
+                    <div style={{marginTop: 65, textAlign: "center"}}>
+                        <h2>CW Forecast</h2>
+
+                        <h6> A project on Climate Simulation, Weather Forecasting and Weather Related Blogs </h6>
+                        <h6>Target audience: Climatologists, Students, Researchers</h6>
+                        <h6>All codes are open sourced. This project can be located in following repositories. </h6>
+                        <p><a href="https://github.com/Machine-Learning-Project-LJSD/CW-Forecast.git"> Website </a><a
+                            href="https://github.com/Machine-Learning-Project-LJSD/Terrain-Generator.git"> CW-Island </a><a
+                            href="https://github.com/Machine-Learning-Project-LJSD/CW-bot.git"> Bot </a></p>
                     </div>
                     <div className={classes.allcards}>
 
@@ -34,18 +42,18 @@ export default function Aboutus() {
                                 <button onClick={() => history.goBack()}>Back</button>
                             </div>
                             <div className={classes.container}>
-                                <Typography variant="h4"> About Us </Typography>
+                                <Typography variant="h4"> About </Typography>
                             </div>
                         </Toolbar>
                     </AppBar> */}
 
                         <div>
-                            <BaseNavBar />
+                            <BaseNavBar/>
                         </div>
 
                         <Card className={classes.root1}>
                             <CardActionArea>
-                                <CardMedia className={classes.media1} />
+                                <CardMedia className={classes.media1}/>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Sadman Saadat
@@ -56,18 +64,19 @@ export default function Aboutus() {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => { window.location.href = "https://github.com/Sadman-Saadat" }}>
+                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                    window.location.href = "https://github.com/Sadman-Saadat"
+                                }}>
                                     Github Profile
                                 </Button>
                             </CardActions>
                         </Card>
-                        <br />
-
+                        <br/>
 
 
                         <Card className={classes.root2}>
                             <CardActionArea>
-                                <CardMedia className={classes.media2} />
+                                <CardMedia className={classes.media2}/>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Khalid Masum
@@ -78,16 +87,18 @@ export default function Aboutus() {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => { window.location.href = "https://github.com/Labnann" }}>
+                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                    window.location.href = "https://github.com/Labnann"
+                                }}>
                                     Github Profile
                                 </Button>
                             </CardActions>
                         </Card>
-                        <br />
+                        <br/>
 
                         <Card className={classes.root3}>
                             <CardActionArea>
-                                <CardMedia className={classes.media3} />
+                                <CardMedia className={classes.media3}/>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Jisan Anam
@@ -98,7 +109,9 @@ export default function Aboutus() {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => { window.location.href = "https://github.com/Jisan129" }}>
+                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                    window.location.href = "https://github.com/Jisan129"
+                                }}>
                                     Github Profile
                                 </Button>
                             </CardActions>
@@ -106,7 +119,7 @@ export default function Aboutus() {
 
                         <Card className={classes.root4}>
                             <CardActionArea>
-                                <CardMedia className={classes.media4} />
+                                <CardMedia className={classes.media4}/>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Hasnaine Ahmed Dihan
@@ -117,7 +130,9 @@ export default function Aboutus() {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary" className={classes.btn} onClick={() => { window.location.href = "https://github.com/dihanahmed" }}>
+                                <Button size="small" color="primary" className={classes.btn} onClick={() => {
+                                    window.location.href = "https://github.com/dihanahmed"
+                                }}>
                                     Github Profile
                                 </Button>
                             </CardActions>
@@ -131,4 +146,4 @@ export default function Aboutus() {
 
 }
 
-export { Aboutus };
+export {Aboutus};

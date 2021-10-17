@@ -10,11 +10,14 @@ const Climate = () => {
 		window.open("http://127.0.0.1:8080/")
 	}
 
+	window.document.body.style.backgroundImage="url('/image/ultano_nouka.jpg')";
+	window.document.body.style.backgroundAttachment="fixed";
+
 
 	return (
 		<div>
 			<BaseNavBar />
-			<h1>Climate</h1>
+			<h1>ClimateSimulator</h1>
 			<br /><br /><br />
 
 

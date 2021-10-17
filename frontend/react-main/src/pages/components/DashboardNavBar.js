@@ -77,7 +77,7 @@ export function DashboardNavBar(props) {
                 <Typography>
                     {" "}
                     <Link to="/donation" className="navlinks">
-                        About Us
+                        About
                     </Link>{" "}
                 </Typography>
             </div>
