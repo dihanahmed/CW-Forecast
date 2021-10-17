@@ -1,8 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
-import Sadman from "../images/Sadman.jpg";
-import Labnan from "../images/Labnan.png";
+import Sadman from "../images/Sadman2.jpg";
+import Labnan from "../images/Labnan.jpg";
 import Jisan from "../images/Jisan.jpg";
-import Dihan from "../images/Dihan.jpg";
+import Dihan from "../images/Dihan2.jpg";
 
 //E5D2AC
 
@@ -67,9 +67,9 @@ export function getUseStyles() {
         },
         media2: {
             backgroundImage: `url(${Labnan})`,
-            backgroundSize: 'contain',
+            backgroundSize: '170px 200px',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: '-30px 0px',
+            backgroundPosition: '-30px px',
             width: '100vw',
             height: '30vh',
         },
@@ -84,7 +84,7 @@ export function getUseStyles() {
 
         media4: {
             backgroundImage: `url(${Dihan})`,
-            backgroundSize: 'contain',
+            backgroundSize: '180px 200px',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: '-30px 0px',
             width: '100vw',

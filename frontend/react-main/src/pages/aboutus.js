@@ -25,14 +25,15 @@ export default function Aboutus() {
 
 
                     <div style={{ marginTop: 65, textAlign: "center" }}>
-                        <h2>CW Forecast</h2>
-
-                        <h6> A project on Climate Simulation, Weather Forecasting and Weather Related Blogs </h6>
-                        <h6>Target audience: Climatologists, Students, Researchers</h6>
-                        <h6>All codes are open sourced. This project can be located in following repositories. </h6>
-                        <p><a href="https://github.com/Machine-Learning-Project-LJSD/CW-Forecast.git"> Website </a><a
-                            href="https://github.com/Machine-Learning-Project-LJSD/Terrain-Generator.git"> CW-Island </a><a
-                                href="https://github.com/Machine-Learning-Project-LJSD/CW-bot.git"> Bot </a></p>
+                        <h2 style={{ fontStyle: "bold", fontSize: "60px" }}>CW Forecast</h2>
+                        <div >
+                            <h6 style={{ fontSize: "30px" }}> A project on Climate Simulation, Weather Forecasting and Weather Related Blogs </h6>
+                            <h6 style={{ fontSize: "30px" }}>Target audience: Climatologists, Students, Researchers</h6>
+                            <h6 style={{ fontSize: "30px" }}>All codes are open sourced. This project can be located in following repositories. </h6>
+                        </div>
+                        <p style={{ fontSize: "30px" }}><a href="https://github.com/Machine-Learning-Project-LJSD/CW-Forecast.git" target="_blank" rel="noreferrer noopener"> Website </a><a
+                            href="https://github.com/Machine-Learning-Project-LJSD/Terrain-Generator.git" target="_blank" rel="noreferrer noopener"> CW-Island </a><a
+                                href="https://github.com/Machine-Learning-Project-LJSD/CW-bot.git" target="_blank" rel="noreferrer noopener"> Bot </a></p>
                     </div>
                     <div className={classes.allcards}>
 
@@ -65,7 +66,7 @@ export default function Aboutus() {
                             </CardActionArea>
                             <CardActions>
                                 <Button size="small" color="primary" className={classes.btn} style={{ fontFamily: 'cinzel' }} onClick={() => {
-                                    window.location.href = "https://github.com/Sadman-Saadat"
+                                    window.open("https://github.com/Sadman-Saadat", "_blank")
                                 }}>
                                     Github Profile
                                 </Button>
@@ -88,7 +89,7 @@ export default function Aboutus() {
                             </CardActionArea>
                             <CardActions>
                                 <Button size="small" color="primary" style={{ fontFamily: 'cinzel' }} className={classes.btn} onClick={() => {
-                                    window.location.href = "https://github.com/Labnann"
+                                    window.open("https://github.com/Labnann", "_blank")
                                 }}>
                                     Github Profile
                                 </Button>
@@ -110,7 +111,7 @@ export default function Aboutus() {
                             </CardActionArea>
                             <CardActions>
                                 <Button size="small" color="primary" style={{ fontFamily: 'cinzel' }} className={classes.btn} onClick={() => {
-                                    window.location.href = "https://github.com/Jisan129"
+                                    window.open("https://github.com/Jisan129")
                                 }}>
                                     Github Profile
                                 </Button>
@@ -131,7 +132,7 @@ export default function Aboutus() {
                             </CardActionArea>
                             <CardActions>
                                 <Button size="small" color="primary" style={{ fontFamily: 'cinzel' }} className={classes.btn} onClick={() => {
-                                    window.location.href = "https://github.com/dihanahmed"
+                                    window.open("https://github.com/dihanahmed")
                                 }}>
                                     Github Profile
                                 </Button>
