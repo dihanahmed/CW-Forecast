@@ -36,6 +36,13 @@ class Dashboard extends React.Component {
                     this.loadUserBlogs(res.data.email);
                     }
             })
+
+
+        document.body.style.backgroundImage = "url('/image/ultano_nouka.jpg')";
+        document.body.style.backgroundAttachment = "fixed";
+
+
+
     }
 
     onSubmit(event){
@@ -57,6 +64,9 @@ class Dashboard extends React.Component {
         })
         this.props.history.push('/d')
     }
+
+
+
 
     render() {
         return (
