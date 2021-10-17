@@ -109,9 +109,9 @@ class ArticleEdit extends React.Component{
                 <div>
                     <div className= 'container' style={{marginTop:200}}>
                         <div className = 'form-div'>
+                            <div style={{backgroundColor:'rgba(255,255,255,.9)'}}> <h3>What changes do u wanna make?</h3> </div>
 
-                                What changes do u wanna make?
-                                <input type = 'text' id="article_title" placeholder='title'  defaultValue = {passedProps.blog.title} className = 'form-control from-group'/>
+                            <input type = 'text'  style={{backgroundColor:'rgba(255,255,255,.9)'}} id="article_title" placeholder='title'  defaultValue = {passedProps.blog.title} className = 'form-control from-group'/>
 
                                 <textarea
                                     id="article_content"
@@ -119,9 +119,10 @@ class ArticleEdit extends React.Component{
                                     className = 'contentStyle'
                                     value={this.state.content}
                                     onChange={this.changeContent}
+                                    style={{backgroundColor:'rgba(255,255,255,.9)'}}
                                 > </textarea>
 
-                                <input type = 'submit' onClick={()=>{this.onSubmit()}} className='btn btn-danger btn-block' defaultValue = 'Save changes' />
+                                <input type = 'submit'  onClick={()=>{this.onSubmit()}} className='btn btn-danger btn-block' defaultValue = 'Save changes' />
 
 
                         </div>

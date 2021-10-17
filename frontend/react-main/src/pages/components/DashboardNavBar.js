@@ -8,7 +8,7 @@ import axios from "axios";
 
 const useStyles = makeStyles({
     component: {
-        background: "#FFFFFF",
+        background: "#DDDDDDDD",
         color: "black",
     },
     container: {
