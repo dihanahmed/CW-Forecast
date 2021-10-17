@@ -23,8 +23,10 @@ const Climate = () => {
 
 
 
-			<div>
-				<iframe style={{
+			<div >
+				<iframe
+					className="border-info rounded-lg"
+					style={{
 					height: window.innerHeight * .8,
 					width: window.innerWidth * .8,
 					position: 'absolute', left: '50%', top: '50%',

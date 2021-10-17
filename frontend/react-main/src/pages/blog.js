@@ -13,7 +13,6 @@ class Blogpage extends React.Component {
         blogs: []
     }
     Abcd() {
-        console.log("?")
         document.body.style.backgroundImage = "url('/image/ultano_nouka.jpg')";
         document.body.style.backgroundAttachment = "fixed";
 
