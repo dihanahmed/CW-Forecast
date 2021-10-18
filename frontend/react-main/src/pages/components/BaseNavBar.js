@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     },
     container: {
         justifyContent: "center",
+        fontFamily: "cinzel"
     },
     design: {
         backgroundPosition: "center",
@@ -26,8 +27,9 @@ export function BaseNavBar(props) {
     const classes = useStyles()
     return <AppBar className={classes.component}>
         <Toolbar className={classes.container}>
+
             <div>
-                <Typography>
+                <Typography style={{ fontFamily: 'cinzel' }}>
                     {" "}
                     <Link to="/" className="navlinks">
                         Homepage
@@ -35,7 +37,7 @@ export function BaseNavBar(props) {
                 </Typography>
             </div>
             <div>
-                <Typography>
+                <Typography style={{ fontFamily: 'cinzel' }}>
                     {" "}
                     <Link to="/blog" className="navlinks">
                         Blogpage
@@ -43,7 +45,7 @@ export function BaseNavBar(props) {
                 </Typography>
             </div>
             <div>
-                <Typography>
+                <Typography style={{ fontFamily: 'cinzel' }}>
                     {" "}
                     <Link to="/weather" className="navlinks">
                         Weather
@@ -51,7 +53,7 @@ export function BaseNavBar(props) {
                 </Typography>
             </div>
             <div>
-                <Typography>
+                <Typography style={{ fontFamily: 'cinzel' }}>
                     {" "}
                     <Link to="/climate" className="navlinks">
                         Climate
@@ -59,7 +61,7 @@ export function BaseNavBar(props) {
                 </Typography>
             </div>
             <div>
-                <Typography>
+                <Typography style={{ fontFamily: 'cinzel' }}>
                     {" "}
                     <Link to="/donation" className="navlinks">
                         Donation
@@ -67,13 +69,14 @@ export function BaseNavBar(props) {
                 </Typography>
             </div>
             <div>
-                <Typography>
+                <Typography style={{ fontFamily: 'cinzel' }}>
                     {" "}
                     <Link to="/aboutus" className="navlinks">
                         About
                     </Link>{" "}
                 </Typography>
             </div>
+
         </Toolbar>
     </AppBar>;
 }

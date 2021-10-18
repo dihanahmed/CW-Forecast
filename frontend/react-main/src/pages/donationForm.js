@@ -4,6 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import { AppBar, Toolbar } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
+import { BaseNavBar } from './components/BaseNavBar';
+import donationBack from '../images/donationback5.jpg'
 
 import axios from 'axios';
 
@@ -42,6 +44,12 @@ class DonationForm extends Component {
         })
     }
 
+    Abcd() {
+        document.body.style.backgroundImage = donationBack;
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.classList.add("no-sroll")
+    }
+
     onSubmit(event) {
         event.preventDefault()
 
@@ -72,16 +80,23 @@ class DonationForm extends Component {
         return (
             <div>
 
-                <AppBar style={{ background: '#C6CAB1' }} className="dFormBar">
+                {/* <AppBar style={{ background: '#C6CAB1' }} className="dFormBar">
                     <Toolbar >
                         <div className="headingForm">
                             <Typography style={{ textColor: 'black' }} variant="h4"> Donation Form</Typography>
                         </div>
                     </Toolbar>
-                </AppBar>
+                </AppBar> */}
+
+                <div>
+                    <BaseNavBar />
+                </div>
 
 
-                <div className="wholeForm">
+                <div className="wholeForm" style={{
+                    backgroundImage: `url(${donationBack})`,
+                    backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100vh', overflow: 'hidden'
+                }}>
                     <form onSubmit={this.onSubmit}>
                         <div className="container_donor">
 

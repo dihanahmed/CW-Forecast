@@ -4,6 +4,8 @@ import Background from "./../images/green2.jpg";
 import "./HomePage.css";
 import { BaseNavBar } from "./components/BaseNavBar";
 
+
+
 const useStyles = makeStyles({
   component: {
     background: "#FFFFFF",
