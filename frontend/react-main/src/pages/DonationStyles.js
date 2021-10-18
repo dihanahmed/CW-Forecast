@@ -52,6 +52,14 @@ export function getUseStyles() {
             width: '100vw',
             height: '30vh',
         },
+        textd: {
+            // fontFamily: "cinzel",
+            fontSize: "30px",
+            marginTop: "80px",
+            justifyContent: "center",
+            display: 'flex',
+            textAlign: 'center',
+        },
         media3: {
             backgroundImage: `url(${Background3})`,
             backgroundSize: 'contain',
@@ -64,7 +72,7 @@ export function getUseStyles() {
             marginLeft: '20px'
         },
         allcards: {
-            padding: '200px 100px 500px 70px',
+            padding: '100px 100px 500px 70px',
             maxWidth: '2000px',
             display: 'flex',
             flexDirection: 'wrap',
